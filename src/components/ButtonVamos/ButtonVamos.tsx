@@ -6,7 +6,7 @@ type Props = {}
 
 export default function ButtonVamos () {
   return (
-    <StyledButtonVamos to="/">¡Vamos!</StyledButtonVamos>
+    <StyledButtonVamos to="/onboarding">¡Vamos!</StyledButtonVamos>
   )
 }
 

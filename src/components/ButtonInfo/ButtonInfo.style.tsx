@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 export const StyledButtonInfo = styled(Link)`
 background-color: #00464B;
+color: white;
 font-size: medium;
 font-weight: 200;
 padding: 1rem 2rem;
