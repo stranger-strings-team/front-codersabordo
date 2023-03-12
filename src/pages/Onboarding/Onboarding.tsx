@@ -1,10 +1,14 @@
 import React from 'react'
 
-type Props = {}
+
+type Props = {};
 
 const Onboarding = (props: Props) => {
   return (
-    <div>Onboarding</div>
+    <div>
+       
+        <h1>Onboarding</h1>
+        </div>
   )
 }
 
