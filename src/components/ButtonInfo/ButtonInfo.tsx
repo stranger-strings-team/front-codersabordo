@@ -5,7 +5,7 @@ type Props = {}
 
 export default function ButtonInfo () {
   return (
-    <StyledButtonInfo to="/">Information</StyledButtonInfo>
+    <StyledButtonInfo to="/">Información</StyledButtonInfo>
   )
 }
 
