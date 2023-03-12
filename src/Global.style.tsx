@@ -71,6 +71,16 @@ export const Container = styled.div`
   text-align: center;
 `
 
+export const AnswerContainer = styled.div`
+  margin: 1rem 2rem; 
+  text-align: justify;
+`
+
+export const AnswerImage = styled.img`
+  width: 10rem; 
+  margin: 0 auto;
+`
+
 
 /* ------------------ GENERAL TEXT STYLES -------------------*/
 
@@ -90,3 +100,8 @@ export const DarkText = styled.p`
   color: ${theme.darkText};
 `
 
+export const OrangeText = styled.p`
+  color: ${theme.orange}; 
+  font-weight: 700;
+  display: inline;
+`
