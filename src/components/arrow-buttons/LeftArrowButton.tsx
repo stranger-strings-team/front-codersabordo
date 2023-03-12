@@ -32,7 +32,6 @@ export const LeftArrowButton = (props: Props) => {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-right: 2rem;
         &&{
             width: 64px;
             height: 64px;

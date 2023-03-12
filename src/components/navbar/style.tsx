@@ -8,11 +8,12 @@ export const StyledNavBar = () => {
     const Nav = styled.nav`
         position: absolute;
         bottom: 0;
+        left: 0;
         width: 100vw;
         height: 80px;
         background-color: #ff4700;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
     `
 

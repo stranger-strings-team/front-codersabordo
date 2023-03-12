@@ -34,7 +34,6 @@ export const RightArrowButton = (props: Props) => {
         justify-content: center;
         align-items: center;
         transform: rotate(180deg);
-        margin-left: 2rem;
         &&{
             width: 64px;
             height: 64px;
