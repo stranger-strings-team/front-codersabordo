@@ -6,9 +6,9 @@ background-color: #009DA9;
 color: white;
 font-size: medium;
 font-weight: 200;
-padding: 1rem 2rem;
-border-radius: 10px;
+padding: 0.5rem 4rem;
+border-radius: 25px;
 display: flex;
 inline-size: fit-content;
-margin-left: 0;
+margin-bottom: 3rem;
 `
