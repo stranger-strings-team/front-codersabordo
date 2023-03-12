@@ -1,11 +1,13 @@
 import CreateRoutes from './Routes'
+import { GlobalStyles } from "./Global.style";
 
 
 function App() {
   
   return (
     <>
-     <CreateRoutes/>
+     <GlobalStyles />
+     <CreateRoutes />
     </>
   )
 }
