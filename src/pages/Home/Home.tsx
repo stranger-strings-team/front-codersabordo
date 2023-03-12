@@ -3,18 +3,20 @@ import styled from 'styled-components'
 import logo from '../../assets/logo.png'
 import ButtonVamos from '../../components/ButtonVamos/ButtonVamos'
 import ButtonInfo from '../../components/ButtonInfo/ButtonInfo'
+import {MainDiv, Myh1, MyLogo} from '../Home/HomeStyle'
+
 
 type Props = {}
 
 const Home = (props: Props) => {
   return (
-    <div>
-        <img src={logo} alt="Logo-F5"/>
-        <h1>CODERS A BORDO</h1>
+    <MainDiv>
+        <MyLogo src={logo} alt="Logo-F5"/>
+        <Myh1>CODERS A BORDO</Myh1>
         <ButtonVamos/>
         <ButtonInfo/>
 
-    </div>
+    </MainDiv>
   )
 }
 
