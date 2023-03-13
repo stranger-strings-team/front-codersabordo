@@ -6,7 +6,7 @@ import { Feedback, MyConfeti } from './FinalStyle'
 
 type Props = {}
 
-const GameOver = (props: Props) => {
+const Final = (props: Props) => {
   return (
     <Container>
   
@@ -19,4 +19,4 @@ const GameOver = (props: Props) => {
   )
 }
 
-export default GameOver;
+export default Final;
