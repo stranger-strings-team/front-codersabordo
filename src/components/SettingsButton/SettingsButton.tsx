@@ -10,7 +10,7 @@ export const SettingsButton = (props: Props) => {
     }
 
     return (
-        <Button onClick={ handleClick }>
+        <Button href="/settings">
             <img src={Icon}/>
         </Button>
     )

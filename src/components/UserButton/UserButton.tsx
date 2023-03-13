@@ -10,7 +10,7 @@ export const UserButton = (props: Props) => {
     }
 
     return (
-        <Button onClick={ handleClick }>
+        <Button href="/profile">
             <img src={Icon}/>
         </Button>
     )

@@ -22,6 +22,8 @@ export const GlobalStyles = createGlobalStyle`
 
   body{
     font-family: 'Poppins', sans-serif;
+    color: ${theme.darkText};
+    background-color: white;
   }
 
   h1{
