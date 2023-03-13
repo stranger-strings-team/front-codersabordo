@@ -4,6 +4,7 @@ import Home from './pages/Home/Home';
 import Onboarding from './pages/Onboarding/Onboarding';
 import { NoMatch } from './pages/NoMatch';
 import Layout from './components/Layout.tsx/Layout';
+import Final from './pages/Final/Final';
 
 
 const CreateRoutes = () => (
@@ -11,6 +12,7 @@ const CreateRoutes = () => (
       <Route index element={<Home/>}/>
       <Route path="/" element={<Layout />}>
         <Route path="/onboarding" element={<Onboarding/>}/>
+        <Route path="/final" element={<Final/>}/>
         <Route path="*" element={<NoMatch />} />
       </Route>
     </Routes>
