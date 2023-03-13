@@ -1,10 +1,17 @@
 import React from "react";
-import { StyledNavBar } from "./style";
+import { Nav } from "./style";
+import { SettingsButton } from "../SettingsButton";
+import { InfoButton } from "../InfoButton";
+import { UserButton } from "../UserButton";
 
 type Props = {}
 
 export const NavBar = (props: Props) => {
     return (
-        <StyledNavBar />
+        <Nav>
+            <SettingsButton />
+            <InfoButton />
+            <UserButton />
+        </Nav>
     )
 }
