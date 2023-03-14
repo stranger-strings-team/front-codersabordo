@@ -7,10 +7,14 @@ flex-direction: column;
 margin-top:20px;
 gap: 14px;
 `
-
+export const Nickname = styled.p`
+color: black;    
+`
 export const Input = styled.input`
 width: 200px;
 height: 40px;
 border-radius: 8px;
+border: none;
+background-color: ${theme.pinkBackground};
 `
 
