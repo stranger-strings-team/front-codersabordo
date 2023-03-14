@@ -1,10 +1,10 @@
 import styled, { createGlobalStyle } from "styled-components";
 
 export const theme = {
-  purpleBackground: '#f8e4f4',
-  blueBackground: '#f0f4f4',
-  pinkBackground: '#ffece4',
-  yellowBackground: '#fffcd4', 
+  purpleBackground: '#fbcef2',
+  blueBackground: '#a1e0e4',
+  pinkBackground: '#fcceba',
+  yellowBackground: '#fdf69a', 
   darkText: '#020100',
   orange: '#FF4700', 
   gray: '#9C9C9C',
@@ -45,7 +45,7 @@ export const GlobalStyles = createGlobalStyle`
   h4{
     font-size: 1.2rem; 
     color: ${theme.darkText};
-    font-weight: 400;
+    font-weight: 700;
     margin-bottom: 0.60rem;
   }
 
@@ -80,7 +80,7 @@ export const ParagraphContainer = styled.div`
 
 export const AnswerImage = styled.img`
   width: 10rem; 
-  margin: 0 auto;
+  margin: 0 0 0 auto;
 `
 
 
@@ -100,6 +100,7 @@ export const XLGrayText = styled(GrayText)`
 
 export const DarkText = styled.p`
   color: ${theme.darkText};
+  z-index: 10
 `
 
 export const OrangeText = styled.p`
