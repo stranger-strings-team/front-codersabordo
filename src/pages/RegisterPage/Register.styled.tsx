@@ -11,6 +11,7 @@ export const Form = styled.form`
 export const Input = styled.input`
     background-color: #ffe6dc;
     border-style: none;
+    border-radius: 10px;
     height: 35px;
     width: 200px;
     padding: 10px;
@@ -23,4 +24,5 @@ export const Select = styled.select`
     height: 35px;
     width: 200px;
     padding: 10px;
+    border-radius: 10px;
 `
