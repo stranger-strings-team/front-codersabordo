@@ -7,6 +7,7 @@ import Layout from './components/Layout.tsx/Layout';
 import Final from './pages/Final/Final';
 import Profile from './pages/Profile/Profile';
 import {IncompleteSection}  from './pages/IncompleteSection/IncompleteSection';
+import Login from './pages/Login/Login';
 import Welcome from './pages/Welcome/Welcome';
 import Incorrect from './pages/Incorrect/Incorrect';
 import CompletedSection from './pages/CompletedSection/CompletedSection';
@@ -26,6 +27,7 @@ const CreateRoutes = () => (
         <Route path="/seccion-completada" element={<CompletedSection/>}/>
         <Route path="/final" element={<Final/>}/>
         <Route path="*" element={<NoMatch />} />
+        <Route path="/login" element={<Login/>}/>
       </Route>
     </Routes>
 );
