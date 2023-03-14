@@ -6,12 +6,14 @@ import { NoMatch } from './pages/NoMatch';
 import Layout from './components/Layout.tsx/Layout';
 import Final from './pages/Final/Final';
 import Profile from './pages/Profile/Profile';
+import Welcome from './pages/Welcome/Welcome';
 
 
 const CreateRoutes = () => (
     <Routes>
       <Route index element={<Home/>}/>
       <Route path="/" element={<Layout />}>
+        <Route path='/welcome' element={<Welcome />} />
       <Route path="/profile" element={<Profile/>}/>
         <Route path="/onboarding" element={<Onboarding/>}/>
         <Route path="/final" element={<Final/>}/>
