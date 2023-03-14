@@ -6,7 +6,7 @@ import { NoMatch } from './pages/NoMatch';
 import Layout from './components/Layout.tsx/Layout';
 import Final from './pages/Final/Final';
 import Profile from './pages/Profile/Profile';
-import CompletedSection from './pages/CompletedSection/CompletedSection';
+import Incorrect from './pages/Incorrect/Incorrect'
 
 
 const CreateRoutes = () => (
@@ -15,7 +15,7 @@ const CreateRoutes = () => (
       <Route path="/" element={<Layout />}>
       <Route path="/profile" element={<Profile/>}/>
         <Route path="/onboarding" element={<Onboarding/>}/>
-        <Route path="/seccion-completada" element={<CompletedSection/>}/>
+        <Route path="/incorrecta" element={<Incorrect/>}/>
         <Route path="/final" element={<Final/>}/>
         <Route path="*" element={<NoMatch />} />
       </Route>
