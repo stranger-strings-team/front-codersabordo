@@ -12,9 +12,9 @@ const Profile = (props: Props) => {
         <img src={Perfil} alt="user photo"/>
         <p>Minerva</p>
         <Input>
-        <input type="text"/>
-        <input type="text"/>
-        <input type="text"/>
+        <input type="text" placeholder="Nombre"/>
+        <input type="text" placeholder="Apellido"/>
+        <input type="text" placeholder="Email"/>
         </Input>
     </Container>
   )
