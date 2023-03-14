@@ -31,17 +31,20 @@ export const ThoughtBubbleStyled = styled.div`
     height:44px;
     bottom:-12px;
     left:28px;
-    box-shadow:-50px 30px 0 -12px ${theme.blueBackground};
+    box-shadow:-50px 30px 0 -12px ${theme.blueBackground},
+                -40px -60px 0 5px ${theme.blueBackground};
   }
+
 
   &:after{
     top:-10px;
     right:60px;
     width:30px;
     height:30px;
-    box-shadow:40px -34px 0 0 ${theme.blueBackground},
-             -28px -6px 0 -2px ${theme.blueBackground},
-             -24px 17px 0 -6px ${theme.blueBackground},
-             -5px 25px 0 -10px ${theme.blueBackground};
+    box-shadow:40px 0px 0 0px ${theme.blueBackground},
+                60px 70px 0 15px ${theme.blueBackground},
+             -30px 0px 0 5px ${theme.blueBackground},
+             10px -30px 0 -6px ${theme.blueBackground},
+             40px -50px 0 -10px ${theme.blueBackground};
   }
 `
