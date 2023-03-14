@@ -47,6 +47,7 @@ export const GlobalStyles = createGlobalStyle`
     color: ${theme.darkText};
     font-weight: 700;
     margin-bottom: 0.60rem;
+    z-index: 1
   }
 
   h5{

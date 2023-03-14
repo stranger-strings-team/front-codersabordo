@@ -1,7 +1,9 @@
 import styled from "styled-components"
+import { theme } from '../../Global.style';
 
 export const Button = styled.button`
-    background-color: orangered;
+    background-color: ${theme.orange};
+    color: white;
     border: 0;
     margin: 0;
     width: 200px;
