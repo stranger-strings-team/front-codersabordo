@@ -10,6 +10,7 @@ import {IncompleteSection}  from './pages/IncompleteSection/IncompleteSection';
 import Welcome from './pages/Welcome/Welcome';
 import Incorrect from './pages/Incorrect/Incorrect';
 import CompletedSection from './pages/CompletedSection/CompletedSection';
+import Register from './pages/RegisterPage/Register';
 
 
 const CreateRoutes = () => (
@@ -17,6 +18,7 @@ const CreateRoutes = () => (
       <Route index element={<Home/>}/>
       <Route path="/" element={<Layout />}>
         <Route path='/welcome' element={<Welcome />} />
+        <Route path='/register' element={<Register />} />
         <Route path="/profile" element={<Profile/>}/>
         <Route path="/onboarding" element={<Onboarding/>}/>
         <Route path="/respuesta-incorrecta" element={<Incorrect/>}/>
