@@ -9,6 +9,10 @@ gap: 15px;
 margin-top: 30px;
 `
 
-export const Container = styled.p `
+export const Nickname = styled.p `
 font-weight: 700;
+color: black;
+margin-top: 20px;
 `
+
+
