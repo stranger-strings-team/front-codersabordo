@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { GlobalStyles } from '../../Global.style'
+import { GlobalStyles, theme } from '../../Global.style'
 
 export const InputDiv = styled.div`
 display: flex;
@@ -15,4 +15,11 @@ color: black;
 margin-top: 20px;
 `
 
+export const Input = styled.input`
+border: none;
+background-color: ${theme.pinkBackground};
+width: 200px;
+height: 40px;
+border-radius: 10px;
+`
 

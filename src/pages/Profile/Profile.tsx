@@ -1,7 +1,7 @@
 import React from 'react'
 import Perfil from '../../assets/profile.png'
 import { Container, DarkText, OrangeText } from '../../Global.style'
-import { InputDiv, Nickname } from './ProfileStyle'
+import { Input, InputDiv, Nickname } from './ProfileStyle'
 
 type Props = {}
 
@@ -12,9 +12,9 @@ const Profile = (props: Props) => {
         <img src={Perfil} alt="user photo"/>
         <Nickname>Minerva</Nickname>
         <InputDiv>
-        <input type="text" placeholder='Nombre'/>
-        <input type="text" placeholder='Apellidos'/>
-        <input type="text" placeholder='Email'/>
+        <Input type="text" placeholder='  Nombre'/>
+        <Input type="text" placeholder='  Apellidos'/>
+        <Input type="text" placeholder='  Email'/>
         </InputDiv>
     </Container>
   )
