@@ -22,6 +22,8 @@ export const GlobalStyles = createGlobalStyle`
 
   body{
     font-family: 'Poppins', sans-serif;
+    color: ${theme.darkText};
+    background-color: white;
   }
 
   h1{
@@ -71,7 +73,7 @@ export const Container = styled.div`
   text-align: center;
 `
 
-export const AnswerContainer = styled.div`
+export const ParagraphContainer = styled.div`
   margin: 1rem 2rem; 
   text-align: justify;
 `

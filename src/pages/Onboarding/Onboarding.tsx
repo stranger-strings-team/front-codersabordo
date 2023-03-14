@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import QuestionButton from '../../components/QuestionButton/QuestionButton'
 import { BlueButton, PinkButton, PurpleButton, YellowButton } from '../../components/QuestionButton/questionButton.style'
-import { AnswerContainer, AnswerImage, Container, DarkText, GlobalStyles, OrangeText } from '../../Global.style'
+import { ParagraphContainer, AnswerImage, Container, DarkText, GlobalStyles, OrangeText } from '../../Global.style'
 import correct from '../../assets/correct.png'
 
 
@@ -25,9 +25,9 @@ const Onboarding = (props: Props) => {
         <>
           <BlueButton>Con la cámara encendida y el micrófono apagado</BlueButton>
           <AnswerImage src={correct}></AnswerImage>
-          <AnswerContainer>
+          <ParagraphContainer>
             <DarkText>Queremos vernos las caras entre todas y <OrangeText>fomentar la participación</OrangeText>. Como seremos muchas, levantaremos la mano si queremos hablar y solo encenderemos el micrófono cuando sea nuestro turno.</DarkText>
-          </AnswerContainer>
+          </ParagraphContainer>
         </>
     
       )}
