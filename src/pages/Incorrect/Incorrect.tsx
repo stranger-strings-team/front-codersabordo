@@ -4,6 +4,7 @@ import Incorrecta from '../../assets/incorrecta.png'
 import {Container, ParagraphContainer, DarkText} from '../../Global.style'
 import { NextButton } from '../../components/NextButton';
 
+
 type Props = {}
 
 const Incorrect = (props: Props) => {

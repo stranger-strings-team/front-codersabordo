@@ -12,6 +12,7 @@ import Welcome from './pages/Welcome/Welcome';
 import Incorrect from './pages/Incorrect/Incorrect';
 import CompletedSection from './pages/CompletedSection/CompletedSection';
 import Register from './pages/RegisterPage/Register';
+import OpenQuestion from './pages/OpenQuestion/OpenQuestion';
 
 
 const CreateRoutes = () => (
@@ -21,6 +22,7 @@ const CreateRoutes = () => (
         <Route path='/welcome' element={<Welcome />} />
         <Route path='/register' element={<Register />} />
         <Route path="/profile" element={<Profile/>}/>
+        <Route path="/open-question" element={<OpenQuestion/>}/>
         <Route path="/onboarding" element={<Onboarding/>}/>
         <Route path="/respuesta-incorrecta" element={<Incorrect/>}/>
         <Route path="/seccion-incompleta" element={<IncompleteSection/>}/>
