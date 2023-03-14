@@ -2,6 +2,7 @@ import React from 'react'
 import { BlueButton, PurpleButton } from '../../components/QuestionButton/questionButton.style';
 import Incorrecta from '../../assets/incorrecta.png'
 import {Container, ParagraphContainer, DarkText} from '../../Global.style'
+import { NextButton } from '../../components/NextButton';
 
 type Props = {}
 
@@ -15,6 +16,7 @@ const Incorrect = (props: Props) => {
         <ParagraphContainer>
             <DarkText>¡Inténtalo de nuevo al final de la sección!</DarkText>
           </ParagraphContainer>
+          <NextButton/>
     </Container>
   )
 }
