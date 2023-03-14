@@ -1,20 +1,20 @@
 import React from 'react'
 import Perfil from '../../assets/profile.png'
-import { Container } from '../../Global.style'
-import { Input, InputDiv } from './ProfileStyle'
+import { Container, DarkText, OrangeText } from '../../Global.style'
+import { Input, InputDiv, Nickname } from './ProfileStyle'
 
 type Props = {}
 
 const Profile = (props: Props) => {
   return (
     <Container>
-        <h3>Tu perfil</h3>
+        <h3><OrangeText>Tu perfil</OrangeText></h3>
         <img src={Perfil} alt="user photo"/>
-        <p>Minerva</p>
+        <Nickname>Minerva</Nickname>
         <InputDiv>
-        <Input type="text" placeholder="Nombre"/>
-        <Input type="text" placeholder="Apellido"/>
-        <Input type="text" placeholder="Email"/>
+        <Input type="text" placeholder='  Nombre'/>
+        <Input type="text" placeholder='  Apellidos'/>
+        <Input type="text" placeholder='  Email'/>
         </InputDiv>
     </Container>
   )
