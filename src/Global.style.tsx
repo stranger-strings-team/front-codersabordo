@@ -8,7 +8,8 @@ export const theme = {
   darkText: '#020100',
   orange: '#FF4700', 
   gray: '#9C9C9C',
-  coral:'#FFA37F'
+  coral:'#FFA37F',
+  inputBackground: '#f6e4dd'
 }
 
 export const GlobalStyles = createGlobalStyle`

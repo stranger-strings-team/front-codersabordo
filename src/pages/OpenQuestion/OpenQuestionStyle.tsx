@@ -8,7 +8,7 @@ export const Container = styled.div`
 
 export const InputQuestion = styled.input`
     border-radius: 8px;
-    background-color: ${theme.blueBackground};
+    background-color: ${theme.inputBackground};
     border: none;
     display: flex;
     width:70vw;
