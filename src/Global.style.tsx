@@ -26,6 +26,10 @@ export const GlobalStyles = createGlobalStyle`
     background-color: white;
   }
 
+  main{
+    margin-top: 80px;
+  }
+
   h1{
     font-size: 2.25rem;
     color: ${theme.darkText};
@@ -57,9 +61,21 @@ export const GlobalStyles = createGlobalStyle`
     margin-bottom: 0.60rem;
   }
 
-  .purpleBackground{
-  background-color: ${theme.purpleBackground}
-}
+  .yellow{
+    background-color: ${theme.yellowBackground};
+  }
+
+  .blue{
+    background-color: ${theme.blueBackground};
+  }
+
+  .purple{
+    background-color: ${theme.purpleBackground};
+  }
+
+  .pink{
+    background-color: ${theme.pinkBackground};
+  }
 `
 
 // -------------- GENERAL CONTAINER STYLES ---------------

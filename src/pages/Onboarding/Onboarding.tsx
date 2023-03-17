@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from 'react'
-import QuestionButton from '../../components/QuestionButton/QuestionButton'
-import { BlueButton, PinkButton, PurpleButton, YellowButton } from '../../components/QuestionButton/questionButton.style'
-import { ParagraphContainer, AnswerImage, Container, DarkText, GlobalStyles, OrangeText } from '../../Global.style'
+// import QuestionButton from '../../components/QuestionButton/QuestionButton'
+import { BlueButton, PinkButton, PurpleButton, YellowButton, QuestionButton } from '../../components/QuestionButton/questionButton.style'
+import { ParagraphContainer, AnswerImage, Container, DarkText, GlobalStyles, OrangeText, theme } from '../../Global.style'
 import correct from '../../assets/correct.png'
 import {questionServices} from '../../services/questionServices'
 import { ThoughtBubbleStyled } from '../../components/ThoughtBubble/ThoughtBubble.style'
 import { NextButton } from '../../components/NextButton'
 import  Incorrecta  from '../../assets/incorrecta.png'
-
+import "./style.css"
 
 type Props = {};
 
@@ -19,7 +19,13 @@ function Onboarding (props: Props) {
 
   const [questions, setQuestions] = useState<QuestionsType[]>([])
 
-  
+  const getColor = (key: number) => {
+    if (key == 0) return "blue"
+    else if (key == 1) return "pink"
+    else if (key == 2) return "purple"
+    else if (key == 3) return "yellow"
+  }
+
   useEffect(() => {
   async function loadQuestions () {
       const response = await questionServices();
@@ -34,11 +40,22 @@ function Onboarding (props: Props) {
     {questions.filter((question)=>question.section == "Sección 1 - Compromisos").map((question, index)=>(
 
       <Container key={index}>
-
+        {/* <>{(key:number)=>{
+          if(key == 0){
+            console.log("HOLA")
+          }
+        }}</> */}
         <h3>{question.question}</h3>
         {/* {show ? (
         <> */}
-            {question.answer.map((answer, index) =>(<BlueButton onClick={()=>setShow(false)} key={index}>{answer.text}</BlueButton>))}
+            {question.answer.map((answer, index) => (
+            <QuestionButton 
+            onClick={()=>setShow(false)} 
+            key={index}
+            className={getColor(index)}
+            >{answer.text}</QuestionButton>
+            )
+            )}
        
             
           {/* </>
