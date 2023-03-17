@@ -2,12 +2,13 @@ import styled from 'styled-components'
 import { theme } from '../../Global.style'
 
 export const StyledNavTop = styled.div`
-    position: absolute;
+    z-index: 999;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 80px;
-    background-color: rgba(255, 163, 127, 0.36);
+    background-color: ${theme.pinkBackground};
     display: flex;
     justify-content: space-between;
     align-items: center;
