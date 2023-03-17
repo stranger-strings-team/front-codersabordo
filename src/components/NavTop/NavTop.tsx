@@ -9,7 +9,7 @@ export const NavTop = () => {
     <>
       <StyledNavTop>
         <h2>CODERS A BORDO</h2>
-        <Link to="/">
+        <Link to="/roadmap">
           <img src={home} alt="Home icon" />
         </Link>
       </StyledNavTop>
