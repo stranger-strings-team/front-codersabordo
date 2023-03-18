@@ -7,7 +7,7 @@ import {questionServices} from '../../services/questionServices'
 import { ThoughtBubbleStyled } from '../../components/ThoughtBubble/ThoughtBubble.style'
 import { NextButton } from '../../components/NextButton'
 import  Incorrecta  from '../../assets/incorrecta.png'
-import "./style.css"
+import { getColor } from './Onboarding.style'
 
 type Props = {};
 
@@ -19,12 +19,9 @@ function Onboarding (props: Props) {
 
   const [questions, setQuestions] = useState<QuestionsType[]>([])
 
-  const getColor = (key: number) => {
-    if (key == 0) return "blue"
-    else if (key == 1) return "pink"
-    else if (key == 2) return "purple"
-    else if (key == 3) return "yellow"
-  }
+  const [feedback, setFeedback] = useState(true);
+
+  //const []
 
   useEffect(() => {
   async function loadQuestions () {
@@ -34,50 +31,59 @@ function Onboarding (props: Props) {
   loadQuestions();
   }, [])
 
- return (
+  return (
     <>
     
     {questions.filter((question)=>question.section == "Sección 1 - Compromisos").map((question, index)=>(
 
       <Container key={index}>
-        {/* <>{(key:number)=>{
+        <>{(key:number)=>{
           if(key == 0){
             console.log("HOLA")
           }
-        }}</> */}
+        }}</>
         <h3>{question.question}</h3>
-        {/* {show ? (
-        <> */}
             {question.answer.map((answer, index) => (
-            <QuestionButton 
-            onClick={()=>setShow(false)} 
-            key={index}
+              <QuestionButton 
+              onClick={()=> {
+                setFeedback(false)
+                if(question.answer[index].isCorrect===true) {
+                  setShow(false)}
+                }
+            }
+              key={index}
             className={getColor(index)}
             >{answer.text}</QuestionButton>
             )
             )}
-       
-            
-          {/* </>
-        ):( */}
-          {/* <> */}
-            <AnswerImage src={correct}></AnswerImage>
-            <ThoughtBubbleStyled>
-              <h4><OrangeText>¡Muy bien!</OrangeText></h4>
-              <DarkText>{question.feedbackCorrect}</DarkText>
-            </ThoughtBubbleStyled>
+            {feedback ? (
+              <></>
+            ) : (
 
-            
-            
-            <img src={Incorrecta}/>
-            <ParagraphContainer>
+              show? (
+                <>
+                
+                <img src={Incorrecta}/>
+                <ParagraphContainer>
                 <DarkText>{question.feedbackIncorrect}</DarkText>
-              </ParagraphContainer>
-              <NextButton/>
-            
-          {/* </>
-      
-        )} */}
+                </ParagraphContainer>
+                <NextButton/>
+                
+                </>
+                ):(
+                  <>
+                  
+                  <AnswerImage src={correct}></AnswerImage>
+                  <ThoughtBubbleStyled>
+                  <h4><OrangeText>¡Muy bien!</OrangeText></h4>
+                  <DarkText>{question.feedbackCorrect}</DarkText>
+                  </ThoughtBubbleStyled>
+                  
+                  
+                  </>
+                  
+                  )
+                  )}
         
       </Container>))
     }
