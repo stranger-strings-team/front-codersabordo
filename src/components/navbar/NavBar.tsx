@@ -16,7 +16,7 @@ export const NavBar = (props: Props) => {
     return (
         <div>
             {inGame &&
-                <InGameNavbar />
+                <></>
             }
             {!inGame &&
                 <StandardNavbar />

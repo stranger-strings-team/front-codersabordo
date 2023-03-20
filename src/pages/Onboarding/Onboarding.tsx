@@ -8,6 +8,8 @@ import { ThoughtBubbleStyled } from '../../components/ThoughtBubble/ThoughtBubbl
 import { NextButton } from '../../components/NextButton'
 import  Incorrecta  from '../../assets/incorrecta.png'
 import { getColor } from './Onboarding.style'
+import { InGameNavbar } from '../../components/navbar/InGameNavbar'
+import { BackButton } from '../../components/BackButton'
 
 type Props = {};
 
@@ -19,9 +21,29 @@ function Onboarding (props: Props) {
 
   const [questions, setQuestions] = useState<QuestionsType[]>([])
 
+  const filteredQuestions = questions.filter((question)=>question.section == "Sección 1 - Compromisos")
+
   const [feedback, setFeedback] = useState(true);
 
-  //const []
+  const [checked, setChecked] = useState([false, false, false, false])
+
+  const [questionIndex, setQuestionIndex] = useState(0)
+
+  const handleBack = (i: number) =>{
+    if (questionIndex <= 0) {
+      setQuestionIndex(questionIndex)
+    } else {
+      setQuestionIndex(questionIndex-1)
+    }
+  }
+
+  const handleNext = (i: number) => {
+    if (questionIndex >= filteredQuestions.length-1){
+      setQuestionIndex(questionIndex)
+    } else {
+      setQuestionIndex(questionIndex+1)
+    }
+  }
 
   useEffect(() => {
   async function loadQuestions () {
@@ -33,62 +55,52 @@ function Onboarding (props: Props) {
 
   return (
     <>
-    
-    {questions.filter((question)=>question.section == "Sección 1 - Compromisos").map((question, index)=>(
+      {filteredQuestions.filter((question, index)=>index == questionIndex).map((question, index)=>(
 
-      <Container key={index}>
-        <>{(key:number)=>{
-          if(key == 0){
-            console.log("HOLA")
-          }
-        }}</>
-        <h3>{question.question}</h3>
-            {question.answer.map((answer, index) => (
-              <QuestionButton 
-              onClick={()=> {
-                setFeedback(false)
-                if(question.answer[index].isCorrect===true) {
-                  setShow(false)}
-                }
-            }
-              key={index}
-            className={getColor(index)}
-            >{answer.text}</QuestionButton>
-            )
-            )}
-            {feedback ? (
-              <></>
-            ) : (
-
-              show? (
-                <>
-                
-                <img src={Incorrecta}/>
-                <ParagraphContainer>
-                <DarkText>{question.feedbackIncorrect}</DarkText>
-                </ParagraphContainer>
-                <NextButton/>
-                
-                </>
-                ):(
+        <Container key={index}>
+          <h3>{question.question}</h3>
+              {question.answer.map((answer, index) => (
+                <QuestionButton
+                onClick={()=> {
+                  setFeedback(false)
+                  if(question.answer[index].isCorrect===true) {
+                    setShow(false)}
+                }}
+                key={index}
+                className={getColor(index)}>
+                  {answer.text}
+                </QuestionButton>
+              ))}
+              {feedback ? (
+                <></>
+                ) : (
+                show? (
                   <>
-                  
-                  <AnswerImage src={correct}></AnswerImage>
-                  <ThoughtBubbleStyled>
-                  <h4><OrangeText>¡Muy bien!</OrangeText></h4>
-                  <DarkText>{question.feedbackCorrect}</DarkText>
-                  </ThoughtBubbleStyled>
-                  
-                  
+                    <img src={Incorrecta}/>
+                    <ParagraphContainer>
+                    <DarkText>{question.feedbackIncorrect}</DarkText>
+                    </ParagraphContainer>
+                    <NextButton/>
                   </>
-                  
+                ):(
+                    <>
+                      <AnswerImage src={correct}></AnswerImage>
+                      <ThoughtBubbleStyled>
+                      <h4><OrangeText>¡Muy bien!</OrangeText></h4>
+                      <DarkText>{question.feedbackCorrect}</DarkText>
+                      </ThoughtBubbleStyled>
+                    </>
                   )
-                  )}
-        
-      </Container>))
-    }
+                )
+              }
+              <div style={{display:"flex", flexDirection:"row", gap:"3rem", position:"relative"}}>
+          <BackButton onClick={() => handleBack(questionIndex)}/>
+          <NextButton onClick={() => handleNext(questionIndex)}/>
+              </div>
+        </Container>))
+      }
     </>
-    )
+  )
   
 }
 

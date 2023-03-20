@@ -1,13 +1,10 @@
 import { Button } from "./style"
 import Icon from "../../assets/backarrow.svg"
 
-const handleClick = () => {
-    console.log("BACK")
-}
 
-export const BackButton = () => {
+export const BackButton = ({ onClick }: any) => {
     return (
-        <Button onClick={handleClick}>
+        <Button onClick={onClick}>
             <img src={Icon}/>
         </Button>
     )

@@ -1,11 +1,8 @@
 import { Button } from "./style"
 
-const handleClick = () => {
-    console.log("NEXT")
-}
 
-export const NextButton = () => {
+export const NextButton = ({ onClick }: any) => {
     return (
-        <Button onClick={handleClick}>SIGUIENTE</Button>
+        <Button onClick={onClick}>SIGUIENTE</Button>
     )
 }
