@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 // import QuestionButton from '../../components/QuestionButton/QuestionButton'
-import { BlueButton, PinkButton, PurpleButton, YellowButton, QuestionButton } from '../../components/QuestionButton/questionButton.style'
+import { QuestionButton } from '../../components/QuestionButton/questionButton.style'
 import { ParagraphContainer, AnswerImage, Container, DarkText, GlobalStyles, OrangeText, theme } from '../../Global.style'
 import correct from '../../assets/correct.png'
 import {questionServices} from '../../services/questionServices'
@@ -15,33 +15,57 @@ type Props = {};
 
 type QuestionsType = {_id: string, question:string, answer:[{text:string, isCorrect:boolean}], type:string, section:string, feedbackCorrect:string, feedbackIncorrect:string}
 
-function Onboarding (props: Props) {
+const sectionName = [
+  "Sección 1 - Compromisos",
+  "",
+  ""
+]
 
-  const [show, setShow] = useState(true);
+function Onboarding (props: Props) {
 
   const [questions, setQuestions] = useState<QuestionsType[]>([])
 
-  const filteredQuestions = questions.filter((question)=>question.section == "Sección 1 - Compromisos")
+  const filteredQuestions = questions.filter((question)=>question.section == sectionName[0])
 
-  const [feedback, setFeedback] = useState(true);
+  const [feedback, setFeedback] = useState(false);
+
+  const [correctFeedback, setCorrectFeedback] = useState(false)
 
   const [checked, setChecked] = useState([false, false, false, false])
 
-  const [questionIndex, setQuestionIndex] = useState(0)
+  const [questionIndex, setQuestionIndex] = useState(1)
+
+  const checkAnswers = () => {
+    if (checked) {
+
+    }
+  }
+
+  const handleFeedback = () => {
+    if (feedback == true) {
+      setFeedback(false)
+    } else {
+      setFeedback(true)
+    }
+  }
 
   const handleBack = (i: number) =>{
     if (questionIndex <= 0) {
       setQuestionIndex(questionIndex)
     } else {
       setQuestionIndex(questionIndex-1)
+      setFeedback(false)
     }
   }
 
   const handleNext = (i: number) => {
-    if (questionIndex >= filteredQuestions.length-1){
-      setQuestionIndex(questionIndex)
-    } else {
-      setQuestionIndex(questionIndex+1)
+    if (feedback == true){
+      if (questionIndex >= filteredQuestions.length-1){
+        setQuestionIndex(questionIndex)
+      } else {
+        setFeedback(false)
+        setQuestionIndex(questionIndex+1)
+      }
     }
   }
 
@@ -62,9 +86,12 @@ function Onboarding (props: Props) {
               {question.answer.map((answer, index) => (
                 <QuestionButton
                 onClick={()=> {
-                  setFeedback(false)
+                  setFeedback(true)
                   if(question.answer[index].isCorrect===true) {
-                    setShow(false)}
+                    setCorrectFeedback(true)
+                  } else {
+                    setCorrectFeedback(false)
+                  }
                 }}
                 key={index}
                 className={getColor(index)}>
@@ -72,30 +99,29 @@ function Onboarding (props: Props) {
                 </QuestionButton>
               ))}
               {feedback ? (
-                <></>
-                ) : (
-                show? (
+                correctFeedback ? (
+                  <>
+                    <AnswerImage src={correct}></AnswerImage>
+                    <ThoughtBubbleStyled>
+                    <h4><OrangeText>¡Muy bien!</OrangeText></h4>
+                    <DarkText>{question.feedbackCorrect}</DarkText>
+                    </ThoughtBubbleStyled>
+                  </>
+                ):(
                   <>
                     <img src={Incorrecta}/>
                     <ParagraphContainer>
                     <DarkText>{question.feedbackIncorrect}</DarkText>
                     </ParagraphContainer>
-                    <NextButton/>
                   </>
-                ):(
-                    <>
-                      <AnswerImage src={correct}></AnswerImage>
-                      <ThoughtBubbleStyled>
-                      <h4><OrangeText>¡Muy bien!</OrangeText></h4>
-                      <DarkText>{question.feedbackCorrect}</DarkText>
-                      </ThoughtBubbleStyled>
-                    </>
                   )
-                )
-              }
+                    ) : (
+                      <></>
+                    )
+                }
               <div style={{display:"flex", flexDirection:"row", gap:"3rem", position:"relative"}}>
-          <BackButton onClick={() => handleBack(questionIndex)}/>
-          <NextButton onClick={() => handleNext(questionIndex)}/>
+          <BackButton onClick={() => handleBack(questionIndex)} />
+          <NextButton onClick={() => handleNext(questionIndex)} />
               </div>
         </Container>))
       }
