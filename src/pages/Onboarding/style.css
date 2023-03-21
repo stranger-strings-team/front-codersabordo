@@ -1,0 +1,22 @@
+.checked{
+    border: 1px red solid;
+    background-color: #50bcf2;
+}
+
+.answersform{
+    display: flex;
+    flex-direction: column;
+}
+
+.answerbox{
+    margin: 10px;
+    cursor: pointer;
+}
+
+.answerbox input[type="checkbox"] {
+    display: none;
+}
+
+.answerbox > input[type="checkbox"] ~ span {
+  background-color: #50bcf2;
+}
