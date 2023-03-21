@@ -10,17 +10,19 @@ const Login = (props: Props) => {
     <Container>
        <InputDiv>
         <Input 
-          type="text" 
-          placeholder='  Email' 
+          type="email" 
+          placeholder='Email' 
           name="email"
           autoComplete='off'
+          aria-label="email"
           required
         />
         <Input 
-          type="text" 
-          placeholder='  Contraseña' 
+          type="password" 
+          placeholder='Contraseña' 
           name="password"
           autoComplete='off'
+          aria-label="password"
           required
         />
        </InputDiv>
