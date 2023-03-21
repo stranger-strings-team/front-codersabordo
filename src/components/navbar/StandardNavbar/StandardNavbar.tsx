@@ -4,14 +4,14 @@ import { SettingsButton } from "../../SettingsButton";
 import { InfoButton } from "../../InfoButton";
 import { UserButton } from "../../UserButton";
 
-type Props = {}
+const token = sessionStorage.getItem("access_token")
 
-export const StandardNavbar = (props: Props) => {
+export const StandardNavbar = () => {
     return (
         <Nav>
             <SettingsButton />
             <InfoButton />
-            <UserButton />
+            <UserButton loggedInUser={token} />
         </Nav>
     )
 }

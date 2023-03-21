@@ -8,7 +8,8 @@ export const theme = {
   darkText: '#020100',
   orange: '#FF4700', 
   gray: '#9C9C9C',
-  coral:'#FFA37F'
+  coral:'#FFA37F',
+  inputBackground: '#f6e4dd'
 }
 
 export const GlobalStyles = createGlobalStyle`
@@ -24,6 +25,10 @@ export const GlobalStyles = createGlobalStyle`
     font-family: 'Poppins', sans-serif;
     color: ${theme.darkText};
     background-color: white;
+  }
+
+  main{
+    margin-top: 80px;
   }
 
   h1{
@@ -57,9 +62,21 @@ export const GlobalStyles = createGlobalStyle`
     margin-bottom: 0.60rem;
   }
 
-  .purpleBackground{
-  background-color: ${theme.purpleBackground}
-}
+  .yellow{
+    background-color: ${theme.yellowBackground};
+  }
+
+  .blue{
+    background-color: ${theme.blueBackground};
+  }
+
+  .purple{
+    background-color: ${theme.purpleBackground};
+  }
+
+  .pink{
+    background-color: ${theme.pinkBackground};
+  }
 `
 
 // -------------- GENERAL CONTAINER STYLES ---------------

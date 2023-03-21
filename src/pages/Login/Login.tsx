@@ -5,11 +5,24 @@ import { Container} from '../../Global.style'
 type Props = {}
 
 const Login = (props: Props) => {
+
   return (
     <Container>
        <InputDiv>
-        <Input type="text" placeholder='  Email' name="email" aria-label="email"/>
-        <Input type="text" placeholder='  Contraseña'/>
+        <Input 
+          type="text" 
+          placeholder='  Email' 
+          name="email"
+          autoComplete='off'
+          required
+        />
+        <Input 
+          type="text" 
+          placeholder='  Contraseña' 
+          name="password"
+          autoComplete='off'
+          required
+        />
        </InputDiv>
        <P1p>¿Has olvidado tu contraseña?</P1p>
        <Button>Inicia sesión</Button>

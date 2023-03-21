@@ -16,3 +16,4 @@ export const Feedback = styled.p `
 margin-bottom: 10px;
 justify-content: center;
 `
+
