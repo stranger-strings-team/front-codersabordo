@@ -8,7 +8,7 @@ const Login = (props: Props) => {
   return (
     <Container>
        <InputDiv>
-        <Input type="text" placeholder='  Email' />
+        <Input type="text" placeholder='  Email' name="email" aria-label="email"/>
         <Input type="text" placeholder='  Contraseña'/>
        </InputDiv>
        <P1p>¿Has olvidado tu contraseña?</P1p>

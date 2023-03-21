@@ -4,7 +4,7 @@ import ButtonVamos from '../src/components/ButtonVamos/ButtonVamos'
 import { BrowserRouter } from 'react-router-dom'
 
 describe('Input', async () => {
-  it('should render the button', () => {
+  it('should render the button and read "¡Vamos!"', () => {
     render(
     <BrowserRouter>
       <ButtonVamos />
