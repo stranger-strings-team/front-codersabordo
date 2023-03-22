@@ -14,6 +14,7 @@ margin-bottom: 10px;
 
 export const ProfileAdminDiv = styled.div`
 margin-top: 10px;
+width:100%;
 background-color: ${theme.yellowBackground};
 display: grid;
 grid-template-columns: 2fr 1fr 1fr; 
