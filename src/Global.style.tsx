@@ -97,7 +97,7 @@ export const Row = styled.div`
 `
 
 export const RowRight=styled(Row)`
-  margin-right: 0
+  margin-right: 0;
 `
 
 export const ParagraphContainer = styled.div`
