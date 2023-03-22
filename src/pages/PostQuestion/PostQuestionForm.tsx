@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { RecipeType } from "../Onboarding/Onboarding"
 import "./style.css"
+import PostTextInput from "../../components/PostTextInput/PostTextInput"
 
 const PostQuestionForm = () => {
 
@@ -37,38 +38,7 @@ const PostQuestionForm = () => {
 				</label>
 				<label>
 					Respuestas
-					<input 
-						type="text"
-						name="questionanswer1"
-						placeholder="Escribe una respuesta"
-						autoComplete="off"
-						onChange={handleInput}
-						required
-					/>
-					<input 
-						type="text"
-						name="questionanswer1"
-						placeholder="Escribe una respuesta"
-						autoComplete="off"
-						onChange={handleInput}
-						required
-					/>
-					<input 
-						type="text"
-						name="questionanswer1"
-						placeholder="Escribe una respuesta"
-						autoComplete="off"
-						onChange={handleInput}
-						required
-					/>
-					<input 
-						type="text"
-						name="questionanswer1"
-						placeholder="Escribe una respuesta"
-						autoComplete="off"
-						onChange={handleInput}
-						required
-					/>
+					<PostTextInput />
 				</label>
 				<label>
 					Feedback
