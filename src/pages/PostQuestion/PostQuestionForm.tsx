@@ -39,17 +39,20 @@ const PostQuestionForm = () => {
 				<label>
 					Respuestas
 					<PostTextInput />
+					<PostTextInput />
+					<PostTextInput />
+					<PostTextInput />
 				</label>
-				<label>
+				<label className="feedback">
 					Feedback
-					<input 
+					<textarea 
 						type="text"
 						name="questionquestion"
 						placeholder="¿Qué quieres que vea el usuario cuando responda correctamente?"
 						autoComplete="off"
 						onChange={handleInput}
-						required
-					/>
+						required>
+					</textarea>
 				</label>
 			</form>
 		</div>
