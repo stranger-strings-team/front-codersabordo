@@ -2,7 +2,7 @@ import React from 'react'
 import Perfil from '../../assets/profile.png'
 import Spacer from '../../components/Spacer/Spacer'
 import { Container, OrangeText } from '../../Global.style'
-import { Input, InputDiv, Nickname } from './ProfileStyle'
+import { Input, InputDiv} from './ProfileStyle'
 
 type Props = {}
 
@@ -12,7 +12,7 @@ const Profile = (props: Props) => {
         <h3><OrangeText>Tu perfil</OrangeText></h3>
         <img src={Perfil} alt="user photo"/>
         <Spacer size={15} axis='vertical' />
-        <Nickname>Minerva</Nickname>
+        <h3>Minerva</h3>
         <InputDiv>
         <Input type="text" placeholder='  Nombre'/>
         <Input type="text" placeholder='  Apellidos'/>

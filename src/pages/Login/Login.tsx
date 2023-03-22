@@ -13,7 +13,7 @@ const Login = (props: Props) => {
         <Input type="text" placeholder='  Contraseña'/>
        </InputDiv>
        <P1p>¿Has olvidado tu contraseña?</P1p>
-       <Button>Inicia sesión</Button>
+       <Button><Link to="/roadmap">Inicia sesión</Link></Button>
        
        <P2p>¿No tienes cuenta?<Myspan><Link to="/register">Regístrate</Link> </Myspan></P2p>
        
