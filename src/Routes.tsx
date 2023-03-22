@@ -14,6 +14,8 @@ import CompletedSection from './pages/CompletedSection/CompletedSection';
 import Register from './pages/RegisterPage/Register';
 import OpenQuestion from './pages/OpenQuestion/OpenQuestion';
 import Roadmap from './pages/Roadmap/Roadmap';
+import CoderProgress from './AdminPages/CoderProgres/CoderProgres';
+import CoderProgres from './AdminPages/CoderProgres/CoderProgres';
 
 
 const CreateRoutes = () => (
@@ -32,6 +34,7 @@ const CreateRoutes = () => (
         <Route path="/login" element={<Login/>}/>
         <Route path="/roadmap" element={<Roadmap />}/>
         <Route path="*" element={<NoMatch />} />
+        <Route path='/coders-progres' element={<CoderProgres />} />
       </Route>
     </Routes>
 );
