@@ -17,6 +17,6 @@ width: 200px;
 height: 40px;
 border-radius: 8px;
 border: none;
-background-color: ${theme.pinkBackground};
+background-color: ${theme.inputBackground};
 `
 

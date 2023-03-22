@@ -8,7 +8,8 @@ export const theme = {
   darkText: '#020100',
   orange: '#FF4700', 
   gray: '#9C9C9C',
-  coral:'#FFA37F'
+  coral:'#FFA37F',
+  inputBackground: '#f6e4dd'
 }
 
 export const GlobalStyles = createGlobalStyle`
@@ -26,6 +27,10 @@ export const GlobalStyles = createGlobalStyle`
     background-color: white;
   }
 
+  main{
+    margin-top: 80px;
+  }
+
   h1{
     font-size: 2.25rem;
     color: ${theme.darkText};
@@ -33,6 +38,7 @@ export const GlobalStyles = createGlobalStyle`
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
+
 
   h3{
     font-size: 1.60rem;
@@ -57,9 +63,21 @@ export const GlobalStyles = createGlobalStyle`
     margin-bottom: 0.60rem;
   }
 
-  .purpleBackground{
-  background-color: ${theme.purpleBackground}
-}
+  .yellow{
+    background-color: ${theme.yellowBackground};
+  }
+
+  .blue{
+    background-color: ${theme.blueBackground};
+  }
+
+  .purple{
+    background-color: ${theme.purpleBackground};
+  }
+
+  .pink{
+    background-color: ${theme.pinkBackground};
+  }
 `
 
 // -------------- GENERAL CONTAINER STYLES ---------------
@@ -72,6 +90,14 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
+`
+
+export const Row = styled.div`
+  display: flex;
+`
+
+export const RowRight=styled(Row)`
+  margin-right: 0
 `
 
 export const ParagraphContainer = styled.div`
@@ -88,11 +114,11 @@ export const AnswerImage = styled.img`
 /* ------------------ GENERAL TEXT STYLES -------------------*/
 
 export const GrayText = styled.p`
-  color: ${theme.gray}
+  color: ${theme.gray};
 `
 
 export const SmallGrayText = styled(GrayText)`
-  font-size: 0.80rem
+  font-size: 0.80rem;
 `
 
 export const XLGrayText = styled(GrayText)`
@@ -101,7 +127,7 @@ export const XLGrayText = styled(GrayText)`
 
 export const DarkText = styled.p`
   color: ${theme.darkText};
-  z-index: 10
+  z-index: 10;
 `
 
 export const OrangeText = styled.p`
@@ -109,3 +135,9 @@ export const OrangeText = styled.p`
   font-weight: 700;
   display: inline;
 `
+
+export const TextLeft = styled.div`
+  text-align: left;
+  margin-left: 1rem;
+`
+

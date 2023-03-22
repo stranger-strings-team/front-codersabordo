@@ -35,7 +35,6 @@ export const ThoughtBubbleStyled = styled.div`
                 -40px -60px 0 5px ${theme.blueBackground};
   }
 
-
   &:after{
     top:-10px;
     right:60px;

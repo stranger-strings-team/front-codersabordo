@@ -12,7 +12,10 @@ import Welcome from './pages/Welcome/Welcome';
 import Incorrect from './pages/Incorrect/Incorrect';
 import CompletedSection from './pages/CompletedSection/CompletedSection';
 import Register from './pages/RegisterPage/Register';
+import OpenQuestion from './pages/OpenQuestion/OpenQuestion';
+import Roadmap from './pages/Roadmap/Roadmap';
 import Admin from './pages/Admin/Admin';
+import QuizQuestions from './AdminPages/quizQuestions/QuizQuestions';
 import CreateAdmin from './pages/ProfilesAdmin/ProfilesAdmin';
 
 
@@ -24,6 +27,7 @@ const CreateRoutes = () => (
         <Route path='/welcome' element={<Welcome />} />
         <Route path='/register' element={<Register />} />
         <Route path="/profile" element={<Profile/>}/>
+        <Route path="/open-question" element={<OpenQuestion/>}/>
         <Route path="/admin" element={<Admin/>}/>
         <Route path="/create-admin" element={<CreateAdmin/>}/>
         <Route path="/onboarding" element={<Onboarding/>}/>
@@ -31,8 +35,10 @@ const CreateRoutes = () => (
         <Route path="/seccion-incompleta" element={<IncompleteSection/>}/>
         <Route path="/seccion-completada" element={<CompletedSection/>}/>
         <Route path="/final" element={<Final/>}/>
-        <Route path="*" element={<NoMatch />} />
         <Route path="/login" element={<Login/>}/>
+        <Route path="/roadmap" element={<Roadmap />}/>
+        <Route path="/admin/quiz" element={<QuizQuestions />}/>
+        <Route path="*" element={<NoMatch />} />
       </Route>
     </Routes>
 );
