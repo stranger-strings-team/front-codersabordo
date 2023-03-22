@@ -14,6 +14,7 @@ import CompletedSection from './pages/CompletedSection/CompletedSection';
 import Register from './pages/RegisterPage/Register';
 import OpenQuestion from './pages/OpenQuestion/OpenQuestion';
 import Roadmap from './pages/Roadmap/Roadmap';
+import QuestionEdit from './AdminPages/QuestionEdit/QuestionEdit';
 
 
 const CreateRoutes = () => (
@@ -32,6 +33,7 @@ const CreateRoutes = () => (
         <Route path="/login" element={<Login/>}/>
         <Route path="/roadmap" element={<Roadmap />}/>
         <Route path="*" element={<NoMatch />} />
+        <Route path="/admin/question/path" element={<QuestionEdit />} />
       </Route>
     </Routes>
 );
