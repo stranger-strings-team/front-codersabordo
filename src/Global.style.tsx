@@ -39,6 +39,7 @@ export const GlobalStyles = createGlobalStyle`
     margin-bottom: 1rem;
   }
 
+
   h3{
     font-size: 1.60rem;
     color: ${theme.darkText};
@@ -105,11 +106,11 @@ export const AnswerImage = styled.img`
 /* ------------------ GENERAL TEXT STYLES -------------------*/
 
 export const GrayText = styled.p`
-  color: ${theme.gray}
+  color: ${theme.gray};
 `
 
 export const SmallGrayText = styled(GrayText)`
-  font-size: 0.80rem
+  font-size: 0.80rem;
 `
 
 export const XLGrayText = styled(GrayText)`
@@ -118,7 +119,7 @@ export const XLGrayText = styled(GrayText)`
 
 export const DarkText = styled.p`
   color: ${theme.darkText};
-  z-index: 10
+  z-index: 10;
 `
 
 export const OrangeText = styled.p`
@@ -126,3 +127,4 @@ export const OrangeText = styled.p`
   font-weight: 700;
   display: inline;
 `
+
