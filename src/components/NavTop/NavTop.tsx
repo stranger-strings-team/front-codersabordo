@@ -8,8 +8,13 @@ export const NavTop = () => {
   return (
     <>
       <StyledNavTop>
+<<<<<<< HEAD
         <h2>CODERS A BORDO</h2>
         <Link to="/roadmap">
+=======
+        <Link to="/"><h2>CODERS A BORDO</h2></Link>
+        <Link to="/">
+>>>>>>> profile-page
           <img src={home} alt="Home icon" />
         </Link>
       </StyledNavTop>

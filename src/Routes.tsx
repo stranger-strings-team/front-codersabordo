@@ -14,6 +14,7 @@ import CompletedSection from './pages/CompletedSection/CompletedSection';
 import Register from './pages/RegisterPage/Register';
 import OpenQuestion from './pages/OpenQuestion/OpenQuestion';
 import Roadmap from './pages/Roadmap/Roadmap';
+import Admin from './pages/Admin/Admin';
 
 
 const CreateRoutes = () => (
@@ -24,6 +25,7 @@ const CreateRoutes = () => (
         <Route path='/register' element={<Register />} />
         <Route path="/profile" element={<Profile/>}/>
         <Route path="/open-question" element={<OpenQuestion/>}/>
+        <Route path="/admin" element={<Admin/>}/>
         <Route path="/onboarding" element={<Onboarding/>}/>
         <Route path="/respuesta-incorrecta" element={<Incorrect/>}/>
         <Route path="/seccion-incompleta" element={<IncompleteSection/>}/>
