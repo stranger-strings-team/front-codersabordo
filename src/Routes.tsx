@@ -13,6 +13,8 @@ import Incorrect from './pages/Incorrect/Incorrect';
 import CompletedSection from './pages/CompletedSection/CompletedSection';
 import Register from './pages/RegisterPage/Register';
 import Admin from './pages/Admin/Admin';
+import CreateAdmin from './pages/ProfilesAdmin/ProfilesAdmin';
+
 
 
 const CreateRoutes = () => (
@@ -23,6 +25,7 @@ const CreateRoutes = () => (
         <Route path='/register' element={<Register />} />
         <Route path="/profile" element={<Profile/>}/>
         <Route path="/admin" element={<Admin/>}/>
+        <Route path="/create-admin" element={<CreateAdmin/>}/>
         <Route path="/onboarding" element={<Onboarding/>}/>
         <Route path="/respuesta-incorrecta" element={<Incorrect/>}/>
         <Route path="/seccion-incompleta" element={<IncompleteSection/>}/>
