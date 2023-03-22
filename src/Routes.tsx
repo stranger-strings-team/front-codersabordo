@@ -14,6 +14,7 @@ import CompletedSection from './pages/CompletedSection/CompletedSection';
 import Register from './pages/RegisterPage/Register';
 import OpenQuestion from './pages/OpenQuestion/OpenQuestion';
 import Roadmap from './pages/Roadmap/Roadmap';
+import QuizQuestions from './AdminPages/quizQuestions/QuizQuestions';
 
 
 const CreateRoutes = () => (
@@ -31,6 +32,7 @@ const CreateRoutes = () => (
         <Route path="/final" element={<Final/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/roadmap" element={<Roadmap />}/>
+        <Route path="/admin/quiz" element={<QuizQuestions />}/>
         <Route path="*" element={<NoMatch />} />
       </Route>
     </Routes>
