@@ -1,7 +1,7 @@
 import React from 'react'
 import Perfil from '../../assets/profile.png'
 import Spacer from '../../components/Spacer/Spacer'
-import { Container, DarkText, OrangeText } from '../../Global.style'
+import { Container, OrangeText } from '../../Global.style'
 import { Input, InputDiv, Nickname } from './ProfileStyle'
 
 type Props = {}
