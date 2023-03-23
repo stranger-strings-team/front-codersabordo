@@ -1,12 +1,14 @@
 import React from 'react'
 import SubmitButton from '../../components/SubmitButton/SubmitButton'
-import { Form, Input, Select } from './Register.styled'
+import { Form, Input, Select, Div } from './Register.styled'
+import { P2p, Myspan } from "../Login/LoginStyle.tsx"
+import { Link } from 'react-router-dom'
 
 type Props = {}
 
 const Register = (props: Props) => {
   return (
-    <div>
+    <Div className="">
         <Form action="">
           <Input type="text" placeholder='Nombre' />
           <Input type="text" placeholder='Apellidos' />
@@ -23,8 +25,9 @@ const Register = (props: Props) => {
           </Select>
         </Form>
         <SubmitButton />
+       <P2p>¿Ya tienes una cuenta?<Myspan><Link to="/login"> Accede</Link> </Myspan></P2p>
         
-    </div>
+    </Div>
   )
 }
 

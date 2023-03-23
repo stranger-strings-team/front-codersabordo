@@ -11,14 +11,19 @@ export const Button = styled.button`
     color: white;
     align-items: center;
     font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
 
 export const Input = styled.input`
+    background-color: #ffe6dc;
+    color: black;
+    border-style: none;
+    border-radius: 10px;
+    height: 35px;
     width: 200px;
-    height: 40px;
-    border-radius: 8px;
-    background-color: #ffece4;
-    border: none;
+    padding: 10px;
 `
 
 export const P1p = styled.p`
