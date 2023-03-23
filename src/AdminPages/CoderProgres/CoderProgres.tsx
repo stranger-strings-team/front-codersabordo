@@ -1,7 +1,7 @@
 import React from 'react'
 import { OrangeText } from '../../Global.style'
 import { Select } from '../../pages/RegisterPage/Register.styled'
-import { Div, Table, ThHeader, Tr, Td } from './CoderProgres.style'
+import { Div, StyledPadmin, StyledProfileAdminDiv, Table, ThHeader } from './CoderProgres.style'
 
 type Props = {}
 
@@ -26,32 +26,32 @@ const CoderProgres = (props: Props) => {
               <ThHeader>Secciones completas</ThHeader>
               <ThHeader>Fecha registro</ThHeader>
             </tr>
-            <Tr>
-              <td>Arnau Mínguez</td>
-              <Td>200000</Td>
-              <td>21/03/2023</td>
-            </Tr>
-            <Tr>
-              <td>Hel Aige</td>
-              <Td>1</Td>
-              <td>20/03/2023</td>
-            </Tr>
-            <Tr>
-              <td>Rosie Bradshaw</td>
-              <Td>1, 2</Td>
-              <td>20/03/2023</td>
-            </Tr>
-            <Tr>
-              <td>Sablina Angulo</td>
-              <Td>1, 2, 3</Td>
-              <td>19/03/2023</td>
-            </Tr>
-            <Tr>
-              <td>Sergi Alsina</td>
-              <Td>0</Td>
-              <td>18/03/2023</td>
-            </Tr>
           </Table>
+            <StyledProfileAdminDiv>
+            <StyledPadmin>Arnau Minguez </StyledPadmin>
+            <StyledPadmin>20000</StyledPadmin>
+            <StyledPadmin>23/03/2023</StyledPadmin>
+            </StyledProfileAdminDiv>
+            <StyledProfileAdminDiv>
+            <StyledPadmin>Rosie Bradshaw </StyledPadmin>
+            <StyledPadmin>1, 2, 3</StyledPadmin>
+            <StyledPadmin>22/03/2023</StyledPadmin>
+            </StyledProfileAdminDiv>
+            <StyledProfileAdminDiv>
+            <StyledPadmin>Hel Aige </StyledPadmin>
+            <StyledPadmin>1, 2</StyledPadmin>
+            <StyledPadmin>21/03/2023</StyledPadmin>
+            </StyledProfileAdminDiv>
+            <StyledProfileAdminDiv>
+            <StyledPadmin>Sablina Angulo </StyledPadmin>
+            <StyledPadmin>1</StyledPadmin>
+            <StyledPadmin>20/03/2023</StyledPadmin>
+            </StyledProfileAdminDiv>
+            <StyledProfileAdminDiv>
+            <StyledPadmin>Sergi Alsina </StyledPadmin>
+            <StyledPadmin>0</StyledPadmin>
+            <StyledPadmin>19/03/2023</StyledPadmin>
+            </StyledProfileAdminDiv>
     </div>
   )
 }
