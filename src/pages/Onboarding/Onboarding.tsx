@@ -11,7 +11,7 @@ import { getColor } from './Onboarding.style'
 
 type Props = {};
 
-type QuestionsType = {_id: string, question:string, answer:[{text:string, isCorrect:boolean}], type:string, section:string, feedbackCorrect:string, feedbackIncorrect:string}
+export type QuestionsType = {_id: string, question:string, answer:[{text:string, isCorrect:boolean}], type:string, section:string, feedbackCorrect:string, feedbackIncorrect:string}
 
 function Onboarding (props: Props) {
 
