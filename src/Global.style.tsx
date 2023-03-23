@@ -25,10 +25,12 @@ export const GlobalStyles = createGlobalStyle`
     font-family: 'Poppins', sans-serif;
     color: ${theme.darkText};
     background-color: white;
+    height: 100%;
+    position: relative;
   }
 
   main{
-    margin-top: 80px;
+    margin: 80px 0px;
   }
 
   h1{
