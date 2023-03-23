@@ -16,6 +16,10 @@ import OpenQuestion from './pages/OpenQuestion/OpenQuestion';
 import Roadmap from './pages/Roadmap/Roadmap';
 import CoderProgress from './AdminPages/CoderProgres/CoderProgres';
 import CoderProgres from './AdminPages/CoderProgres/CoderProgres';
+import Admin from './pages/Admin/Admin';
+import QuizQuestions from './AdminPages/quizQuestions/QuizQuestions';
+import CreateAdmin from './pages/ProfilesAdmin/ProfilesAdmin';
+
 
 
 const CreateRoutes = () => (
@@ -26,6 +30,8 @@ const CreateRoutes = () => (
         <Route path='/register' element={<Register />} />
         <Route path="/profile" element={<Profile/>}/>
         <Route path="/open-question" element={<OpenQuestion/>}/>
+        <Route path="/admin" element={<Admin/>}/>
+        <Route path="/create-admin" element={<CreateAdmin/>}/>
         <Route path="/onboarding" element={<Onboarding/>}/>
         <Route path="/respuesta-incorrecta" element={<Incorrect/>}/>
         <Route path="/seccion-incompleta" element={<IncompleteSection/>}/>
@@ -33,6 +39,7 @@ const CreateRoutes = () => (
         <Route path="/final" element={<Final/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/roadmap" element={<Roadmap />}/>
+        <Route path="/admin/quiz" element={<QuizQuestions />}/>
         <Route path="*" element={<NoMatch />} />
         <Route path='/coders-progres' element={<CoderProgres />} />
       </Route>

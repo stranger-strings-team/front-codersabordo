@@ -7,8 +7,10 @@ flex-direction: column;
 margin-top:20px;
 gap: 14px;
 `
-export const Nickname = styled.p`
-color: black;    
+export const DarkText = styled.h3`
+font-size: 0.6rem;
+color: ${theme.darkText};
+font-weight: 200;
 `
 export const Input = styled.input`
 width: 200px;

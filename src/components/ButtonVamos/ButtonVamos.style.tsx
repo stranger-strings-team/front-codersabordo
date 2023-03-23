@@ -11,4 +11,7 @@ border-radius: 40px;
 display: flex;
 inline-size: fit-content;
 margin-bottom: 3rem;
+:hover{
+    color: black;
+}
 `
