@@ -2,6 +2,7 @@ import { Button, Input, InputDiv, Myspan, P1p, P2p } from '../Login/LoginStyle'
 import { Container} from '../../Global.style'
 import { Link } from 'react-router-dom'
 import React, { useState, FormEvent } from 'react'
+import { getQuestions } from "../../services/questionServices"
 
 
 type Props = {}
