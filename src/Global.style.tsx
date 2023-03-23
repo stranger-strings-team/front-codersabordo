@@ -25,10 +25,12 @@ export const GlobalStyles = createGlobalStyle`
     font-family: 'Poppins', sans-serif;
     color: ${theme.darkText};
     background-color: white;
+    height: 100%;
+    position: relative;
   }
 
   main{
-    margin-top: 80px;
+    margin: 80px 0px;
   }
 
   h1{
@@ -92,6 +94,14 @@ export const Container = styled.div`
   text-align: center;
 `
 
+export const Row = styled.div`
+  display: flex;
+`
+
+export const RowRight=styled(Row)`
+  margin-right: 0;
+`
+
 export const ParagraphContainer = styled.div`
   margin: 1rem 2rem; 
   text-align: justify;
@@ -126,5 +136,10 @@ export const OrangeText = styled.p`
   color: ${theme.orange}; 
   font-weight: 700;
   display: inline;
+`
+
+export const TextLeft = styled.div`
+  text-align: left;
+  margin-left: 1rem;
 `
 

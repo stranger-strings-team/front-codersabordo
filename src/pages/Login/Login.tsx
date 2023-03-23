@@ -1,5 +1,7 @@
 import { Button, Input, InputDiv, Myspan, P1p, P2p } from '../Login/LoginStyle'
 import { Container} from '../../Global.style'
+import { Link } from 'react-router-dom'
+import React from 'react'
 
 
 type Props = {}
@@ -25,9 +27,9 @@ const Login = (props: Props) => {
         />
        </InputDiv>
        <P1p>¿Has olvidado tu contraseña?</P1p>
-       <Button>Inicia sesión</Button>
+       <Button><Link to="/roadmap">Inicia sesión</Link></Button>
        
-       <P2p>¿No tienes cuenta?<Myspan> Regístrate</Myspan></P2p>
+       <P2p>¿No tienes cuenta?<Myspan><Link to="/register">Regístrate</Link> </Myspan></P2p>
        
 
     </Container>
