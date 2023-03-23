@@ -19,8 +19,9 @@ export const ThHeader = styled.th`
 
 export const Tr = styled.tr`
     background-color: ${theme.yellowBackground};
+    
 `
 
 export const Td = styled.td`
-    
+    text-align: center;
 `
