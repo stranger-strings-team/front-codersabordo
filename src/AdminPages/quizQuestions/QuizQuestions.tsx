@@ -6,7 +6,7 @@ import Pencil from '../../assets/pencil.png'
 import { IconDiv, IconDivRight } from '../../components/icon/icon.style'
 import { AdminQuestionStyled } from '../../components/AdminQuestion/AdminQuestion.style'
 import Spacer from '../../components/Spacer/Spacer'
-import { questionServices } from '../../services/questionServices'
+import { getQuestions } from '../../services/questionServices'
 
 type Props = {}
 

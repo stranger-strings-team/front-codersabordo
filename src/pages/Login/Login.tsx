@@ -2,16 +2,14 @@ import { Button, Input, InputDiv, Myspan, P1p, P2p } from '../Login/LoginStyle'
 import { Container} from '../../Global.style'
 import { Link } from 'react-router-dom'
 import React, { useState, FormEvent } from 'react'
-import { getQuestions } from "../../services/questionServices"
-
-
-type Props = {}
+import { authUserRequest } from "../../services/userServices"
 
 const Login = (props: Props) => {
+	let token;
 
   const [post, setPost] = useState({
-	"email":"",
-	"password":""
+	"email": "",
+	"password": ""
   })
 
   const handleSubmit = async (e: FormEvent) => {
@@ -34,25 +32,29 @@ const Login = (props: Props) => {
 	
   return (
     <Container>
+    <form onSubmit={handleSubmit}>
        <InputDiv>
         <Input 
-          type="text" 
-          placeholder='Email' 
+          type="text"
           name="email"
-          autoComplete='off'
+          // placeholder="email@email.em"
+          autoComplete="off"
           onChange={handleInput}
           required
+          aria-label="email"
         />
         <Input 
-          type="text" 
-          placeholder='  Contraseña' 
+          type="password"
           name="password"
-          autoComplete='off'
+          // placeholder="********"
+          onChange={handleInput}
           required
+          autoComplete='off'
         />
        </InputDiv>
        <P1p>¿Has olvidado tu contraseña?</P1p>
-       <Button>Inicia sesión</Button>
+       <Button type="submit">Inicia sesión</Button>
+    </form>
        
        <P2p>¿No tienes cuenta?<Myspan><Link to="/register">Regístrate</Link> </Myspan></P2p>
        
