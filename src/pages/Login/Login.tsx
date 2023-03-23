@@ -1,6 +1,6 @@
 import { Button, Input, InputDiv, Myspan, P1p, P2p } from '../Login/LoginStyle'
 import { Container} from '../../Global.style'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import React, { useState, FormEvent } from 'react'
 import { authUserRequest } from "../../services/userServices"
 
@@ -22,6 +22,7 @@ const Login = (props: Props) => {
         token = response.data.access_token;
         // console.log("access_token: ", token);
         sessionStorage.setItem("access_token", token);
+        console.log("logged in")
       })
       .catch(err => console.log(err))
   };
@@ -37,7 +38,7 @@ const Login = (props: Props) => {
         <Input 
           type="text"
           name="email"
-          // placeholder="email@email.em"
+          placeholder="Escribe tu email"
           autoComplete="off"
           onChange={handleInput}
           required
@@ -46,7 +47,7 @@ const Login = (props: Props) => {
         <Input 
           type="password"
           name="password"
-          // placeholder="********"
+          placeholder="Escribe tu contraseña"
           onChange={handleInput}
           required
           autoComplete='off'
