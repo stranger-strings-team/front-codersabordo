@@ -18,6 +18,9 @@ import CoderProgres from './AdminPages/CoderProgres/CoderProgres';
 import Admin from './pages/Admin/Admin';
 import QuizQuestions from './AdminPages/quizQuestions/QuizQuestions';
 import CreateAdmin from './pages/ProfilesAdmin/ProfilesAdmin';
+import CreatePassword from './pages/CreatePassword/CreatePassword';
+import EliminateQuestion from './pages/EliminateQuestion/EliminateQuestion'
+
 
 
 
@@ -31,10 +34,12 @@ const CreateRoutes = () => (
         <Route path="/open-question" element={<OpenQuestion/>}/>
         <Route path="/admin" element={<Admin/>}/>
         <Route path="/create-admin" element={<CreateAdmin/>}/>
+        <Route path="/create-password" element={<CreatePassword/>}/>
+        <Route path="/eliminate-question" element={<EliminateQuestion/>} />       
         <Route path="/onboarding" element={<Onboarding/>}/>
-        <Route path="/respuesta-incorrecta" element={<Incorrect/>}/>
-        <Route path="/seccion-incompleta" element={<IncompleteSection/>}/>
-        <Route path="/seccion-completada" element={<CompletedSection/>}/>
+        <Route path="/incorrect-answer" element={<Incorrect/>}/>
+        <Route path="/incomplete-section" element={<IncompleteSection/>}/>
+        <Route path="/completed-section" element={<CompletedSection/>}/>
         <Route path="/final" element={<Final/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/roadmap" element={<Roadmap />}/>

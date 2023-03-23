@@ -5,6 +5,7 @@ export const InputDiv = styled.div`
 display: flex;
 flex-direction: column;
 margin-top:20px;
+margin-bottom: 12px;
 gap: 14px;
 `
 export const DarkText = styled.h3`
@@ -18,5 +19,11 @@ height: 40px;
 border-radius: 8px;
 border: none;
 background-color: ${theme.inputBackground};
+`
+
+export const Container = styled.p`
+color: blue;
+font-size: 0.2rem;
+
 `
 

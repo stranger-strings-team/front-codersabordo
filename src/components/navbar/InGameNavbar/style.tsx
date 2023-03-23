@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Nav = styled.nav`
     z-index: 11;
-    position: relative;
+    position: absolute;
     bottom: 0;
     left: 0;
     width: 100vw;

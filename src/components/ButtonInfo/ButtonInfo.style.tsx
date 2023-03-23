@@ -10,4 +10,7 @@ padding: 0.3rem 1.5rem;
 border-radius: 25px;
 display: flex;
 inline-size: fit-content;
+:hover{
+    color: black;
+}
 `

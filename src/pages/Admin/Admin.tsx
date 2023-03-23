@@ -1,6 +1,6 @@
 import React from 'react'
-import { Container, OrangeText, DarkText } from '../../Global.style'
-import Perfil from '../../assets/profile.png'
+import { Container, OrangeText } from '../../Global.style'
+import Administrator from '../../assets/admin.png'
 import Spacer from '../../components/Spacer/Spacer'
 import { BlueButton, PurpleButton, YellowButton } from '../../components/QuestionButton/questionButton.style'
 
@@ -12,7 +12,7 @@ const Admin = (props: Props) => {
     
     <Container>
         <h3><OrangeText>Admin</OrangeText></h3>
-        <img src={Perfil} alt="user photo"/>
+        <img src={Administrator} alt="user photo"/>
         <Spacer size={15} axis='vertical' />
         <h3>Cristina Fernandez</h3>
 
