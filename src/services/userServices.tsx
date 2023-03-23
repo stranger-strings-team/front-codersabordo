@@ -9,7 +9,7 @@ export const getUsersRequest = async () => {
 }
 
 export const postUserRequest = async (user: Object) => {
-    return axios.post(apiBase, user);
+    return axios.post(apiBase + "/user", user);
 }
 
 export const authUserRequest = async (auth: Object) => {
