@@ -1,5 +1,5 @@
-import { theme } from "../../Global.style";
 import styled from "styled-components";
+import { theme } from "../../Global.style";
 
 export const Button = styled.button`
     display: flex;
@@ -9,9 +9,8 @@ export const Button = styled.button`
     background: #FFDED1;
     border-radius: 5px;
     height: 55px;
-    width: 55px;
     margin: 0;
     border: 0;
     font-weight: 600;
-    font-size: 1.25rem;
+    font-size: 1.25rem;    
 `
