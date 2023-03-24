@@ -1,6 +1,11 @@
 import styled from "styled-components";
 import { theme } from '../../Global.style'
 
+export const Div = styled.div`
+	display: flex;
+	flex-direction: column;
+`
+
 export const Form = styled.form`
     display: flex;
     flex-direction: column;
@@ -10,6 +15,7 @@ export const Form = styled.form`
 
 export const Input = styled.input`
     background-color: #ffe6dc;
+    color: black;
     border-style: none;
     border-radius: 10px;
     height: 35px;

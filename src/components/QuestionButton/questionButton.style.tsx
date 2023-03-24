@@ -40,7 +40,7 @@ export const PurpleButton=styled(QuestionButton)`
 `
 
 export const BlueButton=styled(QuestionButton)`
-    background-color: ${theme.purpleBackground};
+    background-color: ${theme.blueBackground};
 `
 
 export const PinkButton=styled(QuestionButton)`

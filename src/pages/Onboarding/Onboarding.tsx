@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import { QuestionButton } from '../../components/QuestionButton/questionButton.style'
 import { ParagraphContainer, AnswerImage, Container, DarkText, GlobalStyles, OrangeText, theme } from '../../Global.style'
 import correct from '../../assets/correct.png'
-import { questionServices } from '../../services/questionServices'
+import { getQuestions } from '../../services/questionServices'
 import { ThoughtBubbleStyled } from '../../components/ThoughtBubble/ThoughtBubble.style'
 import { NextButton } from '../../components/NextButton'
 import  Incorrecta  from '../../assets/incorrecta.png'
@@ -103,7 +103,7 @@ function Onboarding (props: Props) {
 
   useEffect(() => {
   async function loadQuestions () {
-      const response = await questionServices();
+      const response = await getQuestions();
       setQuestions(response.data);
     };
   loadQuestions();
