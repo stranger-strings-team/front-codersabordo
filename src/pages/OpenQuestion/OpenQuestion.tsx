@@ -1,19 +1,43 @@
-import React from 'react'
+import React, { FormEvent, useState } from 'react'
 import { NextButton } from '../../components/NextButton';
 import Spacer from '../../components/Spacer/Spacer';
 import { Container, OrangeText } from '../../Global.style';
+import { authUserRequest, patchUserRequest } from '../../services/userServices';
+import { Button } from '../Login/LoginStyle';
 import { InputQuestion } from '../OpenQuestion/OpenQuestionStyle';
 
-type Props = {}
+//Falta terminar esta página
 
-const OpenQuestion = (props: Props) => {
+const OpenQuestion = () => {
+  let token;
+
+  const [post, setPost] = useState({
+    openQuestion: ""
+  })
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+
+    patchUserRequest(post)
+      .catch()
+      .then((response) => {
+        console.log("submitted")
+      })
+      .catch(err => console.log(err))
+  };
+
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPost({ openQuestion: e.target.value })
+  };
   return (
     
     <Container>
           <h3><OrangeText>Una pregunta antes de empezar,</OrangeText><br></br> ¿Qué expectativas tienes de este bootcamp?</h3>
-          <InputQuestion type="text" />
+          <form onSubmit={handleSubmit}>
+          <InputQuestion type="text" name="openQuestion" onChange={handleInput} />
           <Spacer size={45} axis='vertical' />
-          <NextButton/>
+          <Button type="submit">Enviar</Button>
+          </form>
       </Container>
      
     
