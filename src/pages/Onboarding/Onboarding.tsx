@@ -41,21 +41,13 @@ function Onboarding (props: Props) {
 
   const [correctFeedback, setCorrectFeedback] = useState(false)
 
-  const checkArray = [false, false, false, false] 
-
-  const [checked, setChecked] = useState(checkArray)
+  const [checked, setChecked] = useState([false, false, false, false])
 
   const [questionIndex, setQuestionIndex] = useState(1)
 
-  const handleCheck = (event: React.MouseEvent<HTMLLabelElement, MouseEvent>, isCorrect: boolean, index: number) => {
-    checkArray[index] = !checkArray[index];
-    setChecked([...checkArray])
-    console.log("selected answers: ",checkArray)
-
-    /* if ( index == 0 ) { setFirst(!first) }
-    else if ( index  == 1 ) { setSecond(!second)}
-    else if ( index  == 2 ) { setThird(!third)}
-    else if ( index  == 3 ) { setFourth(!fourth)} */
+  const handleCheck = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, isCorrect: boolean, index: number) => {
+    checked[index] = !checked[index];
+    setChecked([...checked])
   }
 
   const handleFeedback = () => {
@@ -80,9 +72,10 @@ function Onboarding (props: Props) {
         actualAnswers.push(true)
       }
     })
-    console.log("correct answers: ",actualAnswers)
+    console.log("selected answers: ", checked)
+    console.log("correct answers: ", actualAnswers)
     setFeedback(true)
-    if(checked == actualAnswers) {
+    if(checked.toString() == actualAnswers.toString()) {
       console.log("correct!")
       setCorrectFeedback(true)
     } else {
@@ -124,7 +117,7 @@ function Onboarding (props: Props) {
 
           <h3>{question.question}</h3>
           <form className="answersform">
-              {question.answer.map((answer, index) => (
+              {/* {question.answer.map((answer, index) => (
 
                 <label 
                 onClick={(event) => handleCheck(event, answer.isCorrect, index)}
@@ -140,7 +133,17 @@ function Onboarding (props: Props) {
                   </input>
                 </label>
 
-              ))}
+              ))} */}
+              {question.answer.map((answer, index) => (
+              <QuestionButton 
+                type="button"
+                onClick={(event) => handleCheck(event, answer.isCorrect, index)}
+                key={index}
+                className={ `answerbox ${getColor(index)} ${checked[index] ? "checked" : ""}`}
+              >
+                {answer.text}
+              </QuestionButton>
+            ))}
           </form>
 
               {feedback ? (

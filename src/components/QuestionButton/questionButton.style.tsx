@@ -26,7 +26,7 @@ export const colors = [
     "background-color: ${theme.purpleBackground}",
 ]
 
-export const QuestionButton = styled.input`
+export const QuestionButton = styled.button`
     margin: 0 1em 1em 1em;
     font-size: 1.2em;
     color: ${theme.darkText}; 

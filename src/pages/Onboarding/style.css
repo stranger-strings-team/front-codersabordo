@@ -1,6 +1,5 @@
 .checked{
-    border: 1px red solid;
-    background-color: #50bcf2;
+    border: 3px #FF4700 solid;
 }
 
 .answersform{
@@ -19,4 +18,9 @@
 
 .answerbox > input[type="checkbox"] ~ span {
   background-color: #50bcf2;
+}
+
+.unanswered{
+    display: none;
+    transition: 300ms;
 }
