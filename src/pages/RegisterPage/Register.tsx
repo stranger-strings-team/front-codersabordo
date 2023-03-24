@@ -1,7 +1,7 @@
 import React, { useState, FormEvent } from 'react'
 import SubmitButton from '../../components/SubmitButton/SubmitButton'
 import { Form, Input, Select, Div } from './Register.styled'
-import { P2p, Myspan } from "../Login/LoginStyle.tsx"
+import { P2p, Myspan } from "../Login/LoginStyle"
 import { Link } from 'react-router-dom'
 import { postUserRequest } from "../../services/userServices"
 
@@ -67,8 +67,8 @@ const Register = (props: Props) => {
                 onChange={handleInput} 
                 required 
           />
-// TO DO - READ SELECT VALUE
-          <Select placeholder='Escuela' onChange={handleInput} required >
+          <Input name="city" type="text" list="city" placeholder='Escuela' onChange={handleInput} required />
+          <datalist id="city">
             <option value='Barcelona'>Barcelona</option>
             <option value='Xixon'>Xixon</option>
             <option value='Sevilla'>Sevilla</option>
@@ -76,11 +76,12 @@ const Register = (props: Props) => {
             <option value='Asturies'>Asturies</option>
             <option value='Mérida'>Mérida</option>
             <option value='Norte Online'>Norte Online</option>
-          </Select>
+            </datalist>
+          
         <SubmitButton type="submit"/>
         </Form>
        <P2p>¿Ya tienes una cuenta?<Myspan><Link to="/login"> Accede</Link> </Myspan></P2p>
-        
+       
     </Div>
   )
 }
