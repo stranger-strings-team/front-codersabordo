@@ -103,9 +103,12 @@ const Onboarding = ({section}: Props) => {
   const handleNext = (i: number) => {
     if (feedback == true){
       if (questionIndex >= filteredQuestions.length-1){
-        // if (sectionName[section]=="Sección 1 - Compromisos"){
-        //   user.section
-        // };
+        if (sectionName[section]=="Sección 1 - Compromisos"){
+        this.user.progress[0]=true};
+        // else if (sectionName[section]=="Sección 2 - ¿Qué puedes esperarte del bootcamp?"){
+        // this.user.progress[1]=true};
+        // else if (sectionName[section]=="Sección 3 - ¿Qué puedes esperarte al finalizar el bootcamp?"){
+        // this.user.progress[2]=true};
         navigate("/completed-section")
       } else if (false) { // TO DO
 

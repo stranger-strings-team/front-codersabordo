@@ -20,14 +20,13 @@ import QuizQuestions from './AdminPages/quizQuestions/QuizQuestions';
 import CreateAdmin from './pages/ProfilesAdmin/ProfilesAdmin';
 import CreatePassword from './pages/CreatePassword/CreatePassword';
 import EliminateQuestion from './pages/EliminateQuestion/EliminateQuestion'
-import { UserContext } from './userContext';
 
 
 
 const CreateRoutes = () => (
+  
     <Routes>
       <Route index element={<Home/>}/>
-      
         <Route path="/" element={<Layout />}>
           <Route path='/welcome' element={<Welcome />} />
           <Route path='/register' element={<Register />} />
@@ -46,8 +45,8 @@ const CreateRoutes = () => (
           <Route path="*" element={<NoMatch />} />
           <Route path='/coders-progres' element={<CoderProgres />} />
         </Route>
-      
-    </Routes>
+      </Routes>
+  
 );
 
 export default CreateRoutes;
