@@ -2,23 +2,23 @@ import React, { FormEvent, useState } from 'react'
 import { NextButton } from '../../components/NextButton';
 import Spacer from '../../components/Spacer/Spacer';
 import { Container, OrangeText } from '../../Global.style';
-import { authUserRequest, patchUserRequest } from '../../services/userServices';
+import { authUserRequest, patchUserRequest, patchUserResponse } from '../../services/userServices';
 import { Button } from '../Login/LoginStyle';
 import { InputQuestion } from '../OpenQuestion/OpenQuestionStyle';
 
 //Falta terminar esta página
 
 const OpenQuestion = () => {
-  let token;
+  let token = '$2b$10$zKvHh6yVVrrzsmJJIerBhuiaV.ur57g7vB5XudnPX46XlqxQ8EWqW';
 
-  const [post, setPost] = useState({
+  const [answer, setAnswer] = useState({
     openQuestion: ""
   })
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
-    patchUserRequest(post)
+    patchUserResponse(answer, "64202cd309433ad7bef61711", token)
       .catch()
       .then((response) => {
         console.log("submitted")
@@ -27,7 +27,7 @@ const OpenQuestion = () => {
   };
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPost({ openQuestion: e.target.value })
+    setAnswer({ openQuestion: e.target.value })
   };
   return (
     
