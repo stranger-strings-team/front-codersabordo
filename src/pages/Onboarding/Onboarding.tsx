@@ -20,6 +20,8 @@ type Props = {
   section: number
 }
 
+type UserType = {_id:string, name:string, surname:string, email:string, city:string, role:string[], progress: boolean[], openQuestion: string}
+
 export const sectionName = [
   "Sección 1 - Compromisos",
   "Sección 2 - ¿Qué puedes esperarte del bootcamp?",
@@ -27,6 +29,7 @@ export const sectionName = [
 ]
 
 const sectionIndex = 0; // esto hace cambiar la sección
+
 
 const Onboarding = ({section}: Props) => {
 
@@ -100,6 +103,9 @@ const Onboarding = ({section}: Props) => {
   const handleNext = (i: number) => {
     if (feedback == true){
       if (questionIndex >= filteredQuestions.length-1){
+        // if (sectionName[section]=="Sección 1 - Compromisos"){
+        //   user.section
+        // };
         navigate("/completed-section")
       } else if (false) { // TO DO
 
