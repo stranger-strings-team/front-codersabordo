@@ -1,6 +1,7 @@
 import React from 'react'
 import SubmitButton from '../../components/SubmitButton/SubmitButton'
-import { Form, Input, Select } from './Register.styled'
+import { Input } from '../../Global.style'
+import { Form, Select } from './Register.styled'
 
 type Props = {}
 

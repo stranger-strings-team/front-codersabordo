@@ -15,6 +15,7 @@ height: 40px;
 border-radius: 8px;
 border: none;
 background-color: ${theme.inputBackground};
+
 `
 
 export const P3p = styled.p`

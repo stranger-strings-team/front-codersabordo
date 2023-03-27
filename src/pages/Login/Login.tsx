@@ -1,5 +1,5 @@
-import { Button, Input, InputDiv, Myspan, P1p, P2p } from '../Login/LoginStyle'
-import { Container} from '../../Global.style'
+import { Button, InputDiv, Myspan, P1p, P2p } from '../Login/LoginStyle'
+import { Container, Input} from '../../Global.style'
 import { Link } from 'react-router-dom'
 import React from 'react'
 

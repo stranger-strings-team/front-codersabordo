@@ -8,14 +8,6 @@ export const Form = styled.form`
     margin-bottom: 30px;
 `
 
-export const Input = styled.input`
-    background-color: #ffe6dc;
-    border-style: none;
-    border-radius: 10px;
-    height: 35px;
-    width: 200px;
-    padding: 10px;
-`
 
 export const Select = styled.select`
     background-color: #ffe6dc;

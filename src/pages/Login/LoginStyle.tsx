@@ -13,14 +13,6 @@ export const Button = styled.button`
     font-weight: 700;
 `
 
-export const Input = styled.input`
-    width: 200px;
-    height: 40px;
-    border-radius: 8px;
-    background-color: #ffece4;
-    border: none;
-`
-
 export const P1p = styled.p`
     font-size: 0.6rem;
     color: blue;
