@@ -29,7 +29,7 @@ const Profile = () => {
         <Input type="text" placeholder='  Email'/>
         </InputDiv>
         <p><Link to="/create-password">Cambiar contraseña</Link></p>
-        <Button onClick={handlerLogout}>Logout</Button>
+        <Button onClick={handlerLogout}>Cerrar sesión</Button>
         
     </Container>
   )

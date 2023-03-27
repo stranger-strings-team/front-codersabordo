@@ -80,7 +80,7 @@ const Register = (props: Props) => {
           
         <SubmitButton type="submit"/>
         </Form>
-       <P2p>¿Ya tienes una cuenta?<Myspan><Link to="/login"> Accede</Link> </Myspan></P2p>
+       <P2p>¿Ya tienes una cuenta?<Myspan><Link to="/login">Accede</Link> </Myspan></P2p>
        
     </Div>
   )
