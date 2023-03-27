@@ -3,7 +3,7 @@ import Spacer from '../../components/Spacer/Spacer'
 import { Container, OrangeText, TextLeft } from '../../Global.style'
 import { Button } from '../Login/LoginStyle'
 import { Input, InputDiv } from '../Profile/ProfileStyle'
-import { Padmin, ProfileAdminDiv, YellowDiv } from './ProfilesAdminStyle'
+import { BinImg, Padmin, ProfileAdminDiv, YellowDiv } from './ProfilesAdminStyle'
 import Bin from '../../assets/delete.png'
 
 
@@ -32,13 +32,14 @@ const ProfilesAdmin = (props: Props) => {
         <ProfileAdminDiv>
             <Padmin>Judith Lloveras </Padmin>
             <Padmin>judith@lloveras.com</Padmin>
-            <img src={Bin}/>
+            <BinImg src={Bin}/>
             
             </ProfileAdminDiv>
         <ProfileAdminDiv>
             <Padmin>David Picó</Padmin>
             <Padmin>david@pico.com</Padmin>
-            <img src={Bin}/>
+            <BinImg src={Bin}/>
+            
         </ProfileAdminDiv>
         </YellowDiv>
 

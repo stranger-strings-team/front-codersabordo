@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Perfil from '../../assets/profile.png'
-import { StyledLogOutButton } from '../../components/LogOutButton/LogOutButtonStyle'
 import Spacer from '../../components/Spacer/Spacer'
 import { Container, DarkText, OrangeText } from '../../Global.style'
 import { P3p } from '../../pages/Profile/ProfileStyle'
@@ -23,8 +22,6 @@ const Profile = (props: Props) => {
         </InputDiv>
         <P3p><Link to="/create-password">Cambiar contraseña</Link></P3p>
         <Spacer size={10} axis='vertical' />
-        <StyledLogOutButton><Link to="/">Cierra sesión</Link></StyledLogOutButton>
-
         
     </Container>
   )

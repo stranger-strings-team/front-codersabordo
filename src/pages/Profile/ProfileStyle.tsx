@@ -24,7 +24,4 @@ margin-top: 10px;
 margin-bottom: 18px; 
 `
 
-export const StyledLogOutButton = styled.button`
-color: white;    
-`
 
