@@ -19,7 +19,7 @@ const QuizQuestions = (props: Props) => {
     
     useEffect(() => {
     async function loadQuestions () {
-        const response = await questionServices();
+        const response = await getQuestions();
         setQuestions(response.data);
     };
     loadQuestions();
@@ -37,15 +37,13 @@ const QuizQuestions = (props: Props) => {
         <TextLeft><h2>Sección 1: Normativa</h2></TextLeft>
 
         {questions.filter((question)=>question.section == "Sección 1 - Compromisos").map((question, index)=>(
-            <>
-                <AdminQuestionStyled className='purple'>
-                    <DarkText>{question.question}</DarkText>
-                    <RowRight>
-                        <IconDivRight><img src={Delete}/></IconDivRight>
-                        <IconDivRight><img src={Pencil}/></IconDivRight>
-                    </RowRight>
-                </AdminQuestionStyled>
-            </>
+            <AdminQuestionStyled className='purple' key={index}>
+                <DarkText>{question.question}</DarkText>
+                <RowRight>
+                    <IconDivRight href='/admin/delete-question'><img src={Delete}/></IconDivRight>
+                    <IconDivRight href='#'><img src={Pencil}/></IconDivRight>
+                </RowRight>
+            </AdminQuestionStyled>
         ))}
         
         <Spacer size={40} axis='vertical' />
@@ -53,15 +51,13 @@ const QuizQuestions = (props: Props) => {
         <TextLeft><h2>Sección 2: El bootcamp</h2></TextLeft>
 
         {questions.filter((question)=>question.section == "Sección 2 - ¿Qué puedes esperarte del bootcamp?").map((question, index)=>(
-            <>
-                <AdminQuestionStyled className='blue'>
-                    <DarkText>{question.question}</DarkText>
-                    <RowRight>
-                        <IconDivRight><img src={Delete}/></IconDivRight>
-                        <IconDivRight><img src={Pencil}/></IconDivRight>
-                    </RowRight>
-                </AdminQuestionStyled>
-            </>
+            <AdminQuestionStyled className='blue' key={index}>
+                <DarkText>{question.question}</DarkText>
+                <RowRight>
+                    <IconDivRight><img src={Delete}/></IconDivRight>
+                    <IconDivRight><img src={Pencil}/></IconDivRight>
+                </RowRight>
+            </AdminQuestionStyled>
         ))}
 
         <Spacer size={40} axis='vertical' />
@@ -69,15 +65,13 @@ const QuizQuestions = (props: Props) => {
         <TextLeft><h2>Sección 3: Después del bootcamp</h2></TextLeft>
 
         {questions.filter((question)=>question.section == "Sección 3 - ¿Qué puedes esperarte al finalizar el bootcamp?").map((question, index)=>(
-            <>
-                <AdminQuestionStyled className='pink'>
-                    <DarkText>{question.question}</DarkText>
-                    <RowRight>
-                        <IconDivRight><img src={Delete}/></IconDivRight>
-                        <IconDivRight><img src={Pencil}/></IconDivRight>
-                    </RowRight>
-                </AdminQuestionStyled>
-            </>
+            <AdminQuestionStyled className='pink' key={index}>
+                <DarkText>{question.question}</DarkText>
+                <RowRight>
+                    <IconDivRight><img src={Delete}/></IconDivRight>
+                    <IconDivRight><img src={Pencil}/></IconDivRight>
+                </RowRight>
+            </AdminQuestionStyled>
         ))}
     </Container>
   )
