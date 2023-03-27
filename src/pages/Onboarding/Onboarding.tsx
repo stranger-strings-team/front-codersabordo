@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import { QuestionButton } from '../../components/QuestionButton/questionButton.style'
 import { ParagraphContainer, AnswerImage, Container, DarkText, GlobalStyles, OrangeText, theme } from '../../Global.style'
 import correct from '../../assets/correct.png'
@@ -12,30 +12,27 @@ import { BackButton } from '../../components/BackButton'
 import "./style.css"
 import { RetryButton } from '../../components/RetryButton/RetryButton'
 import { SubmitAnswerButton } from '../../components/SubmitAnswerButton/SubmitAnswerButton'
-
-type Props = {};
+import { useNavigate } from 'react-router-dom'
 
 type QuestionsType = {_id: string, question:string, answer:[{text:string, isCorrect:boolean}], type:string, section:string, feedbackCorrect:string, feedbackIncorrect:string}
 
-const sectionName = [
+type Props = {
+  section: number
+}
+
+export const sectionName = [
   "Sección 1 - Compromisos",
   "Sección 2 - ¿Qué puedes esperarte del bootcamp?",
   "Sección 3 - ¿Qué puedes esperarte al finalizar el bootcamp?"
 ]
 
-function Onboarding (props: Props) {
+const sectionIndex = 0; // esto hace cambiar la sección
 
-  const [first, setFirst] = useState(false)
-
-  const [second, setSecond] = useState(false)
-
-  const [third, setThird] = useState(false)
-
-  const [fourth, setFourth] = useState(false)
+const Onboarding = ({section}: Props) => {
 
   const [questions, setQuestions] = useState<QuestionsType[]>([])
 
-  const filteredQuestions = questions.filter((question)=>question.section == sectionName[0])
+  const filteredQuestions = questions.filter((question)=>question.section == sectionName[section])
 
   const [feedback, setFeedback] = useState(false);
 
@@ -44,6 +41,10 @@ function Onboarding (props: Props) {
   const [checked, setChecked] = useState([false, false, false, false])
 
   const [questionIndex, setQuestionIndex] = useState(0)
+
+  const navigate = useNavigate()
+
+  const feedbackRef = useRef<null | HTMLDivElement>(null)
 
   const handleCheck = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, isCorrect: boolean, index: number) => {
     checked[index] = !checked[index];
@@ -63,6 +64,12 @@ function Onboarding (props: Props) {
     }
   }
 
+  const handleScroll = (ref: any) => {
+    ref.current?.scrollIntoView({
+      behavior: "smooth"
+    })
+  }
+
   const handleSubmit = (question: QuestionsType, index: number) => {
     const actualAnswers: boolean[] = []
     question.answer.forEach(answer => {
@@ -72,30 +79,33 @@ function Onboarding (props: Props) {
         actualAnswers.push(true)
       }
     })
-    console.log("selected answers: ", checked)
-    console.log("correct answers: ", actualAnswers)
-    setFeedback(true)
+    // console.log("selected answers: ", checked)
+    // console.log("correct answers: ", actualAnswers)
     if(checked.toString() == actualAnswers.toString()) {
-      console.log("correct!")
+      // console.log("correct!")
       setCorrectFeedback(true)
     } else {
-      console.log("wrong!")
+      // console.log("wrong!")
       setCorrectFeedback(false)
     }
+    setFeedback(true)
+    handleScroll(feedbackRef)
   }
 
   const retry = () => {
+    setChecked([false, false, false, false])
     setFeedback(false)
   }
 
   const handleNext = (i: number) => {
     if (feedback == true){
       if (questionIndex >= filteredQuestions.length-1){
-        setQuestionIndex(questionIndex)
-      } else if (false) {
+        navigate("/completed-section")
+      } else if (false) { // TO DO
 
       } else {
         setFeedback(false)
+        setChecked([false, false, false, false])
         setQuestionIndex(questionIndex+1)
       }
     }
@@ -112,28 +122,10 @@ function Onboarding (props: Props) {
   return (
     <>
       {filteredQuestions.filter((question, index)=>index == questionIndex).map((question, index)=>(
-
         <Container key={index}>
 
           <h3>{question.question}</h3>
           <form className="answersform">
-              {/* {question.answer.map((answer, index) => (
-
-                <label 
-                onClick={(event) => handleCheck(event, answer.isCorrect, index)}
-                className={ `answerbox ${getColor(index)} ${checked[index] ? "checked" : ""}`}
-                key={index}  >
-                  <span>
-                    {answer.text}
-                  </span>
-                  <input
-                    name={"answer"+index}
-                    type='checkbox'
-                    key={index}>
-                  </input>
-                </label>
-
-              ))} */}
               {question.answer.map((answer, index) => (
               <QuestionButton 
                 type="button"
@@ -145,7 +137,7 @@ function Onboarding (props: Props) {
               </QuestionButton>
             ))}
           </form>
-
+          <div ref={feedbackRef}></div>
               {feedback ? (
                 correctFeedback ? (
                   <>

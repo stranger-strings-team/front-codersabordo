@@ -1,11 +1,13 @@
 import { Button, Input, InputDiv, Myspan, P1p, P2p } from '../Login/LoginStyle'
 import { Container} from '../../Global.style'
-import { Link, useHistory } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import React, { useState, FormEvent } from 'react'
 import { authUserRequest } from "../../services/userServices"
 
-const Login = (props: Props) => {
+const Login = () => {
 	let token;
+
+  const navigate = useNavigate()
 
   const [post, setPost] = useState({
 	"email": "",
@@ -22,7 +24,7 @@ const Login = (props: Props) => {
         token = response.data.access_token;
         // console.log("access_token: ", token);
         sessionStorage.setItem("access_token", token);
-        console.log("logged in")
+        navigate("/roadmap")
       })
       .catch(err => console.log(err))
   };

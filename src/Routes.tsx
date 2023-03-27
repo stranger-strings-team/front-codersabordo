@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Onboarding from './pages/Onboarding/Onboarding';
@@ -23,7 +23,6 @@ import EliminateQuestion from './pages/EliminateQuestion/EliminateQuestion'
 
 
 
-
 const CreateRoutes = () => (
     <Routes>
       <Route index element={<Home/>}/>
@@ -35,10 +34,8 @@ const CreateRoutes = () => (
         <Route path="/admin" element={<Admin/>}/>
         <Route path="/create-admin" element={<CreateAdmin/>}/>
         <Route path="/create-password" element={<CreatePassword/>}/>
-        <Route path="/eliminate-question" element={<EliminateQuestion/>} />       
-        <Route path="/onboarding" element={<Onboarding/>}/>
-        <Route path="/incorrect-answer" element={<Incorrect/>}/>
-        <Route path="/incomplete-section" element={<IncompleteSection/>}/>
+        <Route path="/eliminate-question" element={<EliminateQuestion/>} />
+        <Route path="/onboarding" element={<Onboarding section={0}/>}/>
         <Route path="/completed-section" element={<CompletedSection/>}/>
         <Route path="/final" element={<Final/>}/>
         <Route path="/login" element={<Login/>}/>

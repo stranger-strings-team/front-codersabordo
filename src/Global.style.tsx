@@ -19,6 +19,8 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0; 
     box-sizing: border-box; 
     text-decoration: none;
+    color: ${theme.darkText};
+    scroll-behavior: smooth 5s;
   }
 
   body{
@@ -30,7 +32,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   main{
-    margin: 80px 0px;
+    margin: 80px 0 40px 0;
   }
 
   h1{
@@ -88,7 +90,9 @@ export const Container = styled.div`
   display:flex; 
   flex-direction: column;
   width:90vw;
-  margin: 20px auto;
+  position: relative;
+  bottom: 0;
+  margin: 20px auto 0 auto;
   justify-content: center;
   align-items: center;
   text-align: center;

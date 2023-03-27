@@ -18,7 +18,7 @@ const Layout = (to: To) => {
       <main>
         <Outlet />
       </main>
-      <NavBar inGame={isInGame} />
+      {/* <NavBar inGame={isInGame} /> */}
     </>
   )
 }
