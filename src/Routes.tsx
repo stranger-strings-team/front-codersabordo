@@ -43,8 +43,8 @@ const CreateRoutes = () => (
         <Route path="/admin/question/post" element={<PostQuestionForm />}/>
         <Route path="/admin" element={<Admin/>}/>
         <Route path="/admin/quiz" element={<QuizQuestions />}/>
-        <Route path="/eliminate-question" element={<EliminateQuestion/>} />
-        <Route path="/admin/admins" element={<CreateAdmin/>}/>
+        <Route path="/admin/delete-question" element={<EliminateQuestion/>} />
+        <Route path="/admin/admins" element={<CreateAdmin/>} />
         <Route path='/admin/coders' element={<CoderProgres />} />
         <Route path="*" element={<NoMatch />} />
       </Route>

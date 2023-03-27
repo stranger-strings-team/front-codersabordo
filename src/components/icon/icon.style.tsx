@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { theme } from "../../Global.style";
 
-export const IconDiv = styled.div`
+export const IconDiv = styled.a`
  width: 35px;
 `
 

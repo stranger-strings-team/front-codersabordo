@@ -2,7 +2,7 @@ import React from 'react'
 import { Container, OrangeText } from '../../Global.style'
 import Administrator from '../../assets/admin.png'
 import Spacer from '../../components/Spacer/Spacer'
-import { StyledLink } from "../../pages/Roadmap/style"
+import { StyledLink } from "./AdminStyle"
 import { BlueButton, PurpleButton, YellowButton } from '../../components/QuestionButton/questionButton.style'
 import { Link } from 'react-router-dom'
 
@@ -21,8 +21,8 @@ const Admin = (props: Props) => {
 
         <>
         <StyledLink to="/admin/coders" className='blue'>Coders</StyledLink>
-        <StyledLink to="/admin/quiz" className='pink'>Editar los questionarios</StyledLink>
-        <StyledLink to="/admin/admins" className='yellow'>Administradores</StyledLink>
+        <StyledLink to="/admin/quiz" className='yellow'>Editar los questionarios</StyledLink>
+        <StyledLink to="/admin/admins" className='pink'>Administradores</StyledLink>
         </>
 
     </Container>
