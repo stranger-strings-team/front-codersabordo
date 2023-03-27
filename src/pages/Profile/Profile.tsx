@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Perfil from '../../assets/profile.png'
+import { StyledLogOutButton } from '../../components/LogOutButton/LogOutButtonStyle'
 import Spacer from '../../components/Spacer/Spacer'
-import { Container, OrangeText } from '../../Global.style'
-import { Myspan } from '../Login/LoginStyle'
+import { Container, DarkText, OrangeText } from '../../Global.style'
+import { P3p } from '../../pages/Profile/ProfileStyle'
 import { Input, InputDiv} from './ProfileStyle'
 
 type Props = {}
@@ -13,14 +14,17 @@ const Profile = (props: Props) => {
     <Container>
         <h3><OrangeText>Tu perfil</OrangeText></h3>
         <img src={Perfil} alt="user photo"/>
-        <Spacer size={15} axis='vertical' />
-        <h3>Minerva</h3>
+        <Spacer size={12} axis='vertical' />
+        <h3><DarkText>Minerva</DarkText></h3>
         <InputDiv>
         <Input type="text" placeholder='  Nombre'/>
         <Input type="text" placeholder='  Apellidos'/>
         <Input type="text" placeholder='  Email'/>
         </InputDiv>
-        <p><Link to="/create-password">Cambiar contraseña</Link></p>
+        <P3p><Link to="/create-password">Cambiar contraseña</Link></P3p>
+        <Spacer size={10} axis='vertical' />
+        <StyledLogOutButton><Link to="/">Cierra sesión</Link></StyledLogOutButton>
+
         
     </Container>
   )
