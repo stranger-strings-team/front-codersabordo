@@ -16,4 +16,10 @@ export const StyledNavTop = styled.div`
     h2 {
         color: ${theme.orange};
     }
+
+    img{
+        width: 2.7rem;
+        margin-right: 15px;
+        //color: grey;
+    }
 `

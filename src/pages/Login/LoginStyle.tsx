@@ -16,16 +16,6 @@ export const Button = styled.button`
     align-items: center;
 `
 
-export const Input = styled.input`
-    background-color: #ffe6dc;
-    color: black;
-    border-style: none;
-    border-radius: 10px;
-    height: 35px;
-    width: 200px;
-    padding: 10px;
-`
-
 export const P1p = styled.p`
     font-size: 0.6rem;
     color: blue;

@@ -1,6 +1,7 @@
 import React, { useState, FormEvent } from 'react'
 import SubmitButton from '../../components/SubmitButton/SubmitButton'
-import { Form, Input, Select, Div } from './Register.styled'
+import { Input } from '../../Global.style'
+import { Form, Select, Div } from './Register.styled'
 import { P2p, Myspan } from "../Login/LoginStyle"
 import { Link } from 'react-router-dom'
 import { postUserRequest } from "../../services/userServices"

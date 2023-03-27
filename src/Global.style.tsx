@@ -115,6 +115,14 @@ export const AnswerImage = styled.img`
   width: 10rem; 
   margin: 0 0 0 auto;
 `
+export const Input = styled.input`
+    background-color: #ffe6dc;
+    border-style: none;
+    border-radius: 10px;
+    height: 35px;
+    width: 200px;
+    padding: 10px;
+`
 
 
 /* ------------------ GENERAL TEXT STYLES -------------------*/
