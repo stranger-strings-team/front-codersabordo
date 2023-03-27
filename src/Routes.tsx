@@ -14,6 +14,7 @@ import CompletedSection from './pages/CompletedSection/CompletedSection';
 import Register from './pages/RegisterPage/Register';
 import OpenQuestion from './pages/OpenQuestion/OpenQuestion';
 import Roadmap from './pages/Roadmap/Roadmap';
+import PostQuestionForm from "./pages/PostQuestion/PostQuestionForm";
 import CoderProgres from './AdminPages/CoderProgres/CoderProgres';
 import Admin from './AdminPages/Admin/Admin';
 import QuizQuestions from './AdminPages/quizQuestions/QuizQuestions';
@@ -37,6 +38,9 @@ const CreateRoutes = () => (
         <Route path="/open-question" element={<OpenQuestion/>}/>
         <Route path="/completed-section" element={<CompletedSection/>}/>
         <Route path="/final" element={<Final/>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/roadmap" element={<Roadmap />}/>
+        <Route path="/admin/question/post" element={<PostQuestionForm />}/>
         <Route path="/admin" element={<Admin/>}/>
         <Route path="/admin/quiz" element={<QuizQuestions />}/>
         <Route path="/eliminate-question" element={<EliminateQuestion/>} />
