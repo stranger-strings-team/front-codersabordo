@@ -19,3 +19,11 @@ export const patchUserRequest = async (user: Object) => {
 export const authUserRequest = async (auth: Object) => {
     return axios.post(loginUrl, auth);
 }
+
+export const findOneByEmail = async (email: string) => {
+    try {
+      const response = await axios.get(apiBase + "/user" + email);
+      return response.data;
+    } catch (error) {
+      console.log(error);
+    }}

@@ -25,6 +25,7 @@ import EliminateQuestion from './AdminPages/EliminateQuestion/EliminateQuestion'
 
 
 const CreateRoutes = () => (
+  
     <Routes>
       <Route index element={<Home/>}/>
       <Route path="/" element={<Layout />}>
