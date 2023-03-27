@@ -32,6 +32,11 @@ const Login = () => {
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPost({ ...post, [e.target.name]: e.target.value })
   };
+
+  const handleLogout = () => {
+    sessionStorage.removeItem('access_token');
+    navigate('/login');
+  };
 	
   return (
     <Container>
