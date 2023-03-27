@@ -1,5 +1,5 @@
-import { Button, Input, InputDiv, Myspan, P1p, P2p } from '../Login/LoginStyle'
-import { Container} from '../../Global.style'
+import { Button, InputDiv, Myspan, P1p, P2p } from '../Login/LoginStyle'
+import { Container, Input} from '../../Global.style'
 import { Link, useNavigate } from 'react-router-dom'
 import React, { useState, FormEvent } from 'react'
 import { authUserRequest } from "../../services/userServices"

@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import home from "../../assets/Home.svg";
+import { UserButton } from "../UserButton/UserButton";
 import { StyledNavTop } from "./NavTop.style";
 
+const token = sessionStorage.getItem("access_token")
 
 export const NavTop = () => {
   return (
@@ -12,6 +14,7 @@ export const NavTop = () => {
         <Link to="/roadmap">
           <img src={home} alt="Home icon" />
         </Link>
+        <UserButton loggedInUser={token} />
       </StyledNavTop>
     </>
   )
