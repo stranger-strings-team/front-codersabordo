@@ -15,11 +15,11 @@ import Register from './pages/RegisterPage/Register';
 import OpenQuestion from './pages/OpenQuestion/OpenQuestion';
 import Roadmap from './pages/Roadmap/Roadmap';
 import CoderProgres from './AdminPages/CoderProgres/CoderProgres';
-import Admin from './pages/Admin/Admin';
+import Admin from './AdminPages/Admin/Admin';
 import QuizQuestions from './AdminPages/quizQuestions/QuizQuestions';
 import CreateAdmin from './pages/ProfilesAdmin/ProfilesAdmin';
 import CreatePassword from './pages/CreatePassword/CreatePassword';
-import EliminateQuestion from './pages/EliminateQuestion/EliminateQuestion'
+import EliminateQuestion from './AdminPages/EliminateQuestion/EliminateQuestion'
 
 
 
@@ -28,21 +28,21 @@ const CreateRoutes = () => (
       <Route index element={<Home/>}/>
       <Route path="/" element={<Layout />}>
         <Route path='/welcome' element={<Welcome />} />
+        <Route path="/login" element={<Login/>}/>
         <Route path='/register' element={<Register />} />
-        <Route path="/profile" element={<Profile/>}/>
-        <Route path="/open-question" element={<OpenQuestion/>}/>
-        <Route path="/admin" element={<Admin/>}/>
-        <Route path="/create-admin" element={<CreateAdmin/>}/>
-        <Route path="/create-password" element={<CreatePassword/>}/>
-        <Route path="/eliminate-question" element={<EliminateQuestion/>} />
+        <Route path="/roadmap" element={<Roadmap />}/>
         <Route path="/onboarding" element={<Onboarding section={0}/>}/>
+        <Route path="/profile" element={<Profile/>}/>
+        <Route path="/create-password" element={<CreatePassword/>}/>
+        <Route path="/open-question" element={<OpenQuestion/>}/>
         <Route path="/completed-section" element={<CompletedSection/>}/>
         <Route path="/final" element={<Final/>}/>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/roadmap" element={<Roadmap />}/>
+        <Route path="/admin" element={<Admin/>}/>
         <Route path="/admin/quiz" element={<QuizQuestions />}/>
+        <Route path="/eliminate-question" element={<EliminateQuestion/>} />
+        <Route path="/admin/admins" element={<CreateAdmin/>}/>
+        <Route path='/admin/coders' element={<CoderProgres />} />
         <Route path="*" element={<NoMatch />} />
-        <Route path='/coders-progres' element={<CoderProgres />} />
       </Route>
     </Routes>
 );

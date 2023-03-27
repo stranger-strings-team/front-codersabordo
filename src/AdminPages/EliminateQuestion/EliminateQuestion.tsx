@@ -2,7 +2,7 @@ import React from 'react'
 import { AdminQuestionStyled } from '../../components/AdminQuestion/AdminQuestion.style'
 import Spacer from '../../components/Spacer/Spacer'
 import { Container, ParagraphContainer } from '../../Global.style'
-import { Button } from '../Login/LoginStyle'
+import { Button } from '../../pages/Login/LoginStyle'
 
 type Props = {}
 
