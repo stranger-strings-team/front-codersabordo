@@ -7,6 +7,7 @@ import { IconDiv, IconDivRight } from '../../components/icon/icon.style'
 import { AdminQuestionStyled } from '../../components/AdminQuestion/AdminQuestion.style'
 import Spacer from '../../components/Spacer/Spacer'
 import { getQuestions } from '../../services/questionServices'
+import { useNavigate } from 'react-router-dom'
 
 type Props = {}
 
@@ -25,6 +26,13 @@ const QuizQuestions = (props: Props) => {
     loadQuestions();
     }, [])
 
+    const navigate = useNavigate()
+
+    const handleClick = (question: QuestionsType, goTo: string) => {
+        //
+        navigate(goTo)
+    }
+
   return (
     <Container>
         <Spacer size={40} axis='vertical' />
@@ -40,8 +48,8 @@ const QuizQuestions = (props: Props) => {
             <AdminQuestionStyled className='purple' key={index}>
                 <DarkText>{question.question}</DarkText>
                 <RowRight>
-                    <IconDivRight href='/admin/delete-question'><img src={Delete}/></IconDivRight>
-                    <IconDivRight href='#'><img src={Pencil}/></IconDivRight>
+                    <IconDivRight onClick={() => {handleClick(question, "/admin/question/delete")}}><img src={Delete}/></IconDivRight>
+                    <IconDivRight onClick={() => {handleClick(question, "/admin/question/edit")}}><img src={Pencil}/></IconDivRight>
                 </RowRight>
             </AdminQuestionStyled>
         ))}

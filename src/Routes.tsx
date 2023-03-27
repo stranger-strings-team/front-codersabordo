@@ -40,10 +40,10 @@ const CreateRoutes = () => (
         <Route path="/final" element={<Final/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/roadmap" element={<Roadmap />}/>
-        <Route path="/admin/question/post" element={<PostQuestionForm />}/>
         <Route path="/admin" element={<Admin/>}/>
-        <Route path="/admin/quiz" element={<QuizQuestions />}/>
-        <Route path="/admin/delete-question" element={<EliminateQuestion/>} />
+        <Route path="/admin/question" element={<QuizQuestions />}/>
+        <Route path="/admin/question/post" element={<PostQuestionForm />}/>
+        <Route path="/admin/question/delete" element={<EliminateQuestion/>} />
         <Route path="/admin/admins" element={<CreateAdmin/>} />
         <Route path='/admin/coders' element={<CoderProgres />} />
         <Route path="*" element={<NoMatch />} />
