@@ -11,29 +11,46 @@
 	width: 100%;
 }
 
-.postquestionform > form > div input,
+.postquestionform > form > div{
+	display: flex;
+	flex-direction: column;
+}
+
+.postquestionform > form > div > input,
 .postquestionform > form > .feedback > textarea{
 	background-color: #FFE6DC;
 	color: black;
 	padding: 1rem 2rem;
-	margin: .25rem 0 1rem 0;
+	margin: 0 0 1rem 0;
 	border: none;
 	border-radius: 15px;
+	width: 80vw;
+	min-width: 80vw;
+	max-width: 80vw;
+}
+
+
+.postquestionform > form > div textarea{
+	background-color: #FFE6DC;
+	color: black;
+	padding: 1rem 2rem;
+	margin: 0;
+	border: none;
+	border-radius: 15px;
+	width: 80vw;
+	min-width: 80vw;
+	max-width: 80vw;
 }
 
 .inputboxstyle{
-	background-color: #FFE6DC;
 	color: black;
-	margin: .25rem 0 1rem 0;
+	margin: 0 0 1rem 0;
 	border-radius: 15px;
-	padding: 1rem;
-	
 }
 
 .inputboxstyle > div{
 	display: flex;
 	flex-direction: row;
-	justify-content: end;
 }
 
 .inputboxstyle > div > label{
@@ -53,5 +70,22 @@
     border-radius: 40px;
     display: flex;
     inline-size: fit-content;
-    margin-bottom: rem;
+    margin-bottom: 1rem;
+}
+
+.iscorrectcheckbox{
+	display: flex;
+	flex-direction: row;
+	width: 80vw;
+}
+.iscorrectcheckbox input, .iscorrectcheckbox label{
+	margin: 0 .5rem 1rem .5rem;
+}
+
+.feedback textarea{
+	height: 150px;
+}
+
+label, p{
+	margin: 0;
 }

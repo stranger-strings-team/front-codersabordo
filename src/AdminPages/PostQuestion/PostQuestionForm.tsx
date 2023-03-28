@@ -55,7 +55,7 @@ const PostQuestionForm = () => {
 				</div>
 				<div>
 					<label htmlFor='section'>¿A qué sección pertenece?</label>
-					<input name="section" list="section" onChange={handleInput} required/>
+					<input placeholder="Sección" name="section" list="section" onChange={handleInput} required/>
 					<datalist id="section">
 						<option value="Sección 1 - Compromisos">Sección 1</option>
 						<option value="Sección 2 - ¿Qué puedes esperarte del bootcamp?">Sección 2</option>
@@ -64,27 +64,26 @@ const PostQuestionForm = () => {
 				</div>
 				<div>
 					<p>Respuestas</p>
-				<div className="inputboxstyle">
-					<label htmlFor="answer.answer"></label>
-					<input 
-						type="text"
-						name="answer.answer"
-						placeholder="Escribe una respuesta"
-						autoComplete="off"
-						onChange={() => setAnswers([])}
-						required
-					/>
-					<div>
-						<input
-							type="checkbox"
-							name="answer.isCorrect"
-							value="answer.isCorrect"
-						/>
-						<label htmlFor="answer.isCorrect">
-							¿Es correcta?
-						</label>
+					<div className="inputboxstyle">
+						<label htmlFor="answer.answer"></label>
+						<textarea
+							name="answer.answer"
+							placeholder="Escribe una respuesta"
+							autoComplete="off"
+							onChange={() => setAnswers([])}
+							required
+						> 
+						</textarea>
+						<div className='iscorrectcheckbox'>
+							<label htmlFor="answer.isCorrect">Correcta</label>
+							<input
+								type="checkbox"
+								name="answer.isCorrect"
+								value="answer.isCorrect"
+								className='checkboxinput'
+							/>
+						</div>
 					</div>
-				</div>
 				</div>
 				<div className="feedback">
 					<label>Feedback</label>
