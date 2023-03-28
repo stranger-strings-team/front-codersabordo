@@ -1,4 +1,5 @@
 import React, { useState, FormEvent } from 'react'
+import { useNavigate } from 'react-router-dom'
 import SubmitButton from '../../components/SubmitButton/SubmitButton'
 import { Form, Input, Select, Div } from './Register.styled'
 import { P2p, Myspan } from "../Login/LoginStyle"
@@ -8,6 +9,7 @@ import { postUserRequest } from "../../services/userServices"
 type Props = {}
 
 const Register = (props: Props) => {
+  const navigate = useNavigate()
 
   const [post, setPost] = useState({
     "name": "",
@@ -24,6 +26,7 @@ const Register = (props: Props) => {
       .catch()
       .then((response) => {
         console.log(response)
+        navigate('/login')
     })
       .catch(err => console.log(err))
   };
