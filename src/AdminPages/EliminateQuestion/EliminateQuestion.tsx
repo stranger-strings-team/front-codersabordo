@@ -35,9 +35,9 @@ const EliminateQuestion = () => {
       .catch()
 			.then((response) => {
 				console.log(response)
+        navigate("/admin/question")
 			})
 			.catch(err => console.log(err))
-    navigate("/admin/question")
   }
 
   return (
