@@ -12,8 +12,8 @@ export const postUserRequest = async (user: Object) => {
     return axios.post(apiBase + "/user", user);
 }
 
-export const patchUserRequest = async (user: Object) => {
-    return axios.patch(apiBase + "/user", user);//Falta terminar esta funcionalidad
+export const patchUserRequest = async (id: string, user: Object) => {
+    return axios.patch(apiBase + `/user/${id}`, user);
 }
 
 export const authUserRequest = async (auth: Object) => {

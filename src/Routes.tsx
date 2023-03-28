@@ -14,13 +14,15 @@ import CompletedSection from './pages/CompletedSection/CompletedSection';
 import Register from './pages/RegisterPage/Register';
 import OpenQuestion from './pages/OpenQuestion/OpenQuestion';
 import Roadmap from './pages/Roadmap/Roadmap';
+import QuestionEdit from './AdminPages/QuestionEdit/QuestionEdit';
 import PostQuestionForm from "./AdminPages/PostQuestion/PostQuestionForm";
-import CoderProgres from './AdminPages/CoderProgres/CoderProgres';
 import Admin from './AdminPages/Admin/Admin';
+import CoderProgres from './AdminPages/CoderProgres/CoderProgres';
 import QuizQuestions from './AdminPages/quizQuestions/QuizQuestions';
 import CreateAdmin from './pages/ProfilesAdmin/ProfilesAdmin';
 import CreatePassword from './pages/CreatePassword/CreatePassword';
 import EliminateQuestion from './AdminPages/EliminateQuestion/EliminateQuestion'
+import PatchQuestion from './AdminPages/PatchQuestion/PatchQuestion';
 
 
 
@@ -43,6 +45,7 @@ const CreateRoutes = () => (
         <Route path="/admin" element={<Admin/>}/>
         <Route path="/admin/question" element={<QuizQuestions />}/>
         <Route path="/admin/question/post" element={<PostQuestionForm />}/>
+        <Route path="/admin/question/edit" element={<QuestionEdit />} />
         <Route path="/admin/question/delete" element={<EliminateQuestion/>} />
         <Route path="/admin/admins" element={<CreateAdmin/>} />
         <Route path='/admin/coders' element={<CoderProgres />} />
