@@ -16,13 +16,28 @@ const CompletedSection = () => {
     navigate("/roadmap")
   }
 
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/roadmap')
+  }
+
+const CompletedSection = (props: Props) => {
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/roadmap')
+  }
+
   return (
     <Container>
         <h3>¡Muy bien!</h3>
         <img src={Completed} alt="happy rainbow"/>
         <p>¡Has acertado todas las preguntas de esta sección!</p>
         <Spacer size={45} axis='vertical' />
-        <OrangeButton onClick={handleClick} />
+        <NextButton onClick={handleClick}/>
     </Container>
   )
 }
