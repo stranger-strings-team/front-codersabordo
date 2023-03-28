@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "./style";
 import Icon from "../../assets/user.svg"
+import { IconDiv } from "../icon/icon.style";
 
 type Props = {
     loggedInUser: string | null;
@@ -9,7 +10,7 @@ type Props = {
 export const UserButton = (props: Props) => {
     const { loggedInUser } = props;
     return (
-        <>
+        <IconDiv>
             {loggedInUser && 
                 <Button href="/profile">
                     <img src={Icon}/>
@@ -20,6 +21,6 @@ export const UserButton = (props: Props) => {
                     <img src={Icon}/>
                 </Button>
             }
-        </>
+        </IconDiv>
     )
 }

@@ -2,7 +2,8 @@ import styled from "styled-components";
 import { theme } from "../../Global.style";
 
 export const IconDiv = styled.a`
- width: 35px;
+ max-width: 35px;
+ display: flex
 `
 
 export const IconDivRight = styled(IconDiv)`
