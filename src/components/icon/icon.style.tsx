@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { theme } from "../../Global.style";
 
 export const IconDiv = styled.a`
  max-width: 35px;

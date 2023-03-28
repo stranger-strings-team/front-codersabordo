@@ -1,10 +1,10 @@
 import React from 'react'
-import Spacer from '../../components/Spacer/Spacer'
+import { Delete } from '../../assets'
+import { Spacer } from '../../components'
 import { Container, Input, OrangeText, TextLeft } from '../../Global.style'
 import { Button } from '../Login/LoginStyle'
 import { InputDiv } from '../Profile/ProfileStyle'
 import { BinImg, Padmin, ProfileAdminDiv, YellowDiv } from './ProfilesAdminStyle'
-import Bin from '../../assets/delete.png'
 
 
 type Props = {}
@@ -32,13 +32,13 @@ const ProfilesAdmin = (props: Props) => {
         <ProfileAdminDiv>
             <Padmin>Judith Lloveras </Padmin>
             <Padmin>judith@lloveras.com</Padmin>
-            <BinImg src={Bin}/>
+            <BinImg src={Delete}/>
             
             </ProfileAdminDiv>
         <ProfileAdminDiv>
             <Padmin>David Picó</Padmin>
             <Padmin>david@pico.com</Padmin>
-            <BinImg src={Bin}/>
+            <BinImg src={Delete}/>
             
         </ProfileAdminDiv>
         </YellowDiv>

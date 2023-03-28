@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Onboarding from './pages/Onboarding/Onboarding';
 import { NoMatch } from './pages/NoMatch';
-import Layout from './components/Layout.tsx/Layout';
+import Layout from './components/Layout/Layout';
 import Final from './pages/Final/Final';
 import Profile from './pages/Profile/Profile';
 import {IncompleteSection}  from './pages/IncompleteSection/IncompleteSection';
@@ -14,13 +14,15 @@ import CompletedSection from './pages/CompletedSection/CompletedSection';
 import Register from './pages/RegisterPage/Register';
 import OpenQuestion from './pages/OpenQuestion/OpenQuestion';
 import Roadmap from './pages/Roadmap/Roadmap';
-import PostQuestionForm from "./pages/PostQuestion/PostQuestionForm";
-import CoderProgres from './AdminPages/CoderProgres/CoderProgres';
+import QuestionEdit from './AdminPages/QuestionEdit/QuestionEdit';
+import PostQuestionForm from "./AdminPages/PostQuestion/PostQuestionForm";
 import Admin from './AdminPages/Admin/Admin';
+import CoderProgres from './AdminPages/CoderProgres/CoderProgres';
 import QuizQuestions from './AdminPages/quizQuestions/QuizQuestions';
 import CreateAdmin from './pages/ProfilesAdmin/ProfilesAdmin';
 import CreatePassword from './pages/CreatePassword/CreatePassword';
 import EliminateQuestion from './AdminPages/EliminateQuestion/EliminateQuestion'
+import PatchQuestion from './AdminPages/PatchQuestion/PatchQuestion';
 
 
 
@@ -41,10 +43,11 @@ const CreateRoutes = () => (
         <Route path="/final" element={<Final/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/roadmap" element={<Roadmap />}/>
-        <Route path="/admin/question/post" element={<PostQuestionForm />}/>
         <Route path="/admin" element={<Admin/>}/>
-        <Route path="/admin/quiz" element={<QuizQuestions />}/>
-        <Route path="/admin/delete-question" element={<EliminateQuestion/>} />
+        <Route path="/admin/question" element={<QuizQuestions />}/>
+        <Route path="/admin/question/post" element={<PostQuestionForm />}/>
+        <Route path="/admin/question/edit" element={<PatchQuestion />} />
+        <Route path="/admin/question/delete" element={<EliminateQuestion/>} />
         <Route path="/admin/admins" element={<CreateAdmin/>} />
         <Route path='/admin/coders' element={<CoderProgres />} />
         <Route path="*" element={<NoMatch />} />

@@ -1,8 +1,8 @@
 import { Button } from "./style"
 
 
-export const OrangeButton = ({ onClick }: any, text:string) => {
+export const OrangeButton = ({ onClick }: any) => {
     return (
-        <Button onClick={onClick}>{text}</Button>
+        <Button onClick={onClick}>VOLVER</Button>
     )
 }
