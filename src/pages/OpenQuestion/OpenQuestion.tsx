@@ -1,6 +1,5 @@
 import React, { FormEvent, useState } from 'react'
-import { NextButton } from '../../components/NextButton';
-import Spacer from '../../components/Spacer/Spacer';
+import { Spacer } from '../../components';
 import { Container, OrangeText } from '../../Global.style';
 import { authUserRequest, patchUserRequest } from '../../services/userServices';
 import { Button } from '../Login/LoginStyle';

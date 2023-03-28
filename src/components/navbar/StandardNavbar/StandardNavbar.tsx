@@ -1,7 +1,7 @@
 import React from "react";
 import { Nav } from "./style";
-import { SettingsButton } from "../../SettingsButton";
-import { InfoButton } from "../../InfoButton";
+import { SettingsButton } from "../../../unused/SettingsButton";
+import { InfoButton } from "../../../unused/InfoButton";
 import { UserButton } from "../../UserButton";
 
 const token = sessionStorage.getItem("access_token")

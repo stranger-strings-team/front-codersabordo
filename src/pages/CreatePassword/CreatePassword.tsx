@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Container, Input, OrangeText } from '../../Global.style'
-import Perfil from '../../assets/profile.png'
-import Spacer from '../../components/Spacer/Spacer'
 import { InputDiv } from '../Profile/ProfileStyle'
 import { Link, useNavigate } from 'react-router-dom'
 import { findOneById } from '../../services/userServices'
 import jwt_decode from "jwt-decode"
+import { Spacer } from '../../components'
+import { Profiles } from '../../assets'
 
 type User = {
   email: string,
@@ -64,7 +64,7 @@ const CreatePassword = () => {
   return (
     <Container>
         <h3><OrangeText>Cambiar tu contraseña</OrangeText></h3>
-        <img src={Perfil} alt="user photo"/>
+        <img src={Profiles} alt="user photo"/>
         <Spacer size={15} axis='vertical' />
         <h3>{user.name}</h3>
         <InputDiv>

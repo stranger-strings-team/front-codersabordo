@@ -1,7 +1,7 @@
 import React from "react";
 import { Nav } from "./StandardNavbar/style";
-import { SettingsButton } from "../SettingsButton";
-import { InfoButton } from "../InfoButton";
+import { SettingsButton } from "../../unused/SettingsButton";
+import { InfoButton } from "../../unused/InfoButton";
 import { UserButton } from "../UserButton";
 import { StandardNavbar } from "./StandardNavbar";
 import { InGameNavbar } from "./InGameNavbar";

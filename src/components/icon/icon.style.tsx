@@ -1,13 +1,8 @@
 import styled from "styled-components";
-import { theme } from "../../Global.style";
 
-export const IconDiv = styled.button`
- width: 35px;
- height: 35px;
- background: none;
- margin: 0;
- padding: 0;
- border: none;
+export const IconDiv = styled.a`
+ max-width: 35px;
+ display: flex
 `
 
 export const IconDivRight = styled(IconDiv)`

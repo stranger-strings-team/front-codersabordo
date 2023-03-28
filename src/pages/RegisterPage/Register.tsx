@@ -1,11 +1,12 @@
 import React, { useState, FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
-import SubmitButton from '../../components/SubmitButton/SubmitButton'
 import { Input, OrangeText } from '../../Global.style'
 import { Form, Select, Div } from './Register.styled'
 import { P2p, Myspan } from "../Login/LoginStyle"
 import { Link } from 'react-router-dom'
 import { postUserRequest } from "../../services/userServices"
+import { SubmitButton } from '../../components'
+
 
 type Props = {}
 

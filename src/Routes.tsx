@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Onboarding from './pages/Onboarding/Onboarding';
 import { NoMatch } from './pages/NoMatch';
-import Layout from './components/Layout.tsx/Layout';
+import Layout from './components/Layout/Layout';
 import Final from './pages/Final/Final';
 import Profile from './pages/Profile/Profile';
 import {IncompleteSection}  from './pages/IncompleteSection/IncompleteSection';

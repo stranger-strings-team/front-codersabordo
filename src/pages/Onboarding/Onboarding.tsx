@@ -1,21 +1,17 @@
 import React, {useEffect, useRef, useState} from 'react'
-import { QuestionButton } from '../../components/QuestionButton/questionButton.style'
 import { ParagraphContainer, AnswerImage, Container, DarkText, GlobalStyles, OrangeText, theme } from '../../Global.style'
-import correct from '../../assets/correct.png'
 import { getQuestions } from '../../services/questionServices'
-import { ThoughtBubbleStyled } from '../../components/ThoughtBubble/ThoughtBubble.style'
-import { NextButton } from '../../components/NextButton'
-import  Incorrecta  from '../../assets/incorrecta.png'
 import { getColor } from './Onboarding.style'
-import { InGameNavbar } from '../../components/navbar/InGameNavbar'
-import { BackButton } from '../../components/BackButton'
 import "./style.css"
 import { RetryButton } from '../../components/RetryButton/RetryButton'
-import { SubmitAnswerButton } from '../../components/SubmitAnswerButton/SubmitAnswerButton'
 import { useNavigate, useParams } from 'react-router-dom'
 import AuthContext from '../../userContext'
 import jwt_decode from "jwt-decode"
 import { findOneById, patchUserRequest } from '../../services/userServices'
+import { BackButton, NextButton, SubmitAnswerButton, ThoughtBubbleStyled } from '../../components'
+import { QuestionButton } from '../../components/QuestionButton/questionButton.style'
+import { Correct, Incorrecta } from '../../assets'
+
 
 export type QuestionsType = {_id: string, question:string, answer:[{text:string, isCorrect:boolean}], type:string, section:string, feedbackCorrect:string, feedbackIncorrect:string}
 
@@ -190,7 +186,7 @@ const Onboarding = () => {
               {feedback ? (
                 correctFeedback ? (
                   <>
-                    <AnswerImage src={correct}></AnswerImage>
+                    <AnswerImage src={Correct}></AnswerImage>
                     <ThoughtBubbleStyled>
                     <h4><OrangeText>¡Muy bien!</OrangeText></h4>
                     <DarkText>{question.feedbackCorrect}</DarkText>

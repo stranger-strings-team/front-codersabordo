@@ -13,13 +13,8 @@ export const StyledNavTop = styled.div`
     justify-content: space-between;
     align-items: center;
 
-    h2 {
-        color: ${theme.orange};
-    }
-
     img{
         width: 2.7rem;
-        margin-right: 15px;
-        //color: grey;
     }
+
 `
