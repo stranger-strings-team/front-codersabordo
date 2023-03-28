@@ -13,14 +13,14 @@ import "./style.css"
 import { RetryButton } from '../../components/RetryButton/RetryButton'
 import { SubmitAnswerButton } from '../../components/SubmitAnswerButton/SubmitAnswerButton'
 import { useNavigate } from 'react-router-dom'
+import AuthContext from '../../userContext'
+import jwtDecode from 'jwt-decode'
 
 export type QuestionsType = {_id: string, question:string, answer:[{text:string, isCorrect:boolean}], type:string, section:string, feedbackCorrect:string, feedbackIncorrect:string}
 
 type Props = {
   section: number
 }
-
-type UserType = {_id:string, name:string, surname:string, email:string, city:string, role:string[], progress: boolean[], openQuestion: string}
 
 export const sectionName = [
   "Sección 1 - Compromisos",
@@ -29,6 +29,7 @@ export const sectionName = [
 ]
 
 const sectionIndex = 0; // esto hace cambiar la sección
+
 
 
 const Onboarding = ({section}: Props) => {
@@ -99,16 +100,16 @@ const Onboarding = ({section}: Props) => {
     setChecked([false, false, false, false])
     setFeedback(false)
   }
+ 
+
+
+
 
   const handleNext = (i: number) => {
+   
+
     if (feedback == true){
       if (questionIndex >= filteredQuestions.length-1){
-        if (sectionName[section]=="Sección 1 - Compromisos"){
-        this.user.progress[0]=true};
-        // else if (sectionName[section]=="Sección 2 - ¿Qué puedes esperarte del bootcamp?"){
-        // this.user.progress[1]=true};
-        // else if (sectionName[section]=="Sección 3 - ¿Qué puedes esperarte al finalizar el bootcamp?"){
-        // this.user.progress[2]=true};
         navigate("/completed-section")
       } else if (false) { // TO DO
 
