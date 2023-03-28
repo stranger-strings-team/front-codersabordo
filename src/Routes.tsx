@@ -14,7 +14,7 @@ import CompletedSection from './pages/CompletedSection/CompletedSection';
 import Register from './pages/RegisterPage/Register';
 import OpenQuestion from './pages/OpenQuestion/OpenQuestion';
 import Roadmap from './pages/Roadmap/Roadmap';
-import PostQuestionForm from "./pages/PostQuestion/PostQuestionForm";
+import PostQuestionForm from "./AdminPages/PostQuestion/PostQuestionForm";
 import CoderProgres from './AdminPages/CoderProgres/CoderProgres';
 import Admin from './AdminPages/Admin/Admin';
 import QuizQuestions from './AdminPages/quizQuestions/QuizQuestions';

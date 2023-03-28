@@ -29,7 +29,8 @@ const QuizQuestions = (props: Props) => {
     const navigate = useNavigate()
 
     const handleClick = (question: QuestionsType, goTo: string) => {
-        //
+        sessionStorage.setItem("question", question._id)
+        console.log("set: ", sessionStorage.getItem("question"))
         navigate(goTo)
     }
 
@@ -39,7 +40,7 @@ const QuizQuestions = (props: Props) => {
 
         <Row>
             <h3><OrangeText>Quiz onboarding</OrangeText></h3>
-            <IconDiv><img src={Add}></img></IconDiv>
+            <IconDiv onClick={() => navigate("/admin/question/post")}><img src={Add} /></IconDiv>
         </Row>
 
         <TextLeft><h2>Sección 1: Normativa</h2></TextLeft>

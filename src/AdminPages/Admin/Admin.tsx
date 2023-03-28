@@ -21,7 +21,7 @@ const Admin = (props: Props) => {
 
         <>
         <StyledLink to="/admin/coders" className='blue'>Coders</StyledLink>
-        <StyledLink to="/admin/quiz" className='yellow'>Editar los questionarios</StyledLink>
+        <StyledLink to="/admin/question" className='yellow'>Editar los questionarios</StyledLink>
         <StyledLink to="/admin/admins" className='pink'>Administradores</StyledLink>
         </>
 
