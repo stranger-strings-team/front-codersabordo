@@ -82,7 +82,7 @@ const Register = (props: Props) => {
             <option value='Norte Online'>Norte Online</option>
             </datalist>
           
-        <SubmitButton type="submit"/>
+        <SubmitButton />
         </Form>
        <P2p>¿Ya tienes una cuenta?<Myspan><Link to="/login">Accede</Link> </Myspan></P2p>
        
