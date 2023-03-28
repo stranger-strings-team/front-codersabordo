@@ -109,9 +109,12 @@ const Profile = () => {
         <Spacer size={12} axis='vertical' />
         <h3><DarkText>{user.name}</DarkText></h3>
         <InputDiv>
-        <Input type="text" placeholder={user.name}/>
-        <Input type="text" placeholder={user.surname}/>
-        <Input type="text" placeholder={user.email}/>
+          <label htmlFor='nombre'></label>
+          <Input type="text" value={user.name} name="nombre"/>
+          <label htmlFor='apellidos'></label>
+          <Input type="text" value={user.surname} name="apellidos"/>
+          <label htmlFor='email'></label>
+          <Input type="email" value={user.email} name="email"/>
         </InputDiv>
         <p><Link to="/create-password">Cambiar contraseña</Link></p>
         <Button onClick={handlerLogout}>Cerrar sesión</Button>

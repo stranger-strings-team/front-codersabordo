@@ -12,16 +12,12 @@ import { BackButton } from '../../components/BackButton'
 import "./style.css"
 import { RetryButton } from '../../components/RetryButton/RetryButton'
 import { SubmitAnswerButton } from '../../components/SubmitAnswerButton/SubmitAnswerButton'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import AuthContext from '../../userContext'
 import jwt_decode from "jwt-decode"
 import { findOneById, patchUserRequest } from '../../services/userServices'
 
 export type QuestionsType = {_id: string, question:string, answer:[{text:string, isCorrect:boolean}], type:string, section:string, feedbackCorrect:string, feedbackIncorrect:string}
-
-type Props = {
-  section: number
-}
 
 type User = {
   progress: [boolean]
@@ -33,12 +29,19 @@ export const sectionName = [
   "Sección 3 - ¿Qué puedes esperarte al finalizar el bootcamp?"
 ]
 
-const sectionIndex = 0; // esto hace cambiar la sección
+const Onboarding = () => {
 
+  let sectionIndex: number;
 
+  const params = useParams()
 
-const Onboarding = ({section}: Props) => {
-  const sectionIndex = 1; // esto hace cambiar la sección
+  const navigate = useNavigate()
+
+  if(params.section != undefined) {
+    sectionIndex = parseInt(params.section)
+  } else {
+    sectionIndex = 0;
+  }
 
   const [questions, setQuestions] = useState<QuestionsType[]>([])
 
@@ -60,17 +63,11 @@ const Onboarding = ({section}: Props) => {
 
   const [id, setId] = useState("6411d0d751f84eb36a7c8cb2")
 
-  const navigate = useNavigate()
-
   const feedbackRef = useRef<null | HTMLDivElement>(null)
 
   const handleCheck = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, isCorrect: boolean, index: number) => {
     checked[index] = !checked[index];
     setChecked([...checked])
-  }
-
-  const handleFeedback = () => {
-    setFeedback(!feedback)
   }
 
   const handleBack = (i: number) =>{
@@ -115,19 +112,15 @@ const Onboarding = ({section}: Props) => {
     setFeedback(false)
   }
  
-
-
-
-
   const handleNext = (i: number) => {
-   
-
     if (feedback == true){
       if (questionIndex >= filteredQuestions.length-1){
         handleProgress()
-        navigate("/completed-section")
-      } else if (false) { // TO DO
-
+        if(sectionIndex == 2 && questionIndex >= filteredQuestions.length-1){
+          navigate("/final")
+        } else {
+          navigate("/completed-section")
+        }
       } else {
         setFeedback(false)
         setChecked([false, false, false, false])

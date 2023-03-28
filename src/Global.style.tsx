@@ -144,10 +144,12 @@ export const DarkText = styled.p`
   z-index: 10;
 `
 
-export const OrangeText = styled.p`
-  color: ${theme.orange}; 
+export const OrangeText = styled.span`
   font-weight: 700;
   display: inline;
+  &&&{
+    color: ${theme.orange}; 
+  }
 `
 
 export const TextLeft = styled.div`

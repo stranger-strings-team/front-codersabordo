@@ -35,7 +35,7 @@ const CreateRoutes = () => (
         <Route path="/login" element={<Login/>}/>
         <Route path='/register' element={<Register />} />
         <Route path="/roadmap" element={<Roadmap />}/>
-        <Route path="/onboarding" element={<Onboarding section={0}/>}/>
+        <Route path="/onboarding/:section" element={<Onboarding />}/>
         <Route path="/profile" element={<Profile/>}/>
         <Route path="/create-password" element={<CreatePassword/>}/>
         <Route path="/open-question" element={<OpenQuestion/>}/>
