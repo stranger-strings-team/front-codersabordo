@@ -8,27 +8,11 @@ import { useNavigate } from 'react-router-dom'
 
 
 const CompletedSection = () => {
-  const hola = "hola"
 
   const navigate = useNavigate()
   
   const handleClick = () => {
     navigate("/roadmap")
-  }
-
-
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate('/roadmap')
-  }
-
-const CompletedSection = (props: Props) => {
-
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate('/roadmap')
   }
 
   return (
