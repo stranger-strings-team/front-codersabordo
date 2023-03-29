@@ -1,33 +1,38 @@
 import axios from 'axios'
 
+
+const accessToken = sessionStorage.getItem("access_token")
 const apiBase = 'http://localhost:4000/api'
 
 const loginUrl = ("http://localhost:4000/api/auth/login")
 
+const authAxios = axios.create({
+  baseURL: apiBase,
+  headers: {
+    Authorization: `Bearer ${accessToken}`
+  }
+})
+
 export const getUsersRequest = async () => {
-    return axios.get(apiBase);
+    return authAxios.get(apiBase);
 }
 
 export const postUserRequest = async (user: Object) => {
-    return axios.post(apiBase + "/user", user);
+    return authAxios.post(apiBase + "/user", user);
 }
 
-export const patchUserRequest = async (user: Object, id) => {
-    return axios.patch(apiBase + `/${id}`, user);//Falta terminar esta funcionalidad
-}
-;
-export const patchUserResponse = async (answer: Object, id: any, token: any) => {
-    console.log(answer.openQuestion);
-    // recuperar el objeto a traves de la id
-    let user = axios.get(apiBase + `/user/${id}`);
-    // nueva response la añades al objeto que viene de la anterior consulta
-    let updatedUser = {...user, openQuestion: answer};
-    // enivamos a la api el objeto actualizado
-    return axios.patch(apiBase + `/user/${id}`, updatedUser, {headers: 
-        {'Authorization': `Bearer ${token}`}
-    });//Falta terminar esta funcionalidad
+export const patchUserRequest = async (id: string, user: Object) => {
+    return authAxios.patch(apiBase + `/user/${id}`, user);
 }
 
 export const authUserRequest = async (auth: Object) => {
-    return axios.post(loginUrl, auth);
+    return authAxios.post(loginUrl, auth);
 }
+
+export const findOneById = async (id: string) => {
+    try {
+      const response = await authAxios.get(apiBase + "/user/" + id);
+      return response.data;
+    } catch (error) {
+      console.log(error);
+    }}

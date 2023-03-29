@@ -1,7 +1,7 @@
 import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
 import { fireEvent, render } from '@testing-library/react'
-import { UserButton } from '../components/UserButton'
+
 
 test('renders content', () => {
     // const userButton = {

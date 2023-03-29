@@ -31,8 +31,7 @@ export const QuestionButton = styled.button`
     font-size: 1.2em;
     color: ${theme.darkText}; 
     line-height: 1.3;
-    font-weight: 400; 
-    width: 100%;
+    font-weight: 400;
 `
 
 export const PurpleButton=styled(QuestionButton)`

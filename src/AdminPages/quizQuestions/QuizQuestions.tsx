@@ -3,10 +3,11 @@ import { Container, DarkText, GrayText, OrangeText, Row, RowRight, TextLeft } fr
 import Add from '../../assets/add.png'
 import Delete from '../../assets/delete.png'
 import Pencil from '../../assets/pencil.png'
-import { IconDiv, IconDivRight } from '../../components/icon/icon.style'
+import { IconDiv, IconDivButton, IconDivButtonRight, IconDivRight } from '../../components/icon/icon.style'
 import { AdminQuestionStyled } from '../../components/AdminQuestion/AdminQuestion.style'
 import Spacer from '../../components/Spacer/Spacer'
 import { getQuestions } from '../../services/questionServices'
+import { useNavigate } from 'react-router-dom'
 
 type Props = {}
 
@@ -19,11 +20,19 @@ const QuizQuestions = (props: Props) => {
     
     useEffect(() => {
     async function loadQuestions () {
-        const response = await questionServices();
+        const response = await getQuestions();
         setQuestions(response.data);
     };
     loadQuestions();
     }, [])
+
+    const navigate = useNavigate()
+
+    const handleClick = (question: QuestionsType, goTo: string) => {
+        sessionStorage.setItem("question", question._id)
+        console.log("set: ", sessionStorage.getItem("question"))
+        navigate(goTo)
+    }
 
   return (
     <Container>
@@ -31,21 +40,19 @@ const QuizQuestions = (props: Props) => {
 
         <Row>
             <h3><OrangeText>Quiz onboarding</OrangeText></h3>
-            <IconDiv><img src={Add}></img></IconDiv>
+            <IconDivButton onClick={() => navigate("/admin/question/post")}><img src={Add} /></IconDivButton>
         </Row>
 
         <TextLeft><h2>Sección 1: Normativa</h2></TextLeft>
 
         {questions.filter((question)=>question.section == "Sección 1 - Compromisos").map((question, index)=>(
-            <>
-                <AdminQuestionStyled className='purple'>
-                    <DarkText>{question.question}</DarkText>
-                    <RowRight>
-                        <IconDivRight><img src={Delete}/></IconDivRight>
-                        <IconDivRight><img src={Pencil}/></IconDivRight>
-                    </RowRight>
-                </AdminQuestionStyled>
-            </>
+            <AdminQuestionStyled className='purple' key={index}>
+                <DarkText>{question.question}</DarkText>
+                <RowRight>
+                    <IconDivButtonRight onClick={() => {handleClick(question, "/admin/question/delete")}}><img src={Delete}/></IconDivButtonRight>
+                    <IconDivButtonRight onClick={() => {handleClick(question, "/admin/question/edit")}}><img src={Pencil}/></IconDivButtonRight>
+                </RowRight>
+            </AdminQuestionStyled>
         ))}
         
         <Spacer size={40} axis='vertical' />
@@ -53,15 +60,13 @@ const QuizQuestions = (props: Props) => {
         <TextLeft><h2>Sección 2: El bootcamp</h2></TextLeft>
 
         {questions.filter((question)=>question.section == "Sección 2 - ¿Qué puedes esperarte del bootcamp?").map((question, index)=>(
-            <>
-                <AdminQuestionStyled className='blue'>
-                    <DarkText>{question.question}</DarkText>
-                    <RowRight>
-                        <IconDivRight><img src={Delete}/></IconDivRight>
-                        <IconDivRight><img src={Pencil}/></IconDivRight>
-                    </RowRight>
-                </AdminQuestionStyled>
-            </>
+            <AdminQuestionStyled className='blue' key={index}>
+                <DarkText>{question.question}</DarkText>
+                <RowRight>
+                    <IconDivButtonRight><img src={Delete}/></IconDivButtonRight>
+                    <IconDivButtonRight><img src={Pencil}/></IconDivButtonRight>
+                </RowRight>
+            </AdminQuestionStyled>
         ))}
 
         <Spacer size={40} axis='vertical' />
@@ -69,15 +74,13 @@ const QuizQuestions = (props: Props) => {
         <TextLeft><h2>Sección 3: Después del bootcamp</h2></TextLeft>
 
         {questions.filter((question)=>question.section == "Sección 3 - ¿Qué puedes esperarte al finalizar el bootcamp?").map((question, index)=>(
-            <>
-                <AdminQuestionStyled className='pink'>
-                    <DarkText>{question.question}</DarkText>
-                    <RowRight>
-                        <IconDivRight><img src={Delete}/></IconDivRight>
-                        <IconDivRight><img src={Pencil}/></IconDivRight>
-                    </RowRight>
-                </AdminQuestionStyled>
-            </>
+            <AdminQuestionStyled className='pink' key={index}>
+                <DarkText>{question.question}</DarkText>
+                <RowRight>
+                    <IconDivButtonRight><img src={Delete}/></IconDivButtonRight>
+                    <IconDivButtonRight><img src={Pencil}/></IconDivButtonRight>
+                </RowRight>
+            </AdminQuestionStyled>
         ))}
     </Container>
   )

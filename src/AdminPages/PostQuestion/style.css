@@ -1,0 +1,91 @@
+.postquestionform{
+	display: flex;
+	flex-direction: column;
+	margin: 7rem 0 5rem 0;
+	width: 80vw;
+}
+
+.postquestionform > form{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.postquestionform > form > div{
+	display: flex;
+	flex-direction: column;
+}
+
+.postquestionform > form > div > input,
+.postquestionform > form > .feedback > textarea{
+	background-color: #FFE6DC;
+	color: black;
+	padding: 1rem 2rem;
+	margin: 0 0 1rem 0;
+	border: none;
+	border-radius: 15px;
+	width: 80vw;
+	min-width: 80vw;
+	max-width: 80vw;
+}
+
+
+.postquestionform > form > div textarea{
+	background-color: #FFE6DC;
+	color: black;
+	padding: 1rem 2rem;
+	margin: 0;
+	border: none;
+	border-radius: 15px;
+	width: 80vw;
+	min-width: 80vw;
+	max-width: 80vw;
+}
+
+.inputboxstyle{
+	color: black;
+	margin: 0 0 1rem 0;
+	border-radius: 15px;
+}
+
+.inputboxstyle > div{
+	display: flex;
+	flex-direction: row;
+}
+
+.inputboxstyle > div > label{
+	margin: 0 1rem;
+}
+
+.inputboxstyle > div > input{
+	margin: 0;
+}
+
+.postquestionform button{
+    background-color: #FF4700;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 0.3rem 3rem;
+    border-radius: 40px;
+    display: flex;
+    inline-size: fit-content;
+    margin-bottom: 1rem;
+}
+
+.iscorrectcheckbox{
+	display: flex;
+	flex-direction: row;
+	width: 80vw;
+}
+.iscorrectcheckbox input, .iscorrectcheckbox label{
+	margin: 0 .5rem 1rem .5rem;
+}
+
+.feedback textarea{
+	height: 150px;
+}
+
+label, p{
+	margin: 0;
+}

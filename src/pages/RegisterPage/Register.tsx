@@ -1,13 +1,17 @@
 import React, { useState, FormEvent } from 'react'
-import SubmitButton from '../../components/SubmitButton/SubmitButton'
-import { Form, Input, Select, Div } from './Register.styled'
+import { useNavigate } from 'react-router-dom'
+import { Input, OrangeText } from '../../Global.style'
+import { Form, Select, Div } from './Register.styled'
 import { P2p, Myspan } from "../Login/LoginStyle"
 import { Link } from 'react-router-dom'
 import { postUserRequest } from "../../services/userServices"
+import { SubmitButton } from '../../components'
+
 
 type Props = {}
 
 const Register = (props: Props) => {
+  const navigate = useNavigate()
 
   const [post, setPost] = useState({
     "name": "",
@@ -24,6 +28,7 @@ const Register = (props: Props) => {
       .catch()
       .then((response) => {
         console.log(response)
+        navigate('/login')
     })
       .catch(err => console.log(err))
   };
@@ -78,9 +83,9 @@ const Register = (props: Props) => {
             <option value='Norte Online'>Norte Online</option>
             </datalist>
           
-        <SubmitButton type="submit"/>
+        <SubmitButton />
         </Form>
-       <P2p>¿Ya tienes una cuenta?<Myspan><Link to="/login"> Accede</Link> </Myspan></P2p>
+       <P2p>¿Ya tienes una cuenta? <OrangeText><Link to="/login">Accede</Link> </OrangeText></P2p>
        
     </Div>
   )

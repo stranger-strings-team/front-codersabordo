@@ -1,41 +1,47 @@
-import React, {useEffect, useState} from 'react'
-import { QuestionButton } from '../../components/QuestionButton/questionButton.style'
+import React, {useEffect, useRef, useState} from 'react'
 import { ParagraphContainer, AnswerImage, Container, DarkText, GlobalStyles, OrangeText, theme } from '../../Global.style'
-import correct from '../../assets/correct.png'
 import { getQuestions } from '../../services/questionServices'
-import { ThoughtBubbleStyled } from '../../components/ThoughtBubble/ThoughtBubble.style'
-import { NextButton } from '../../components/NextButton'
-import  Incorrecta  from '../../assets/incorrecta.png'
 import { getColor } from './Onboarding.style'
-import { InGameNavbar } from '../../components/navbar/InGameNavbar'
-import { BackButton } from '../../components/BackButton'
 import "./style.css"
 import { RetryButton } from '../../components/RetryButton/RetryButton'
-import { SubmitAnswerButton } from '../../components/SubmitAnswerButton/SubmitAnswerButton'
+import { useNavigate, useParams } from 'react-router-dom'
+import AuthContext from '../../userContext'
+import jwt_decode from "jwt-decode"
+import { findOneById, patchUserRequest } from '../../services/userServices'
+import { BackButton, NextButton, SubmitAnswerButton, ThoughtBubbleStyled } from '../../components'
+import { QuestionButton } from '../../components/QuestionButton/questionButton.style'
+import { Correct, Incorrecta } from '../../assets'
 
-type Props = {};
 
-type QuestionsType = {_id: string, question:string, answer:[{text:string, isCorrect:boolean}], type:string, section:string, feedbackCorrect:string, feedbackIncorrect:string}
+export type QuestionsType = {_id: string, question:string, answer:[{text:string, isCorrect:boolean}], type:string, section:string, feedbackCorrect:string, feedbackIncorrect:string}
 
-const sectionName = [
+type User = {
+  progress: [boolean]
+}
+
+export const sectionName = [
   "Sección 1 - Compromisos",
   "Sección 2 - ¿Qué puedes esperarte del bootcamp?",
   "Sección 3 - ¿Qué puedes esperarte al finalizar el bootcamp?"
 ]
 
-function Onboarding (props: Props) {
+const Onboarding = () => {
 
-  const [first, setFirst] = useState(false)
+  let sectionIndex: number;
 
-  const [second, setSecond] = useState(false)
+  const params = useParams()
 
-  const [third, setThird] = useState(false)
+  const navigate = useNavigate()
 
-  const [fourth, setFourth] = useState(false)
+  if(params.section != undefined) {
+    sectionIndex = parseInt(params.section)
+  } else {
+    sectionIndex = 0;
+  }
 
   const [questions, setQuestions] = useState<QuestionsType[]>([])
 
-  const filteredQuestions = questions.filter((question)=>question.section == sectionName[0])
+  const filteredQuestions = questions.filter((question)=>question.section == sectionName[sectionIndex])
 
   const [feedback, setFeedback] = useState(false);
 
@@ -45,13 +51,19 @@ function Onboarding (props: Props) {
 
   const [questionIndex, setQuestionIndex] = useState(0)
 
+  const [dataProgress, setDataProgress] = useState({
+    progress: []
+  })
+
+  const [userProgress, setUserProgress] = useState([false, false, false])
+
+  const [id, setId] = useState("6411d0d751f84eb36a7c8cb2")
+
+  const feedbackRef = useRef<null | HTMLDivElement>(null)
+
   const handleCheck = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, isCorrect: boolean, index: number) => {
     checked[index] = !checked[index];
     setChecked([...checked])
-  }
-
-  const handleFeedback = () => {
-    setFeedback(!feedback)
   }
 
   const handleBack = (i: number) =>{
@@ -63,6 +75,12 @@ function Onboarding (props: Props) {
     }
   }
 
+  const handleScroll = (ref: any) => {
+    ref.current?.scrollIntoView({
+      behavior: "smooth"
+    })
+  }
+
   const handleSubmit = (question: QuestionsType, index: number) => {
     const actualAnswers: boolean[] = []
     question.answer.forEach(answer => {
@@ -72,33 +90,70 @@ function Onboarding (props: Props) {
         actualAnswers.push(true)
       }
     })
-    console.log("selected answers: ", checked)
-    console.log("correct answers: ", actualAnswers)
-    setFeedback(true)
+    // console.log("selected answers: ", checked)
+    // console.log("correct answers: ", actualAnswers)
     if(checked.toString() == actualAnswers.toString()) {
-      console.log("correct!")
+      // console.log("correct!")
       setCorrectFeedback(true)
     } else {
-      console.log("wrong!")
+      // console.log("wrong!")
       setCorrectFeedback(false)
     }
+    setFeedback(true)
+    handleScroll(feedbackRef)
   }
 
   const retry = () => {
+    setChecked([false, false, false, false])
     setFeedback(false)
   }
-
+ 
   const handleNext = (i: number) => {
     if (feedback == true){
       if (questionIndex >= filteredQuestions.length-1){
-        setQuestionIndex(questionIndex)
-      } else if (false) {
-
+        handleProgress()
+        if(sectionIndex == 2 && questionIndex >= filteredQuestions.length-1){
+          navigate("/final")
+        } else {
+          navigate("/completed-section")
+        }
       } else {
         setFeedback(false)
+        setChecked([false, false, false, false])
         setQuestionIndex(questionIndex+1)
       }
     }
+  }
+
+  useEffect(() => {
+    async function getLoggedUser () {
+      const token = sessionStorage.getItem("access_token")
+      if(!token){
+        console.log("no token found")
+        return "6411d0d751f84eb36a7c8cb2"
+      }
+      const decodedToken: {email: string; sub: string; roles: string[]} = jwt_decode(token)
+      setId(decodedToken.sub)
+    }
+  getLoggedUser();
+  }, [])
+
+  const handleProgress = async () => {
+    const userData = findOneById(id)
+    /* setDataProgress(userData) */
+    if (sectionIndex >= 0) {
+      userProgress[sectionIndex] = true;
+      setUserProgress([...userProgress])
+    } else if (sectionIndex >= 1) {
+      userProgress[sectionIndex] = true;
+      setUserProgress([...userProgress])
+    } else if (sectionIndex >= 2) {
+      userProgress[sectionIndex] = true;
+      setUserProgress([...userProgress])
+    }
+    console.log("progress: ", userProgress)
+    console.log("user: ", userData)
+    patchUserRequest(id, {progress: userProgress})
   }
 
   useEffect(() => {
@@ -112,28 +167,10 @@ function Onboarding (props: Props) {
   return (
     <>
       {filteredQuestions.filter((question, index)=>index == questionIndex).map((question, index)=>(
-
         <Container key={index}>
 
-          <h3>{question.question}</h3>
+          <h2>{question.question}</h2>
           <form className="answersform">
-              {/* {question.answer.map((answer, index) => (
-
-                <label 
-                onClick={(event) => handleCheck(event, answer.isCorrect, index)}
-                className={ `answerbox ${getColor(index)} ${checked[index] ? "checked" : ""}`}
-                key={index}  >
-                  <span>
-                    {answer.text}
-                  </span>
-                  <input
-                    name={"answer"+index}
-                    type='checkbox'
-                    key={index}>
-                  </input>
-                </label>
-
-              ))} */}
               {question.answer.map((answer, index) => (
               <QuestionButton 
                 type="button"
@@ -145,11 +182,11 @@ function Onboarding (props: Props) {
               </QuestionButton>
             ))}
           </form>
-
+          <div ref={feedbackRef}></div>
               {feedback ? (
                 correctFeedback ? (
                   <>
-                    <AnswerImage src={correct}></AnswerImage>
+                    <AnswerImage src={Correct}></AnswerImage>
                     <ThoughtBubbleStyled>
                     <h4><OrangeText>¡Muy bien!</OrangeText></h4>
                     <DarkText>{question.feedbackCorrect}</DarkText>

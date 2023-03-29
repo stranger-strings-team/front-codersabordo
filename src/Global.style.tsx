@@ -19,6 +19,8 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0; 
     box-sizing: border-box; 
     text-decoration: none;
+    color: ${theme.darkText};
+    scroll-behavior: smooth 5s;
   }
 
   body{
@@ -30,7 +32,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   main{
-    margin: 80px 0px;
+    margin: 80px 0 40px 0;
   }
 
   h1{
@@ -41,12 +43,19 @@ export const GlobalStyles = createGlobalStyle`
     margin-bottom: 1rem;
   }
 
+  h2{
+    font-size: 1.60rem;
+    color: ${theme.darkText};
+    font-weight: 700;
+    margin: 1rem 0 2rem 0;
+    padding: 0 0.8rem
+  }
 
   h3{
     font-size: 1.60rem;
     color: ${theme.darkText};
     font-weight: 700;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
     padding: 0 0.8rem
   }
 
@@ -88,7 +97,9 @@ export const Container = styled.div`
   display:flex; 
   flex-direction: column;
   width:90vw;
-  margin: 20px auto;
+  position: relative;
+  bottom: 0;
+  margin: 20px auto 0 auto;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -111,6 +122,14 @@ export const AnswerImage = styled.img`
   width: 10rem; 
   margin: 0 0 0 auto;
 `
+export const Input = styled.input`
+    background-color: #ffe6dc;
+    border-style: none;
+    border-radius: 10px;
+    height: 35px;
+    width: 200px;
+    padding: 10px;
+`
 
 
 /* ------------------ GENERAL TEXT STYLES -------------------*/
@@ -132,10 +151,12 @@ export const DarkText = styled.p`
   z-index: 10;
 `
 
-export const OrangeText = styled.p`
-  color: ${theme.orange}; 
+export const OrangeText = styled.span`
   font-weight: 700;
   display: inline;
+  &&&{
+    color: ${theme.orange}; 
+  }
 `
 
 export const TextLeft = styled.div`
