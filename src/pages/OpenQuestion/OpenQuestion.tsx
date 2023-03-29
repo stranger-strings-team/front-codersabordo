@@ -1,14 +1,13 @@
 import React, { FormEvent, useState } from 'react'
 import { Spacer } from '../../components';
 import { Container, OrangeText } from '../../Global.style';
-import { authUserRequest, patchUserRequest, patchUserResponse } from '../../services/userServices';
+import { authUserRequest, patchUserRequest } from '../../services/userServices';
 import { Button } from '../Login/LoginStyle';
 import { InputWrapper } from '../OpenQuestion/OpenQuestionStyle';
 
 //Falta terminar esta página
 
 const OpenQuestion = () => {
-  let token = '$2b$10$zKvHh6yVVrrzsmJJIerBhuiaV.ur57g7vB5XudnPX46XlqxQ8EWqW';
 
   const [answer, setAnswer] = useState({
     openQuestion: ""
@@ -17,10 +16,10 @@ const OpenQuestion = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
-    patchUserResponse(answer, "64202cd309433ad7bef61711", token)
+    patchUserRequest( "6421a0db9448e1c8dc9f0205", answer)
       .catch()
       .then((response) => {
-        console.log("submitted")
+        console.log(response)
       })
       .catch(err => console.log(err))
   };
