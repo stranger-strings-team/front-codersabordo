@@ -17,12 +17,12 @@ const OpenQuestion = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
-    patchUserRequest(post)
-      .catch()
-      .then((response) => {
-        console.log("submitted")
-      })
-      .catch(err => console.log(err))
+  //  patchUserRequest(post)
+   //   .catch()
+   //   .then((response) => {
+   //     console.log("submitted")
+   //   })
+   //   .catch(err => console.log(err))
   };
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {

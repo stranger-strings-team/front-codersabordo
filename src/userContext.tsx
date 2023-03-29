@@ -1,5 +1,5 @@
 import { useState, useEffect, createContext } from "react";
-import { findOneByEmail } from "./services/userServices"
+import { findOneById } from "./services/userServices"
 import jwt_decode from "jwt-decode";
 
 interface AuthContextType {
@@ -40,7 +40,7 @@ const AuthProvider: any = ({ children }: any): any => {
       };
 
       try {
-        const userData = await findOneByEmail(authData.email);
+        const userData = await findOneById(authData.email);
         delete userData.password;
         setAuth(userData);
       } catch (error) {
