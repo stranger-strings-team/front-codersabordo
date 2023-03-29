@@ -22,5 +22,5 @@ export const IconDivButton = styled.button`
 `
 
 export const IconDivButtonRight = styled(IconDivButton)`
-
+  margin: 1rem 0 0 0;
 `
