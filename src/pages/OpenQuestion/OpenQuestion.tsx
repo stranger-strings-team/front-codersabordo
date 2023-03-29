@@ -9,7 +9,7 @@ import { InputWrapper } from '../OpenQuestion/OpenQuestionStyle';
 //Falta terminar esta página
 
 const OpenQuestion = () => {
-const navigate = useNavigate()
+  const navigate = useNavigate()
   const [answer, setAnswer] = useState({
     openQuestion: ""
   })
