@@ -18,12 +18,19 @@ width:100%;
 background-color: ${theme.yellowBackground};
 display: grid;
 grid-template-columns: 2fr 1fr 1fr; 
-padding: 2px;
+padding: 6px;
 border-radius: 8px;
+align-items: center;
 `
 
 export const Padmin = styled.p`
 color: black;
 font-size: 0,5rem;
-font-weight: 20;    
+font-weight: 20;
+margin-top: 8px 8px;    
+`
+
+export const BinImg = styled.img`
+width: 1.6rem;  
+margin-top: 8px 8px;  
 `

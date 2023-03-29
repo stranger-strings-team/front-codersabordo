@@ -1,5 +1,5 @@
-import { Button, Input, InputDiv, Myspan, P1p, P2p } from '../Login/LoginStyle'
-import { Container} from '../../Global.style'
+import { Button, InputDiv, Myspan, P1p, P2p } from '../Login/LoginStyle'
+import { Container, Input, OrangeText} from '../../Global.style'
 import { Link, useNavigate } from 'react-router-dom'
 import React, { useState, FormEvent } from 'react'
 import { authUserRequest } from "../../services/userServices"
@@ -32,6 +32,11 @@ const Login = () => {
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPost({ ...post, [e.target.name]: e.target.value })
   };
+
+  const handleLogout = () => {
+    sessionStorage.removeItem('access_token');
+    navigate('/login');
+  };
 	
   return (
     <Container>
@@ -55,11 +60,11 @@ const Login = () => {
           autoComplete='off'
         />
        </InputDiv>
-       <P1p>¿Has olvidado tu contraseña?</P1p>
+       {/* <P1p>¿Has olvidado tu contraseña?</P1p> */}
        <Button type="submit">Inicia sesión</Button>
     </form>
        
-       <P2p>¿No tienes cuenta?<Myspan><Link to="/register">Regístrate</Link> </Myspan></P2p>
+       <P2p>¿No tienes cuenta? <OrangeText><Link to="/register">Regístrate</Link></OrangeText></P2p>
        
 
     </Container>

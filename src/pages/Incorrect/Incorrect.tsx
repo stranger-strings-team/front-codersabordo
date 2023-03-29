@@ -1,8 +1,8 @@
 import React from 'react'
-import { BlueButton, PurpleButton } from '../../components/QuestionButton/questionButton.style';
-import Incorrecta from '../../assets/incorrecta.png'
+import { Incorrecta } from '../../assets'
+import { NextButton } from '../../components'
+import { BlueButton, PurpleButton } from '../../components/QuestionButton/questionButton.style'
 import {Container, ParagraphContainer, DarkText} from '../../Global.style'
-import { NextButton } from '../../components/NextButton';
 
 
 type Props = {}
