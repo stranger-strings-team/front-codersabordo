@@ -55,12 +55,11 @@ const PostQuestionForm = () => {
 				</div>
 				<div>
 					<label htmlFor='section'>¿A qué sección pertenece?</label>
-					<input placeholder="Sección" name="section" list="section" onChange={handleInput} required/>
-					<datalist id="section">
+					<select placeholder="Sección" name="section" onChange={handleInput} required>
 						<option value="Sección 1 - Compromisos">Sección 1</option>
 						<option value="Sección 2 - ¿Qué puedes esperarte del bootcamp?">Sección 2</option>
 						<option value="Sección 3 - ¿Qué puedes esperarte al finalizar el bootcamp?">Sección 3</option>
-					</datalist>
+					</select>
 				</div>
 				<div>
 					<p>Respuestas</p>

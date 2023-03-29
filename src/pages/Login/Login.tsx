@@ -27,11 +27,17 @@ const Login = () => {
         sessionStorage.setItem("access_token", token);
         const decodedToken: {email: string; sub: string; roles: string[]} = jwt_decode(token)
         const user: any = findOneById(decodedToken.sub)
-        if (!user.openQuestion){
-          navigate("/open-question")
-        } else {
-          navigate("/roadmap")
-        }
+        findOneById(decodedToken.sub)
+          .catch()
+          .then((user) => {
+            console.log(user)
+            if (user.openQuestion != undefined){
+              navigate("/roadmap")
+            } else {
+              navigate("/open-question")
+            }
+          })
+          .catch(err => console.log(err))
       })
       .catch(err => console.log(err))
   };

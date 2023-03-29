@@ -1,58 +1,83 @@
-import React from 'react'
-import { OrangeText } from '../../Global.style'
+import React, { useEffect, useState } from 'react'
+import { Container, OrangeText } from '../../Global.style'
 import { Select } from '../../pages/RegisterPage/Register.styled'
-import { Div, StyledPadmin, StyledProfileAdminDiv, Table, ThHeader } from './CoderProgres.style'
+import { Div, StyledPadmin, StyledProfileAdminDiv, Table, ThHeader, Label, P } from './CoderProgres.style'
+import { getUsersRequest } from '../../services/userServices'
 
-type Props = {}
+type User = {
+  _id: string,
+  name: string,
+  surname: string
+  password: string,
+  email: string,
+  city: string,
+  roles: [string],
+  progress: [boolean],
+  openQuestion: string
+}
 
-const CoderProgres = (props: Props) => {
+const CoderProgres = () => {
+
+  const [users, setUsers] = useState<User[]>([])
+  
+  const [cityQuery, setCityQuery] = useState("Barcelona")
+
+  const filteredUsers = users.filter((user: User) => user.city == cityQuery)
+
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    console.log(e.target.value)
+    setCityQuery(e.target.value)
+  }
+
+  const getProgress = (user: User) => {
+    let progress = ""
+    user.progress.forEach((section, i) => {
+      if (section == true){
+        progress += (i+1+", ")
+      }
+      
+    });
+    return progress.slice(0, progress.length-2)
+  }
+
+  useEffect(() => {
+    const loadUsers = async () => {
+      getUsersRequest()
+        .catch()
+        .then((response) => {
+          setUsers(response.data)
+        })
+        .catch(err => console.log(err))
+    }
+    loadUsers()
+  }, [])
+
   return (
-    <div>
+    <Container>
       <Div>
-        <OrangeText>Progreso coders</OrangeText>
-        <Select placeholder='Escuela'>
-            <option value='Barcelona'>Barcelona</option>
-            <option value='Xixon'>Xixon</option>
-            <option value='Sevilla'>Sevilla</option>
-            <option value='Madrid'>Madrid</option>
-            <option value='Asturies'>Asturies</option>
-            <option value='Mérida'>Mérida</option>
-            <option value='Norte Online'>Norte Online</option>
-          </Select>
+        <P><OrangeText>Coders</OrangeText></P>
+        <Label htmlFor="city">Filtrar por ciudad</Label>
+        <Select name="city" placeholder='Escuela' onChange={(e) => handleChange(e)}>
+          <option value='Barcelona'>Barcelona</option>
+          <option value='Xixon'>Xixon</option>
+          <option value='Sevilla'>Sevilla</option>
+          <option value='Madrid'>Madrid</option>
+          <option value='Asturies'>Asturies</option>
+          <option value='Mérida'>Mérida</option>
+          <option value='Norte Online'>Norte Online</option>
+        </Select>
       </Div>
-        <Table>
-            <tr>
-              <ThHeader>Coders</ThHeader>
-              <ThHeader>Secciones completas</ThHeader>
-              <ThHeader>Fecha registro</ThHeader>
-            </tr>
-          </Table>
-            <StyledProfileAdminDiv>
-            <StyledPadmin>Arnau Minguez </StyledPadmin>
-            <StyledPadmin>20000</StyledPadmin>
-            <StyledPadmin>23/03/2023</StyledPadmin>
-            </StyledProfileAdminDiv>
-            <StyledProfileAdminDiv>
-            <StyledPadmin>Rosie Bradshaw </StyledPadmin>
-            <StyledPadmin>1, 2, 3</StyledPadmin>
-            <StyledPadmin>22/03/2023</StyledPadmin>
-            </StyledProfileAdminDiv>
-            <StyledProfileAdminDiv>
-            <StyledPadmin>Hel Aige </StyledPadmin>
-            <StyledPadmin>1, 2</StyledPadmin>
-            <StyledPadmin>21/03/2023</StyledPadmin>
-            </StyledProfileAdminDiv>
-            <StyledProfileAdminDiv>
-            <StyledPadmin>Sablina Angulo </StyledPadmin>
-            <StyledPadmin>1</StyledPadmin>
-            <StyledPadmin>20/03/2023</StyledPadmin>
-            </StyledProfileAdminDiv>
-            <StyledProfileAdminDiv>
-            <StyledPadmin>Sergi Alsina </StyledPadmin>
-            <StyledPadmin>0</StyledPadmin>
-            <StyledPadmin>19/03/2023</StyledPadmin>
-            </StyledProfileAdminDiv>
-    </div>
+      <Table>
+          <ThHeader>Coders</ThHeader>
+          <ThHeader>Secciones <br/>completas</ThHeader>
+      </Table>
+      {filteredUsers.map((user, index) => (
+        <StyledProfileAdminDiv key={index}>
+          <StyledPadmin>{user.name}</StyledPadmin>
+          <StyledPadmin>{getProgress(user)}</StyledPadmin>
+        </StyledProfileAdminDiv>
+      ))}
+    </Container>
   )
 }
 

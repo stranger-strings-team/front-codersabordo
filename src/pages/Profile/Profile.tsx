@@ -100,7 +100,7 @@ const Profile = () => {
         }
       }
       authenticateUser()
-    })
+    }, [])
 
   return (
     <Container>

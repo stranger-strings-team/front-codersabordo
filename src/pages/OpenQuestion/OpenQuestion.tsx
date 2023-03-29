@@ -1,26 +1,49 @@
-import React, { FormEvent, useState } from 'react'
+import React, { FormEvent, useEffect, useState } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom';
 import { Spacer } from '../../components';
 import { Container, OrangeText } from '../../Global.style';
-import { authUserRequest, patchUserRequest } from '../../services/userServices';
+import { authUserRequest, findOneById, patchUserRequest } from '../../services/userServices';
 import { Button } from '../Login/LoginStyle';
 import { InputWrapper } from '../OpenQuestion/OpenQuestionStyle';
+import jwt_decode from "jwt-decode"
 
-//Falta terminar esta página
 
 const OpenQuestion = () => {
   const navigate = useNavigate()
   const [answer, setAnswer] = useState({
     openQuestion: ""
   })
+  const [id, setId] = useState<string>("6411d0d751f84eb36a7c8cb2")
+
+  useEffect(() => {
+    const token = sessionStorage.getItem("access_token")
+    if(!token){
+      console.log("no token found")
+      return
+    }
+    const decodedToken: {email: string; sub: string; roles: string[]} = jwt_decode(token)
+      const getUser = async () => {
+      findOneById(decodedToken.sub)
+      .catch()
+      .then((user) => {
+        if(user._id == undefined){
+          setId("6411d0d751f84eb36a7c8cb2")
+        }
+        setId(user._id)
+        //console.log("id: ", id)
+      })
+      .catch(err => console.log(err))
+    }
+    getUser()
+  }, [])
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
-    patchUserRequest( "6421a0db9448e1c8dc9f0205", answer)
+    patchUserRequest(id , answer)
       .catch()
       .then((response) => { 
-        console.log(response)
+        //console.log(response)
         navigate("/roadmap")
       })
       .catch(err => console.log(err))

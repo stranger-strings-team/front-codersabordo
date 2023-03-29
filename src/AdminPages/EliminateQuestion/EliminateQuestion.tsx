@@ -18,9 +18,13 @@ const EliminateQuestion = () => {
   async function loadQuestion () {
     const id = sessionStorage.getItem("question");
     console.log("read: ", id)
-    const response = await getOneQuestion(id);
-    setQuestion(response.data);
-    sessionStorage.removeItem("question");
+    getOneQuestion(id)
+      .catch()
+      .then((res) => {
+        setQuestion(res.data)
+        sessionStorage.removeItem("question");
+      })
+      .catch(err => console.log(err))
   };
   loadQuestion();
   }, [])

@@ -14,7 +14,7 @@ const authAxios = axios.create({
 })
 
 export const getUsersRequest = async () => {
-    return authAxios.get(apiBase);
+    return authAxios.get(apiBase + "/user");
 }
 
 export const postUserRequest = async (user: Object) => {

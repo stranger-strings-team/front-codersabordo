@@ -17,6 +17,7 @@
 }
 
 .postquestionform > form > div > input,
+.postquestionform > form > div > select,
 .postquestionform > form > .feedback > textarea{
 	background-color: #FFE6DC;
 	color: black;
@@ -82,10 +83,22 @@
 	margin: 0 .5rem 1rem .5rem;
 }
 
+.feedback{
+	margin: 1.5rem 0 0 0;
+}
+
 .feedback textarea{
 	height: 150px;
 }
 
-label, p{
+.postquestionform label, .postquestionform p{
 	margin: 0;
+}
+
+.postquestionform p{
+	margin: 1.5rem 0 0 0;
+}
+
+.postquestionform > form > div > label, .postquestionform p{
+	font-weight: 600;
 }
