@@ -1,8 +1,10 @@
 import React from 'react'
-import Confeti from '../../assets/confeti.png'
 import { Container, OrangeText, ParagraphContainer } from '../../Global.style'
 import { MyConfeti } from './FinalStyle'
 import canvasConfetti from 'canvas-confetti';
+import { OrangeButton } from '../../components';
+import { useNavigate } from 'react-router-dom';
+import { Confeti } from '../../assets';
 
 
 type Props = {}
@@ -14,8 +16,11 @@ const Final = (props: Props) => {
       spread: 150,
       origin: { y: 0.6 },
     });
-   
-  
+  } 
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/roadmap')
   }
   return (
     <Container>
@@ -25,6 +30,9 @@ const Final = (props: Props) => {
   
       <MyConfeti src={Confeti} alt="celebration with confeti" onLoad={activarAnimacion} />
       <canvas id="canvas"></canvas>
+
+      <OrangeButton onClick={handleClick}/>
+
     
     </Container>
   )

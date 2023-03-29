@@ -1,7 +1,6 @@
 import React from 'react'
-import Rain from '../../assets/rain.png'
-import { NextButton } from '../../components/NextButton'
-import Spacer from '../../components/Spacer/Spacer'
+import { Rain } from '../../assets'
+import { NextButton, Spacer } from '../../components'
 import { Container } from '../../Global.style'
 
 type Props = {}

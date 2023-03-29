@@ -14,7 +14,7 @@ const Roadmap = () => {
     const redirect = (section: number) => {
         console.log("sección: ", section+1)
         setSectionIndex(section)
-        navigate("/onboarding")
+        navigate(`/onboarding/${section}`)
     }
 
     return (

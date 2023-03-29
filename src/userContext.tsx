@@ -1,5 +1,5 @@
 import { useState, useEffect, createContext } from "react";
-import { findOneByEmail } from "./services/userServices"
+import { findOneById } from "./services/userServices"
 import jwt_decode from "jwt-decode";
 
 interface AuthContextType {
@@ -8,9 +8,9 @@ interface AuthContextType {
 }
 
 interface User {
-  username: string;
   email: string;
-  id: string;
+  _id: string;
+  roles: [string]
 }
 
 export const AuthContext = createContext<AuthContextType>({
@@ -29,19 +29,18 @@ const AuthProvider: any = ({ children }: any): any => {
         return;
       }
 
-      const decodedToken: { username: string; email: string; id: string } =
+      const decodedToken: { email: string; _id: string, roles: [string] } =
         jwt_decode(token);
       console.log("AuthProvider, from token: " + decodedToken.email);
       console.log("AuthProvider, from auth: " + auth?.email);
 
       const authData = {
-        username: decodedToken.username,
         email: decodedToken.email,
-        id: decodedToken.id,
+        roles: decodedToken.roles
       };
 
       try {
-        const userData = await findOneByEmail(authData.email);
+        const userData = await findOneById(authData.email);
         delete userData.password;
         setAuth(userData);
       } catch (error) {

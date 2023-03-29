@@ -1,9 +1,10 @@
 const PostTextInput = ({ onChange }: any) => {
 	return(
-	<div>
+	<div className="inputboxstyle">
+		<label htmlFor="text"></label>
 		<input 
 			type="text"
-			name="questionanswer1"
+			name="text"
 			placeholder="Escribe una respuesta"
 			autoComplete="off"
 			onChange={onChange}
@@ -12,10 +13,10 @@ const PostTextInput = ({ onChange }: any) => {
 		<div>
 			<input
 				type="checkbox"
-				name="iscorrect"
-				value="iscorrect"
+				name="isCorrect"
+				value="isCorrect"
 			/>
-			<label name="iscorrect">
+			<label htmlFor="isCorrect">
 				¿Es correcta?
 			</label>
 		</div>
