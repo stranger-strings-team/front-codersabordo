@@ -1,4 +1,5 @@
 import React, { FormEvent, useState } from 'react'
+import { Navigate, useNavigate } from 'react-router-dom';
 import { Spacer } from '../../components';
 import { Container, OrangeText } from '../../Global.style';
 import { authUserRequest, patchUserRequest } from '../../services/userServices';
@@ -8,7 +9,7 @@ import { InputWrapper } from '../OpenQuestion/OpenQuestionStyle';
 //Falta terminar esta página
 
 const OpenQuestion = () => {
-
+const navigate = useNavigate()
   const [answer, setAnswer] = useState({
     openQuestion: ""
   })
@@ -18,8 +19,9 @@ const OpenQuestion = () => {
 
     patchUserRequest( "6421a0db9448e1c8dc9f0205", answer)
       .catch()
-      .then((response) => {
+      .then((response) => { 
         console.log(response)
+        navigate("/roadmap")
       })
       .catch(err => console.log(err))
   };
@@ -27,6 +29,7 @@ const OpenQuestion = () => {
   const handleInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setAnswer({ openQuestion: e.target.value })
   };
+
   return (
     
     <Container>

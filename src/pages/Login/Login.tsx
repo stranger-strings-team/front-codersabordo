@@ -2,7 +2,8 @@ import { Button, InputDiv, Myspan, P1p, P2p } from '../Login/LoginStyle'
 import { Container, Input, OrangeText} from '../../Global.style'
 import { Link, useNavigate } from 'react-router-dom'
 import React, { useState, FormEvent } from 'react'
-import { authUserRequest } from "../../services/userServices"
+import { authUserRequest, findOneById } from "../../services/userServices"
+import jwt_decode from "jwt-decode"
 
 const Login = () => {
 	let token;
@@ -24,7 +25,13 @@ const Login = () => {
         token = response.data.access_token;
         // console.log("access_token: ", token);
         sessionStorage.setItem("access_token", token);
-        navigate("/roadmap")
+        const decodedToken: {email: string; sub: string; roles: string[]} = jwt_decode(token)
+        const user: any = findOneById(decodedToken.sub)
+        if (!user.openQuestion){
+          navigate("/open-question")
+        } else {
+          navigate("/roadmap")
+        }
       })
       .catch(err => console.log(err))
   };
