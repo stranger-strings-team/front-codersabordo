@@ -10,17 +10,17 @@ type Props = {
 export const UserButton = (props: Props) => {
     const { loggedInUser } = props;
     return (
-        <IconDiv>
+        <>
             {loggedInUser && 
-                <Button href="/profile">
+                <Button to="/profile">
                     <img src={User}/>
                 </Button>
             }
             {!loggedInUser &&
-                <Button href="/login">
+                <Button to="/login">
                     <img src={User}/>
                 </Button>
             }
-        </IconDiv>
+        </>
     )
 }

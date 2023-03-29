@@ -3,7 +3,7 @@ import { Container, DarkText, GrayText, OrangeText, Row, RowRight, TextLeft } fr
 import Add from '../../assets/add.png'
 import Delete from '../../assets/delete.png'
 import Pencil from '../../assets/pencil.png'
-import { IconDiv, IconDivRight } from '../../components/icon/icon.style'
+import { IconDiv, IconDivButton, IconDivButtonRight, IconDivRight } from '../../components/icon/icon.style'
 import { AdminQuestionStyled } from '../../components/AdminQuestion/AdminQuestion.style'
 import Spacer from '../../components/Spacer/Spacer'
 import { getQuestions } from '../../services/questionServices'
@@ -40,7 +40,7 @@ const QuizQuestions = (props: Props) => {
 
         <Row>
             <h3><OrangeText>Quiz onboarding</OrangeText></h3>
-            <IconDiv onClick={() => navigate("/admin/question/post")}><img src={Add} /></IconDiv>
+            <IconDivButton onClick={() => navigate("/admin/question/post")}><img src={Add} /></IconDivButton>
         </Row>
 
         <TextLeft><h2>Sección 1: Normativa</h2></TextLeft>
@@ -49,8 +49,8 @@ const QuizQuestions = (props: Props) => {
             <AdminQuestionStyled className='purple' key={index}>
                 <DarkText>{question.question}</DarkText>
                 <RowRight>
-                    <IconDivRight onClick={() => {handleClick(question, "/admin/question/delete")}}><img src={Delete}/></IconDivRight>
-                    <IconDivRight onClick={() => {handleClick(question, "/admin/question/edit")}}><img src={Pencil}/></IconDivRight>
+                    <IconDivButtonRight onClick={() => {handleClick(question, "/admin/question/delete")}}><img src={Delete}/></IconDivButtonRight>
+                    <IconDivButtonRight onClick={() => {handleClick(question, "/admin/question/edit")}}><img src={Pencil}/></IconDivButtonRight>
                 </RowRight>
             </AdminQuestionStyled>
         ))}
@@ -63,8 +63,8 @@ const QuizQuestions = (props: Props) => {
             <AdminQuestionStyled className='blue' key={index}>
                 <DarkText>{question.question}</DarkText>
                 <RowRight>
-                    <IconDivRight><img src={Delete}/></IconDivRight>
-                    <IconDivRight><img src={Pencil}/></IconDivRight>
+                    <IconDivButtonRight><img src={Delete}/></IconDivButtonRight>
+                    <IconDivButtonRight><img src={Pencil}/></IconDivButtonRight>
                 </RowRight>
             </AdminQuestionStyled>
         ))}
@@ -77,8 +77,8 @@ const QuizQuestions = (props: Props) => {
             <AdminQuestionStyled className='pink' key={index}>
                 <DarkText>{question.question}</DarkText>
                 <RowRight>
-                    <IconDivRight><img src={Delete}/></IconDivRight>
-                    <IconDivRight><img src={Pencil}/></IconDivRight>
+                    <IconDivButtonRight><img src={Delete}/></IconDivButtonRight>
+                    <IconDivButtonRight><img src={Pencil}/></IconDivButtonRight>
                 </RowRight>
             </AdminQuestionStyled>
         ))}

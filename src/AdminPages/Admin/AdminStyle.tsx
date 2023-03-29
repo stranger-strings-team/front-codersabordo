@@ -3,10 +3,8 @@ import { GlobalStyles, theme } from '../../Global.style'
 import { Link } from "react-router-dom";
 
 
-export const DarkText = styled.h3`
- font-size: 0.6rem;
- color: ${theme.darkText};
- font-weight: 200;
+export const H3 = styled.h3`
+    margin: 0 0 2rem 0;
 `
 
 export const StyledLink = styled(Link)`

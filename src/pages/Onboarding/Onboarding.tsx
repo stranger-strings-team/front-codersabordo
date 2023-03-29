@@ -169,7 +169,7 @@ const Onboarding = () => {
       {filteredQuestions.filter((question, index)=>index == questionIndex).map((question, index)=>(
         <Container key={index}>
 
-          <h3>{question.question}</h3>
+          <h2>{question.question}</h2>
           <form className="answersform">
               {question.answer.map((answer, index) => (
               <QuestionButton 

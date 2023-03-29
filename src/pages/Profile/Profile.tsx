@@ -106,15 +106,15 @@ const Profile = () => {
     <Container>
       <h3><OrangeText>Tu perfil</OrangeText></h3>
         <img src={Profiles} alt="user photo"/>
-        <Spacer size={12} axis='vertical' />
+        {/* <Spacer size={12} axis='vertical' /> */}
         <h3><DarkText>{user.name}</DarkText></h3>
         <InputDiv>
           <label htmlFor='nombre'></label>
-          <Input type="text" value={user.name} name="nombre"/>
+          <Input type="text" defaultValue={user.name} name="nombre"/>
           <label htmlFor='apellidos'></label>
-          <Input type="text" value={user.surname} name="apellidos"/>
+          <Input type="text" defaultValue={user.surname} name="apellidos"/>
           <label htmlFor='email'></label>
-          <Input type="email" value={user.email} name="email"/>
+          <Input type="email" defaultValue={user.email} name="email"/>
         </InputDiv>
         <p><Link to="/create-password">Cambiar contraseña</Link></p>
         <Button onClick={handlerLogout}>Cerrar sesión</Button>

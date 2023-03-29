@@ -43,12 +43,19 @@ export const GlobalStyles = createGlobalStyle`
     margin-bottom: 1rem;
   }
 
+  h2{
+    font-size: 1.60rem;
+    color: ${theme.darkText};
+    font-weight: 700;
+    margin: 1rem 0 2rem 0;
+    padding: 0 0.8rem
+  }
 
   h3{
     font-size: 1.60rem;
     color: ${theme.darkText};
     font-weight: 700;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
     padding: 0 0.8rem
   }
 
