@@ -25,17 +25,13 @@ const Login = () => {
         // console.log("access_token: ", token);
         sessionStorage.setItem("access_token", token);
         navigate("/roadmap")
+        location.reload()
       })
       .catch(err => console.log(err))
   };
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPost({ ...post, [e.target.name]: e.target.value })
-  };
-
-  const handleLogout = () => {
-    sessionStorage.removeItem('access_token');
-    navigate('/login');
   };
 	
   return (

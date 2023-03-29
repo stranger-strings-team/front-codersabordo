@@ -5,7 +5,6 @@ import { getColor } from './Onboarding.style'
 import "./style.css"
 import { RetryButton } from '../../components/RetryButton/RetryButton'
 import { useNavigate, useParams } from 'react-router-dom'
-import AuthContext from '../../userContext'
 import jwt_decode from "jwt-decode"
 import { findOneById, patchUserRequest } from '../../services/userServices'
 import { BackButton, NextButton, SubmitAnswerButton, ThoughtBubbleStyled } from '../../components'
@@ -13,10 +12,17 @@ import { QuestionButton } from '../../components/QuestionButton/questionButton.s
 import { Correct, Incorrecta } from '../../assets'
 
 
-export type QuestionsType = {_id: string, question:string, answer:[{text:string, isCorrect:boolean}], type:string, section:string, feedbackCorrect:string, feedbackIncorrect:string}
-
-type User = {
-  progress: [boolean]
+export type QuestionsType = {
+  _id: string, 
+  question: string, 
+  answer: [{
+    text: string, 
+    isCorrect: boolean
+  }], 
+  type: string, 
+  section: string, 
+  feedbackCorrect: string, 
+  feedbackIncorrect: string
 }
 
 export const sectionName = [
@@ -50,10 +56,6 @@ const Onboarding = () => {
   const [checked, setChecked] = useState([false, false, false, false])
 
   const [questionIndex, setQuestionIndex] = useState(0)
-
-  const [dataProgress, setDataProgress] = useState({
-    progress: []
-  })
 
   const [userProgress, setUserProgress] = useState([false, false, false])
 
@@ -127,13 +129,20 @@ const Onboarding = () => {
 
   useEffect(() => {
     async function getLoggedUser () {
-      const token = sessionStorage.getItem("access_token")
+      let token = sessionStorage.getItem("access_token")
       if(!token){
         console.log("no token found")
-        return "6411d0d751f84eb36a7c8cb2"
+        token = "6411d0d751f84eb36a7c8cb2"
       }
       const decodedToken: {email: string; sub: string; roles: string[]} = jwt_decode(token)
       setId(decodedToken.sub)
+      findOneById(id)
+        .catch()
+        .then((response) => {
+          //console.log("res", response.progress)
+          setUserProgress(response.progress)
+        })
+        .catch(err => console.log(err))
     }
   getLoggedUser();
   }, [])
@@ -151,15 +160,19 @@ const Onboarding = () => {
       userProgress[sectionIndex] = true;
       setUserProgress([...userProgress])
     }
-    console.log("progress: ", userProgress)
-    console.log("user: ", userData)
+    // console.log("progress: ", userProgress)
+    // console.log("user: ", userData)
     patchUserRequest(id, {progress: userProgress})
   }
 
   useEffect(() => {
   async function loadQuestions () {
-      const response = await getQuestions();
-      setQuestions(response.data);
+      getQuestions()
+        .catch()
+        .then((response) => {
+          setQuestions(response.data)
+        })
+        .catch(err => console.log(err))
     };
   loadQuestions();
   }, [])
