@@ -4,7 +4,7 @@ import Spacer from '../../components/Spacer/Spacer';
 import { Container, OrangeText } from '../../Global.style';
 import { authUserRequest, patchUserRequest, patchUserResponse } from '../../services/userServices';
 import { Button } from '../Login/LoginStyle';
-import { InputQuestion } from '../OpenQuestion/OpenQuestionStyle';
+import { InputWrapper } from '../OpenQuestion/OpenQuestionStyle';
 
 //Falta terminar esta página
 
@@ -26,7 +26,7 @@ const OpenQuestion = () => {
       .catch(err => console.log(err))
   };
 
-  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setAnswer({ openQuestion: e.target.value })
   };
   return (
@@ -34,7 +34,14 @@ const OpenQuestion = () => {
     <Container>
           <h3><OrangeText>Una pregunta antes de empezar,</OrangeText><br></br> ¿Qué expectativas tienes de este bootcamp?</h3>
           <form onSubmit={handleSubmit}>
-          <InputQuestion type="text" name="openQuestion" onChange={handleInput} />
+          <label htmlFor="openQuestion"></label>
+          <InputWrapper name="openQuestion"
+							placeholder="Escribe tu respuesta..."
+							autoComplete="off"
+							onChange={(event)=>handleInput(event)}
+							required>
+        
+          </InputWrapper> 
           <Spacer size={45} axis='vertical' />
           <Button type="submit">Enviar</Button>
           </form>

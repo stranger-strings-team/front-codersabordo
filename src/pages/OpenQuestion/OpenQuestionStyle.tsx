@@ -6,7 +6,7 @@ export const Container = styled.div`
     flex-direction: column;
 `
 
-export const InputQuestion = styled.input`
+export const InputWrapper = styled.textarea`
     border-radius: 8px;
     background-color: ${theme.inputBackground};
     border: none;
@@ -14,4 +14,6 @@ export const InputQuestion = styled.input`
     width:70vw;
     height: 200px;
     margin: 20px auto;
+    padding: 10px;
 `
+
