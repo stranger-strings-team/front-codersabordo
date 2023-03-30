@@ -7,6 +7,5 @@ export const Button = styled(Link)`
     align-items: center;
     background: none;
     padding: 0;
-    margin: 1rem;
     border: 0;
 `

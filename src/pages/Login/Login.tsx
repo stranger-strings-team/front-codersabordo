@@ -31,8 +31,8 @@ const Login = () => {
           .catch()
           .then((user) => {
             console.log(user)
-            if (user.openQuestion != undefined){
-              navigate("/roadmap")
+            if (user.openQuestion != undefined || user.roles.includes("Admin")){
+              navigate("/profile")
               location.reload()
             } else {
               navigate("/open-question")
