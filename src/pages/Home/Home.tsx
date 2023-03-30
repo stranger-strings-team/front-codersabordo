@@ -14,7 +14,6 @@ const Home = (props: Props) => {
         <MyLogo src={Logo} alt="Logo-F5"/>
         <Myh1>CODERS A BORDO</Myh1>
         <ButtonVamos/>
-        <ButtonInfo/>
 
     </MainDiv>
   )

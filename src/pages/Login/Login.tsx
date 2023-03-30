@@ -33,8 +33,10 @@ const Login = () => {
             console.log(user)
             if (user.openQuestion != undefined){
               navigate("/roadmap")
+              location.reload()
             } else {
               navigate("/open-question")
+              location.reload()
             }
           })
           .catch(err => console.log(err))
