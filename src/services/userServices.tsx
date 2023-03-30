@@ -25,6 +25,10 @@ export const patchUserRequest = async (id: string, user: Object) => {
     return authAxios.patch(apiBase + `/user/${id}`, user);
 }
 
+export const deleteUserById = async (id: string) => {
+  return authAxios.delete(apiBase + `/user/${id}`)
+}
+
 export const authUserRequest = async (auth: Object) => {
     return authAxios.post(loginUrl, auth);
 }

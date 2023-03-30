@@ -5,11 +5,12 @@ import { Container, Input, OrangeText, TextLeft } from '../../Global.style'
 import { Button } from '../../pages/Login/LoginStyle'
 import { InputDiv } from '../../pages/Profile/ProfileStyle'
 import { BinImg, Padmin, ProfileAdminDiv, YellowDiv } from './ProfilesAdminStyle'
-import { getUsersRequest, postUserRequest } from "../../services/userServices"
+import { deleteUserById, getUsersRequest, postUserRequest } from "../../services/userServices"
 import { useNavigate } from "react-router-dom"
 
 
 type User = {
+    _id: string,
     name: string,
     surname: string,
     email: string,
@@ -40,14 +41,24 @@ const ProfilesAdmin = () => {
             .catch()
             .then((response) => {
                 console.log(response)
-                navigate("/admin")
+                location.reload()
             })
             .catch(err => console.log(err))
     }
 
     const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setUser({ ...user, [e.target.name]: e.target.value })
-  };
+        setUser({ ...user, [e.target.name]: e.target.value })
+    };
+
+    const deleteAdmin = (admin: User) => {
+        deleteUserById(admin._id)
+            .catch()
+            .then(() => {
+                console.log("deleted", admin)
+                location.reload()
+            })
+            .catch(err => console.log(err))
+    }
 
     useEffect(() => {
         const loadAdmins = async () => {
@@ -124,7 +135,7 @@ const ProfilesAdmin = () => {
             <ProfileAdminDiv key={index}>
                 <Padmin>{admin.name}</Padmin>
                 <Padmin>{admin.email}</Padmin>
-                <BinImg src={Delete}/>
+                <BinImg src={Delete} onClick={() => deleteAdmin(admin)}/>
             </ProfileAdminDiv>
         ))}
         </YellowDiv>
