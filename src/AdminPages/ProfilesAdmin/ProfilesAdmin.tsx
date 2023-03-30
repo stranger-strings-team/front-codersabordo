@@ -2,10 +2,10 @@ import React, { useState, useEffect, FormEvent } from 'react'
 import { Delete } from '../../assets'
 import { Spacer } from '../../components'
 import { Container, Input, OrangeText, TextLeft } from '../../Global.style'
-import { Button } from '../Login/LoginStyle'
-import { InputDiv } from '../Profile/ProfileStyle'
+import { Button } from '../../pages/Login/LoginStyle'
+import { InputDiv } from '../../pages/Profile/ProfileStyle'
 import { BinImg, Padmin, ProfileAdminDiv, YellowDiv } from './ProfilesAdminStyle'
-import { postUserRequest } from "../../services/userServices"
+import { getUsersRequest, postUserRequest } from "../../services/userServices"
 import { useNavigate } from "react-router-dom"
 
 
@@ -22,7 +22,7 @@ const ProfilesAdmin = () => {
 
     const navigate = useNavigate()
 
-    const [admins, setAdmins] = useState<User[]>()
+    const [admins, setAdmins] = useState<User[]>([])
 
     const [user, setUser] = useState({
         name: "",
@@ -54,6 +54,7 @@ const ProfilesAdmin = () => {
             getUsersRequest()
                 .catch()
                 .then((response) => {
+                    //console.log(response.data)
                     setAdmins(response.data)
                 })
                 .catch(err => console.log(err))
@@ -96,47 +97,36 @@ const ProfilesAdmin = () => {
                 onChange={handleInput}
                 placeholder='Contraseña' 
             />
-          <Input 
+            <Spacer size={0} axis={"horizontal"}/>
+            <Input 
               name="city" 
               type="text" 
               list="city" 
               placeholder='Escuela' 
               onChange={handleInput} 
               required 
-          />
-          <datalist id="city">
-            <option value='Barcelona'>Barcelona</option>
-            <option value='Xixon'>Xixon</option>
-            <option value='Sevilla'>Sevilla</option>
-            <option value='Madrid'>Madrid</option>
-            <option value='Asturies'>Asturies</option>
-            <option value='Mérida'>Mérida</option>
-            <option value='Norte Online'>Norte Online</option>
+            />
+            <datalist id="city">
+                <option value='Barcelona'>Barcelona</option>
+                <option value='Xixon'>Xixon</option>
+                <option value='Sevilla'>Sevilla</option>
+                <option value='Madrid'>Madrid</option>
+                <option value='Asturies'>Asturies</option>
+                <option value='Mérida'>Mérida</option>
+                <option value='Norte Online'>Norte Online</option>
             </datalist>
             <Button>Añadir</Button>
         </InputDiv>
         <Spacer size={30} axis='vertical' />
         <p>Perfiles admin</p>
         <YellowDiv>
-        {admins.filter(admin => admin.roles.includes("Admin")).map(() => {
-            <ProfileAdminDiv>
-            <Padmin>{admin.name}</Padmin>
-            <Padmin>{admin.email}</Padmin>
-            <BinImg src={Delete}/>    
-            </ProfileAdminDiv>    
-        })}
-        <ProfileAdminDiv>
-            <Padmin>Judith Lloveras </Padmin>
-            <Padmin>judith@lloveras.com</Padmin>
-            <BinImg src={Delete}/>
-            
+        {admins.filter(admin => admin.roles.includes("Admin")).map((admin, index) => (
+            <ProfileAdminDiv key={index}>
+                <Padmin>{admin.name}</Padmin>
+                <Padmin>{admin.email}</Padmin>
+                <BinImg src={Delete}/>
             </ProfileAdminDiv>
-        <ProfileAdminDiv>
-            <Padmin>David Picó</Padmin>
-            <Padmin>david@pico.com</Padmin>
-            <BinImg src={Delete}/>
-            
-        </ProfileAdminDiv>
+        ))}
         </YellowDiv>
 
     </Container>

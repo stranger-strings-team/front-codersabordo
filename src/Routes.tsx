@@ -16,7 +16,7 @@ import PostQuestionForm from "./AdminPages/PostQuestion/PostQuestionForm";
 import Admin from './AdminPages/Admin/Admin';
 import CoderProgres from './AdminPages/CoderProgres/CoderProgres';
 import QuizQuestions from './AdminPages/quizQuestions/QuizQuestions';
-import CreateAdmin from './pages/ProfilesAdmin/ProfilesAdmin';
+import CreateAdmin from './AdminPages/ProfilesAdmin/ProfilesAdmin';
 import CreatePassword from './pages/CreatePassword/CreatePassword';
 import EliminateQuestion from './AdminPages/EliminateQuestion/EliminateQuestion'
 import PatchQuestion from './AdminPages/PatchQuestion/PatchQuestion';

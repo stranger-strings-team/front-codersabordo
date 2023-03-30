@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { theme } from '../../Global.style'
-import { Padmin, ProfileAdminDiv } from '../../pages/ProfilesAdmin/ProfilesAdminStyle'
+import { Padmin, ProfileAdminDiv } from '../ProfilesAdmin/ProfilesAdminStyle'
 
 export const Div = styled.div`
     display: flex;
