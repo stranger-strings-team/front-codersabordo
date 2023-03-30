@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const IconDiv = styled(Link)`
- max-width: 35px;
- display: flex;
+export const IconDiv = styled.button`
+  max-width: 35px;
+  max-height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  margin: 0;
 `
 
 export const IconDivRight = styled(IconDiv)`

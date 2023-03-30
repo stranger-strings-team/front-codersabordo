@@ -66,6 +66,7 @@ const Profile = () => {
     const handlerLogout = () => {
       sessionStorage.removeItem("access_token");
       navigate("/login")
+      location.reload()
     };
 
     // if (loading) {
