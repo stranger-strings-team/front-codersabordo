@@ -18,7 +18,8 @@ const Register = (props: Props) => {
     "surname": "",
     "email": "",
     "password": "",
-    "city":""
+    "city":"",
+    "progress": [false, false, false]
   });
 
   const handleSubmit = async (e: FormEvent) => {
