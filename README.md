@@ -1,7 +1,7 @@
 # Coders a bordo - Factoría F5
  
 <p align="center">
-<img src="../assets/logo.png"> 
+<img src="src/assets/logo.png"> 
 
 ***
 ## Table of Contents
@@ -75,7 +75,7 @@ The project was developed with the following technologies
 <img src="https://www.vectorlogo.zone/logos/typescriptlang/typescriptlang-icon.svg">
 <img src="https://www.vectorlogo.zone/logos/nodejs/nodejs-ar21.svg">
 <img src="https://www.vectorlogo.zone/logos/mongodb/mongodb-ar21.svg">
-<img src="../assets/swagger.svg" width=60px>
+<img src="src/assets/swagger.svg" width=60px>
 <img src="https://www.vectorlogo.zone/logos/jestjsio/jestjsio-ar21.svg">
 
  </p>
@@ -97,11 +97,11 @@ The project was developed with the following technologies
 <img src= "https://www.vectorlogo.zone/logos/typescriptlang/typescriptlang-icon.svg">
 <img src= "https://www.vectorlogo.zone/logos/nodejs/nodejs-ar21.svg">
 <img src= "https://www.vectorlogo.zone/logos/axios/axios-ar21.svg">
-<img src= "../assets/styled-components-1.svg" width=60px>
-<img src= "../assets/vite.svg" width=50>
+<img src= "src/assets/styled-components-1.svg" width=60px>
+<img src= "src/assets/vite.svg" width=50>
 <img src= "https://www.vectorlogo.zone/logos/jestjsio/jestjsio-ar21.svg">
-<img src= "../assets/react-router.svg" width=80>
-<img src="../assets/vitest.svg" width=50>
+<img src= "src/assets/react-router.svg" width=80>
+<img src="src/assets/vitest.svg" width=50>
 
 
 ***
@@ -190,13 +190,15 @@ This project was developed as the final presentation of the P6.2022-23 class of 
 - Notion
 - GitHub
 - Slack
+- Visual Studio Code
 
 
 <p align="center">
 <a href="https://www.figma.com"><img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg"></a>
-<a href="https://www.notion.so"><img src="../assets/notion.svg" width=60></a>
+<a href="https://www.notion.so"><img src="src/assets/notion.svg" width=60></a>
 <a href="https://github.com"><img src="https://www.vectorlogo.zone/logos/github/github-icon.svg"></a>
 <a href="https://slack.com/workspace-signin"><img src="https://www.vectorlogo.zone/logos/slack/slack-icon.svg"></a>
+<a href="https://code.visualstudio.com/"><img src="https://www.vectorlogo.zone/logos/visualstudio_code/visualstudio_code-icon.svg"></a>
 </p>
 
 ## Methodology
