@@ -1,25 +1,26 @@
 import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Home from './pages/Home/Home';
-import Onboarding from './pages/Onboarding/Onboarding';
-import { NoMatch } from './pages/NoMatch';
+import Home from './pages/GamePages/Home/Home';
 import Layout from './components/Layout/Layout';
-import Final from './pages/Final/Final';
-import Profile from './pages/Profile/Profile';
-import Login from './pages/Login/Login';
-import Welcome from './pages/Welcome/Welcome';
-import CompletedSection from './pages/CompletedSection/CompletedSection';
-import Register from './pages/RegisterPage/Register';
-import OpenQuestion from './pages/OpenQuestion/OpenQuestion';
-import Roadmap from './pages/Roadmap/Roadmap';
-import PostQuestionForm from "./AdminPages/PostQuestion/PostQuestionForm";
-import Admin from './AdminPages/Admin/Admin';
-import CoderProgres from './AdminPages/CoderProgres/CoderProgres';
-import QuizQuestions from './AdminPages/quizQuestions/QuizQuestions';
-import CreateAdmin from './AdminPages/ProfilesAdmin/ProfilesAdmin';
-import CreatePassword from './pages/CreatePassword/CreatePassword';
-import EliminateQuestion from './AdminPages/EliminateQuestion/EliminateQuestion'
-import PatchQuestion from './AdminPages/PatchQuestion/PatchQuestion';
+import CompletedSection from './pages/GamePages/CompletedSection/CompletedSection';
+import Admin from './pages/AdminPages/Admin/Admin';
+import Welcome from './pages/GamePages/Welcome/Welcome';
+import Login from './pages/GamePages/Login/Login';
+import Register from './pages/GamePages/RegisterPage/Register';
+import Onboarding from './pages/GamePages/Onboarding/Onboarding';
+import Roadmap from './pages/GamePages/Roadmap/Roadmap';
+import Profile from './pages/GamePages/Profile/Profile';
+import CreatePassword from './pages/GamePages/CreatePassword/CreatePassword';
+import ProfilesAdmin from './pages/AdminPages/ProfilesAdmin/ProfilesAdmin';
+import OpenQuestion from './pages/GamePages/OpenQuestion/OpenQuestion';
+import Final from './pages/GamePages/Final/Final';
+import QuizQuestions from './pages/AdminPages/quizQuestions/QuizQuestions';
+import PostQuestionForm from './pages/AdminPages/PatchQuestion/PatchQuestion';
+import PatchQuestion from './pages/AdminPages/PatchQuestion/PatchQuestion';
+import EliminateQuestion from './pages/AdminPages/EliminateQuestion/EliminateQuestion';
+import CoderProgres from './pages/AdminPages/CoderProgress/CoderProgress';
+import { NoMatch } from './pages/GamePages/NoMatch/NoMatch';
+
 
 
 
@@ -45,7 +46,7 @@ const CreateRoutes = () => (
         <Route path="/admin/question/post" element={<PostQuestionForm />}/>
         <Route path="/admin/question/edit" element={<PatchQuestion />} />
         <Route path="/admin/question/delete" element={<EliminateQuestion/>} />
-        <Route path="/admin/admins" element={<CreateAdmin/>} />
+        <Route path="/admin/admins" element={<ProfilesAdmin/>} />
         <Route path='/admin/coders' element={<CoderProgres />} />
         <Route path="*" element={<NoMatch />} />
       </Route>
