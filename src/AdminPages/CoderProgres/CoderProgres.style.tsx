@@ -27,11 +27,18 @@ export const ThHeader = styled.p`
 export const StyledProfileAdminDiv = styled(ProfileAdminDiv)`
     display: flex;
     justify-content: space-between;
-    width: 90%;
+    align-items: center;
+    width: 100%;
 `
 
 export const StyledPadmin = styled(Padmin)`
-    margin: 0 3rem 0 1rem;
+    margin: 0 1rem 0 1rem;
+    width: 130px;
+    text-align: left;
+`
+export const StyledPadminAnswer = styled(StyledPadmin)`
+    padding: 0 0 0 0;
+    width: 90px;
 `
 
 export const Label = styled.label`
@@ -43,4 +50,16 @@ export const Label = styled.label`
 export const P = styled.p`
     margin: 1rem 0 0 0;
     font-size: 2rem;
+`
+
+export const Button = styled.button`
+    background: none;
+    padding: 0;
+    margin: 0 1rem 0 0;
+    border: 0;
+    height: 24px;
+`
+
+export const Img = styled.img`
+    height: 24px;
 `

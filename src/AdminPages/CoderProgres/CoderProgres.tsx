@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Container, OrangeText } from '../../Global.style'
 import { Select } from '../../pages/RegisterPage/Register.styled'
-import { Div, StyledPadmin, StyledProfileAdminDiv, Table, ThHeader, Label, P } from './CoderProgres.style'
+import { Div, StyledPadmin, StyledProfileAdminDiv, Table, ThHeader, Label, P, Button, Img, StyledPadminAnswer } from './CoderProgres.style'
 import { getUsersRequest } from '../../services/userServices'
+import { Info } from '../../assets'
 
 type User = {
   _id: string,
@@ -22,11 +23,20 @@ const CoderProgres = () => {
   
   const [cityQuery, setCityQuery] = useState("Barcelona")
 
-  const filteredUsers = users.filter((user: User) => user.city == cityQuery)
+  const filteredUsers = users.filter((user: User) => user.city == cityQuery).reverse().filter(user => !user.roles.includes("Admin"))
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     //console.log(e.target.value)
     setCityQuery(e.target.value)
+  }
+
+  const handleClick = (user: User) => {
+    console.log(user.name)
+    if(user.openQuestion == undefined){
+      alert("Sin respuesta.")
+    } else {
+      alert(user.openQuestion)
+    }
   }
 
   const getProgress = (user: User) => {
@@ -56,7 +66,7 @@ const CoderProgres = () => {
     <Container>
       <Div>
         <P><OrangeText>Coders</OrangeText></P>
-        <Label htmlFor="city">Filtrar por ciudad</Label>
+        <Label htmlFor="city">Filtrar por escuela</Label>
         <Select name="city" placeholder='Escuela' onChange={(e) => handleChange(e)}>
           <option value='Barcelona'>Barcelona</option>
           <option value='Xixon'>Xixon</option>
@@ -68,13 +78,15 @@ const CoderProgres = () => {
         </Select>
       </Div>
       <Table>
-          <ThHeader>Coders</ThHeader>
+          <ThHeader>Coder</ThHeader>
           <ThHeader>Secciones <br/>completas</ThHeader>
+          <ThHeader></ThHeader>
       </Table>
       {filteredUsers.map((user, index) => (
         <StyledProfileAdminDiv key={index}>
-          <StyledPadmin>{user.name}</StyledPadmin>
-          <StyledPadmin>{getProgress(user)}</StyledPadmin>
+          <StyledPadmin>{user.name + " " + user.surname}</StyledPadmin>
+          <StyledPadminAnswer>{getProgress(user)}</StyledPadminAnswer>
+          <Button onClick={() => handleClick(user)}><Img src={Info}/></Button>
         </StyledProfileAdminDiv>
       ))}
     </Container>
