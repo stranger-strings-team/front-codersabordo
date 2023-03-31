@@ -129,10 +129,10 @@ const Onboarding = () => {
 
   useEffect(() => {
     async function getLoggedUser () {
-      let token = sessionStorage.getItem("access_token")
+      const token = sessionStorage.getItem("access_token")
       if(!token){
         console.log("no token found")
-        token = "6411d0d751f84eb36a7c8cb2"
+        return
       }
       const decodedToken: {email: string; sub: string; roles: string[]} = jwt_decode(token)
       setId(decodedToken.sub)

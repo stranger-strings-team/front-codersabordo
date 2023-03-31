@@ -9,12 +9,10 @@ import Spacer from '../../components/Spacer/Spacer'
 import { getQuestions } from '../../services/questionServices'
 import { useNavigate } from 'react-router-dom'
 
-type Props = {}
 
 type QuestionsType = {_id: string, question:string, answer:[{text:string, isCorrect:boolean}], type:string, section:string, feedbackCorrect:string, feedbackIncorrect:string}
 
-
-const QuizQuestions = (props: Props) => {
+const QuizQuestions = () => {
 
     const [questions, setQuestions] = useState<QuestionsType[]>([])
     
@@ -63,8 +61,8 @@ const QuizQuestions = (props: Props) => {
             <AdminQuestionStyled className='blue' key={index}>
                 <DarkText>{question.question}</DarkText>
                 <RowRight>
-                    <IconDivButtonRight><img src={Delete}/></IconDivButtonRight>
-                    <IconDivButtonRight><img src={Pencil}/></IconDivButtonRight>
+                    <IconDivButtonRight onClick={() => {handleClick(question, "/admin/question/delete")}}><img src={Delete}/></IconDivButtonRight>
+                    <IconDivButtonRight onClick={() => {handleClick(question, "/admin/question/edit")}}><img src={Pencil}/></IconDivButtonRight>
                 </RowRight>
             </AdminQuestionStyled>
         ))}
@@ -77,8 +75,8 @@ const QuizQuestions = (props: Props) => {
             <AdminQuestionStyled className='pink' key={index}>
                 <DarkText>{question.question}</DarkText>
                 <RowRight>
-                    <IconDivButtonRight><img src={Delete}/></IconDivButtonRight>
-                    <IconDivButtonRight><img src={Pencil}/></IconDivButtonRight>
+                    <IconDivButtonRight onClick={() => {handleClick(question, "/admin/question/delete")}}><img src={Delete}/></IconDivButtonRight>
+                    <IconDivButtonRight onClick={() => {handleClick(question, "/admin/question/edit")}}><img src={Pencil}/></IconDivButtonRight>
                 </RowRight>
             </AdminQuestionStyled>
         ))}

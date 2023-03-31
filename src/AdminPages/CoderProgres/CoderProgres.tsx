@@ -25,7 +25,7 @@ const CoderProgres = () => {
   const filteredUsers = users.filter((user: User) => user.city == cityQuery)
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    console.log(e.target.value)
+    //console.log(e.target.value)
     setCityQuery(e.target.value)
   }
 

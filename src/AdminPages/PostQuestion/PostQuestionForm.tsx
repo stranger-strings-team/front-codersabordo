@@ -1,45 +1,7 @@
 import { FormEvent, useEffect, useState } from 'react'
 import { postQuestion } from '../../services/questionServices'
 
-type Answers = [
-	{
-		text: string,
-		isCorrect: boolean
-	},
-	{
-		text: string,
-		isCorrect: boolean
-	},
-	{
-		text: string,
-		isCorrect: boolean
-	},
-	{
-		text: string,
-		isCorrect: boolean
-	}
-]
-
 const PostQuestionForm = () => {
-
-	const [answers, setAnswers] = useState<Answers>([
-		{
-			text: "respuesta incorrecta",
-			isCorrect: false
-		},
-		{
-			text: "respuesta incorrecta",
-			isCorrect: false
-		},
-		{
-			text: "respuesta incorrecta",
-			isCorrect: false
-		},
-		{
-			text: "respuesta incorrecta",
-			isCorrect: false
-		}
-	])
 
 	const [questionText, setQuestionText] = useState<string>("ELIGE UNA")
 
@@ -77,27 +39,26 @@ const PostQuestionForm = () => {
 	})
 
 	const handleInput = () => {
-		setAnswers([
-			{
-				text: answerText0,
-				isCorrect: answerCheck0
-			},
-			{
-				text: answerText1,
-				isCorrect: answerCheck1
-			},
-			{
-				text: answerText2,
-				isCorrect: answerCheck2
-			},
-			{
-				text: answerText3,
-				isCorrect: answerCheck3
-			}
-		])
 		setQuestion({
 			question: questionText,
-			answer: answers,
+			answer: [
+				{
+					text: answerText0,
+					isCorrect: answerCheck0
+				},
+				{
+					text: answerText1,
+					isCorrect: answerCheck1
+				},
+				{
+					text: answerText2,
+					isCorrect: answerCheck2
+				},
+				{
+					text: answerText3,
+					isCorrect: answerCheck3
+				}
+			],
 			type: "Opción múltiple",
 			section: section,
 			feedbackCorrect: feedback,
@@ -108,7 +69,7 @@ const PostQuestionForm = () => {
 		handleInput()
 	}, [])
 	
-	// HAY QUE PULSAR DOS VECES EL BOTON Y A VECES SE QUEDA EL STATE (answers) ANTERIOR
+	// HAY QUE PULSAR DOS VECES EL BOTON
 
 	const handleSubmit = (e: FormEvent) => {
 		e.preventDefault();
