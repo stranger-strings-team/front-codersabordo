@@ -59,7 +59,7 @@ const Onboarding = () => {
 
   const [userProgress, setUserProgress] = useState([false, false, false])
 
-  const [id, setId] = useState("6411d0d751f84eb36a7c8cb2")
+  const [id, setId] = useState("")
 
   const feedbackRef = useRef<null | HTMLDivElement>(null)
 
@@ -139,7 +139,8 @@ const Onboarding = () => {
       findOneById(id)
         .catch()
         .then((response) => {
-          //console.log("res", response.progress)
+          // console.log("res", response)
+          // console.log("progress", response.progress)
           setUserProgress(response.progress)
         })
         .catch(err => console.log(err))
@@ -148,19 +149,18 @@ const Onboarding = () => {
   }, [])
 
   const handleProgress = async () => {
-    const userData = findOneById(id)
-    /* setDataProgress(userData) */
-    if (sectionIndex >= 0) {
-      userProgress[sectionIndex] = true;
+    console.log("progress: ", userProgress)
+    if (sectionIndex == 0) {
+      userProgress[0] = true;
       setUserProgress([...userProgress])
-    } else if (sectionIndex >= 1) {
-      userProgress[sectionIndex] = true;
+    } else if (sectionIndex == 1) {
+      userProgress[1] = true;
       setUserProgress([...userProgress])
-    } else if (sectionIndex >= 2) {
-      userProgress[sectionIndex] = true;
+    } else if (sectionIndex == 2) {
+      userProgress[2] = true;
       setUserProgress([...userProgress])
     }
-    // console.log("progress: ", userProgress)
+    console.log("progress: ", userProgress)
     // console.log("user: ", userData)
     patchUserRequest(id, {progress: userProgress})
   }
