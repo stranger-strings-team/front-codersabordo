@@ -29,13 +29,9 @@ const EliminateQuestion = () => {
   loadQuestion();
   }, [])
 
-  const deleteQuestion = async (id: string | undefined) => {
-    deleteOneQuestion(id)
-  }
-
   const handleClick = () => {
     console.log("hola")
-    deleteQuestion(question?._id)
+    deleteOneQuestion(question?._id)
       .catch()
 			.then((response) => {
 				console.log(response)

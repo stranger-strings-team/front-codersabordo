@@ -19,7 +19,7 @@ export const Table = styled.div`
     margin: 0;
 `
 
-export const ThHeader = styled.th`
+export const ThHeader = styled.p`
     font-size: 1rem;
     padding: 10px;
 `

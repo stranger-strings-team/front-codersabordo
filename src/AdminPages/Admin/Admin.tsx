@@ -30,7 +30,7 @@ const Admin = () => {
       findOneById(decodedToken.sub)
         .catch()
         .then((response) => {
-          console.log(response)
+          //console.log(response)
           setAdmin(response)
         })
         .catch(err => console.log(err))

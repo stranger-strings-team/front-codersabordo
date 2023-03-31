@@ -108,7 +108,7 @@ const Profile = () => {
       <h3><OrangeText>Tu perfil</OrangeText></h3>
         <img src={Profiles} alt="user photo"/>
         {/* <Spacer size={12} axis='vertical' /> */}
-        <h3><DarkText>{user.name}</DarkText></h3>
+        <h3><DarkText>{user.name + " " + user.surname}</DarkText></h3>
         <InputDiv>
           <label htmlFor='nombre'></label>
           <Input type="text" defaultValue={user.name} name="nombre"/>
