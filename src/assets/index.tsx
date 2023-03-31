@@ -1,5 +1,5 @@
 import Add from '../assets/add.png'
-import Admin from '../assets/admin.png'
+import Administrator from '../assets/admin.png'
 import Arrow from '../assets/arrow-icon.svg'
 import BackArrow from '../assets/backarrow.svg'
 import Completed from '../assets/completada.png'
@@ -16,4 +16,4 @@ import Profiles from '../assets/profile.png'
 import Rain from '../assets/rain.png'
 import User from '../assets/user.svg'
 
-export {Add, Admin, Arrow, BackArrow, Completed, Confeti, Correct, Delete, Hello, Home, Incorrecta, Info, Logo, Pencil, Profiles, Rain, User}
+export {Add, Administrator, Arrow, BackArrow, Completed, Confeti, Correct, Delete, Hello, Home, Incorrecta, Info, Logo, Pencil, Profiles, Rain, User}
