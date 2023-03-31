@@ -18,7 +18,6 @@
   - [Versions](#versions)
     - [Plugins](#plugins)
   - [Deployment](#deployment)
-  - [Support](#support)
   - [Authors](#authors)
   - [FAQs](#faqs)
   - [About the project](#about-the-project)
@@ -82,6 +81,8 @@ The project was developed with the following technologies
 
 ### Frontend Technologies
 
+- Html
+- Css
 - React
 - Vite
 - Typescript 
@@ -93,6 +94,8 @@ The project was developed with the following technologies
 - Vitest
 
 <p align="center">
+<img src= "https://www.vectorlogo.zone/logos/w3_html5/w3_html5-ar21.svg">
+<img src= "https://www.vectorlogo.zone/logos/w3_css/w3_css-ar21.svg">
 <img src= "https://www.vectorlogo.zone/logos/reactjs/reactjs-ar21.svg">
 <img src= "https://www.vectorlogo.zone/logos/typescriptlang/typescriptlang-icon.svg">
 <img src= "https://www.vectorlogo.zone/logos/nodejs/nodejs-ar21.svg">
@@ -146,11 +149,6 @@ To install and run the frontend of Coders a bordo, please follow the steps below
 - React: 18.2.0
 - NestJS: 9.0.0
 
-### Plugins
-
-- @vitejs/plugin-react: 3.1.0
-
-
 
 
 ***
@@ -191,6 +189,10 @@ This project was developed as the final presentation of the P6.2022-23 class of 
 - GitHub
 - Slack
 - Visual Studio Code
+- Trello
+- Zoom
+- Gmail
+- Canva
 
 
 <p align="center">
@@ -199,6 +201,10 @@ This project was developed as the final presentation of the P6.2022-23 class of 
 <a href="https://github.com"><img src="https://www.vectorlogo.zone/logos/github/github-icon.svg"></a>
 <a href="https://slack.com/workspace-signin"><img src="https://www.vectorlogo.zone/logos/slack/slack-icon.svg"></a>
 <a href="https://code.visualstudio.com/"><img src="https://www.vectorlogo.zone/logos/visualstudio_code/visualstudio_code-icon.svg"></a>
+<a href="https://trello.com"><img src="https://www.vectorlogo.zone/logos/trello/trello-icon.svg"></a>
+<a href="https://zoom.us/"><img src="https://www.vectorlogo.zone/logos/zoomus/zoomus-icon.svg"></a>
+<a href="https://www.gmail.com/"><img src="https://www.vectorlogo.zone/logos/gmail/gmail-icon.svg"></a>
+<a href="https://www.canva.com/"><img src="https://www.vectorlogo.zone/logos/canva/canva-icon.svg"></a>
 </p>
 
 ## Methodology
