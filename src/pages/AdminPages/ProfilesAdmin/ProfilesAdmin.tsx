@@ -4,7 +4,7 @@ import { Spacer } from '../../../components'
 import { Container, Input, OrangeText, TextLeft } from '../../../Global.style'
 import { Button } from '../../GamePages/Login/LoginStyle'
 import { InputDiv } from '../../GamePages/Profile/ProfileStyle'
-import { BinImg, Padmin, ProfileAdminDiv, YellowDiv } from './ProfilesAdminStyle'
+import { BinImg, Padmin, Padminname, ProfileAdminDiv, YellowDiv } from './ProfilesAdminStyle'
 import { deleteUserById, getUsersRequest, postUserRequest } from "../../../services/userServices"
 import { useNavigate } from "react-router-dom"
 
@@ -133,7 +133,7 @@ const ProfilesAdmin = () => {
         <YellowDiv>
         {admins.filter(admin => admin.roles.includes("Admin")).map((admin, index) => (
             <ProfileAdminDiv key={index}>
-                <Padmin>{admin.name}</Padmin>
+                <Padminname>{admin.name}</Padminname>
                 <Padmin>{admin.email}</Padmin>
                 <BinImg src={Delete} onClick={() => deleteAdmin(admin)}/>
             </ProfileAdminDiv>

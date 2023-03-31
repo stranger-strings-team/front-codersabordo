@@ -16,14 +16,18 @@ export const ProfileAdminDiv = styled.div`
     margin-top: 10px;
     width:100%;
     background-color: ${theme.yellowBackground};
-    display: grid;
+    display: flex;
+    gap: 20px;
+    /* grid-template-columns: 2fr 1fr 1fr;  */
+    justify-content: stretch;
     align-items: center;
-    grid-template-columns: 2fr 1fr 1fr; 
     padding: 6px;
     border-radius: 8px;
     align-items: center;
     max-width: 100vw;
+    position: relative
 `
+
 
 export const Padmin = styled.p`
     color: black;
@@ -31,8 +35,13 @@ export const Padmin = styled.p`
     font-weight: 20;
 `
 
+export const Padminname = styled(Padmin)`
+    margin-left: 2px;
+`
+
 export const BinImg = styled.img`
     width: 1.6rem;
     margin-top: 8px;
     cursor: pointer;
+    margin-right: 2px;
 `

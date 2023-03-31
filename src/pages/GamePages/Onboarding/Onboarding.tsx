@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react'
-import { ParagraphContainer, AnswerImage, Container, DarkText, GlobalStyles, OrangeText, theme } from '../../../Global.style'
+import { ParagraphContainer, AnswerImage, Container, DarkText, OrangeText } from '../../../Global.style'
 import { getQuestions } from '../../../services/questionServices'
 import { getColor } from './Onboarding.style'
 import "./style.css"
