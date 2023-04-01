@@ -18,7 +18,7 @@ import QuizQuestions from './pages/AdminPages/quizQuestions/QuizQuestions';
 import PostQuestionForm from './pages/AdminPages/PatchQuestion/PatchQuestion';
 import PatchQuestion from './pages/AdminPages/PatchQuestion/PatchQuestion';
 import EliminateQuestion from './pages/AdminPages/EliminateQuestion/EliminateQuestion';
-import CoderProgres from './pages/AdminPages/CoderProgress/CoderProgress';
+import CoderProgress from './pages/AdminPages/CoderProgress/CoderProgress';
 import { NoMatch } from './pages/GamePages/NoMatch/NoMatch';
 
 
@@ -47,7 +47,7 @@ const CreateRoutes = () => (
         <Route path="/admin/question/edit" element={<PatchQuestion />} />
         <Route path="/admin/question/delete" element={<EliminateQuestion/>} />
         <Route path="/admin/admins" element={<ProfilesAdmin/>} />
-        <Route path='/admin/coders' element={<CoderProgres />} />
+        <Route path='/admin/coders' element={<CoderProgress />} />
         <Route path="*" element={<NoMatch />} />
       </Route>
     </Routes>
