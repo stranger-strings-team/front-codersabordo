@@ -48,7 +48,7 @@ const QuizQuestions = () => {
                 <DarkText>{question.question}</DarkText>
                 <RowRight>
                     <IconDivButtonRight onClick={() => {handleClick(question, "/admin/question/delete")}}><img src={Delete}/></IconDivButtonRight>
-                    <IconDivButtonRight onClick={() => {handleClick(question, "/admin/question/edit")}}><img src={Pencil}/></IconDivButtonRight>
+                    {/* <IconDivButtonRight onClick={() => {handleClick(question, "/admin/question/edit")}}><img src={Pencil}/></IconDivButtonRight> */}
                 </RowRight>
             </AdminQuestionStyled>
         ))}
@@ -62,7 +62,7 @@ const QuizQuestions = () => {
                 <DarkText>{question.question}</DarkText>
                 <RowRight>
                     <IconDivButtonRight onClick={() => {handleClick(question, "/admin/question/delete")}}><img src={Delete}/></IconDivButtonRight>
-                    <IconDivButtonRight onClick={() => {handleClick(question, "/admin/question/edit")}}><img src={Pencil}/></IconDivButtonRight>
+                    {/* <IconDivButtonRight onClick={() => {handleClick(question, "/admin/question/edit")}}><img src={Pencil}/></IconDivButtonRight> */}
                 </RowRight>
             </AdminQuestionStyled>
         ))}
@@ -76,7 +76,7 @@ const QuizQuestions = () => {
                 <DarkText>{question.question}</DarkText>
                 <RowRight>
                     <IconDivButtonRight onClick={() => {handleClick(question, "/admin/question/delete")}}><img src={Delete}/></IconDivButtonRight>
-                    <IconDivButtonRight onClick={() => {handleClick(question, "/admin/question/edit")}}><img src={Pencil}/></IconDivButtonRight>
+                    {/* <IconDivButtonRight onClick={() => {handleClick(question, "/admin/question/edit")}}><img src={Pencil}/></IconDivButtonRight> */}
                 </RowRight>
             </AdminQuestionStyled>
         ))}

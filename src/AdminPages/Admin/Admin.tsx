@@ -47,9 +47,9 @@ const Admin = () => {
         <H3>{admin.name + " " + admin.surname}</H3>
 
         <>
-        <StyledLink to="/admin/coders" className='blue'>Coders</StyledLink>
-        <StyledLink to="/admin/question" className='yellow'>Editar los questionarios</StyledLink>
-        <StyledLink to="/admin/admins" className='pink'>Administradores</StyledLink>
+          <StyledLink to="/admin/coders" className='blue'>Coders</StyledLink>
+          <StyledLink to="/admin/question" className='yellow'>Quiz</StyledLink>
+          <StyledLink to="/admin/admins" className='pink'>Administradores</StyledLink>
         </>
 
     </Container>
