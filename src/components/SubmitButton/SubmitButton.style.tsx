@@ -10,5 +10,5 @@ export const StyledSubmitButton = styled.button`
     border-radius: 40px;
     display: flex;
     inline-size: fit-content;
-    margin-bottom: rem;
+    margin-bottom: 0;
 `

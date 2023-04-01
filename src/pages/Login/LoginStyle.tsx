@@ -5,12 +5,23 @@ import { theme } from '../../Global.style'
 export const Button = styled.button`
     margin-top: 25px;
     width: 200px;
-    height: 40px;
-    border-radius: 50px;
+    padding: 0.3rem;
+    border-radius: 40px;
     background-color: ${theme.orange};
     color: white;
     align-items: center;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: 600;
+`
+
+export const Input = styled.input`
+    width: 200px;
+    height: 40px;
+    border-radius: 8px;
+    padding: 0 1rem;
+    background-color: #ffece4;
+    color: black;
+    border: none;
     display: flex;
     justify-content: center;
     align-items: center;

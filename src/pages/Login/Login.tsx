@@ -53,18 +53,18 @@ const Login = () => {
     <form onSubmit={handleSubmit}>
        <InputDiv>
         <Input 
-          type="text"
+          type="email" 
+          placeholder='Email' 
           name="email"
-          placeholder="Escribe tu email"
           autoComplete="off"
           onChange={handleInput}
           required
           aria-label="email"
         />
         <Input 
-          type="password"
+          type="password" 
+          placeholder='Contraseña' 
           name="password"
-          placeholder="Escribe tu contraseña"
           onChange={handleInput}
           required
           autoComplete='off'
