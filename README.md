@@ -30,7 +30,7 @@
 
 ## Screenshots
 
-<tab>
+<table>
 <tr>
 <td><img src="src/assets/screenshots/1.png"></td>
 <td><img src="src/assets/screenshots/2.png"></td>
@@ -63,10 +63,11 @@
 </tr>
 <tr>
 <td><img src="src/assets/screenshots/17.png"></td>
-<td><img src="src/assets/screenshots18.png"></td>
+<td><img src="src/assets/screenshots/18.png"></td>
 <td><img src="src/assets/screenshots/19.png"></td>
 
 </tr>
+</table>
 
 
 ***
