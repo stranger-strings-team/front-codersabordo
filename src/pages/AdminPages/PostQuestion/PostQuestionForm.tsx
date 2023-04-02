@@ -1,5 +1,6 @@
 import { FormEvent, useEffect, useState } from 'react'
 import { postQuestion } from '../../../services/questionServices'
+import "./style.css"
 
 const PostQuestionForm = () => {
 
