@@ -80,8 +80,8 @@ The project was developed with the following technologies
 
 ### Frontend Technologies
 
-- Html
-- Css
+- HTML
+- CSS
 - React
 - Vite
 - Typescript 
