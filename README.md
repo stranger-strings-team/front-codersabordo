@@ -167,7 +167,7 @@ To install and run the frontend of Coders a bordo, please follow the steps below
 [Arnau Mínguez](https://github.com/GrimMori)     
 [Hel Aige](https://github.com/HelAige)   
 [Rosie Bradshaw](https://github.com/Rosie-Bradshaw)<br> 
-[Sablina Angulo](https://github.com/sablinali) 
+[Sablina Angulo](https://github.com/sablinali)<br>
 [Sergi Alsina](https://github.com/SergiAlsina)
 
 
