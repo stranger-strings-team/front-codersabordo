@@ -31,12 +31,7 @@
 ## Screenshots
 
 <table>
-<tr>
-<td><img src="src/assets/screenshots/1.png"></td>
-<td><img src="src/assets/screenshots/2.png"></td>
-<td><img src="src/assets/screenshots/3.png"></td>
-<td><img src="src/assets/screenshots/4.png"></td>
-</tr>
+
 <tr>
 <td><img src="src/assets/screenshots/1.png"></td>
 <td><img src="src/assets/screenshots/2.png"></td>
