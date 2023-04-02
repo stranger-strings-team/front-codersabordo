@@ -167,7 +167,7 @@ To install and run the frontend of Coders a bordo, please follow the steps below
 [Rosie Bradshaw](https://github.com/Rosie-Bradshaw)<br>
 [Hel Aige](https://github.com/HelAige)   
 [Sablina Angulo](https://github.com/sablinali)  
-[Arnau Minguez](https://github.com/GrimMori)     
+[Arnau Mínguez](https://github.com/GrimMori)     
 [Sergi Alsina](https://github.com/SergiAlsina)
 
 
@@ -185,26 +185,15 @@ This project was developed as the final presentation of the P6.2022-23 class of 
 ## Tools
 
 - Figma
-- Notion
 - GitHub
-- Slack
 - Visual Studio Code
-- Trello
-- Zoom
-- Gmail
-- Canva
-
 
 <p align="center">
 <a href="https://www.figma.com"><img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg"></a>
-<a href="https://www.notion.so"><img src="src/assets/notion.svg" width=60></a>
 <a href="https://github.com"><img src="https://www.vectorlogo.zone/logos/github/github-icon.svg"></a>
-<a href="https://slack.com/workspace-signin"><img src="https://www.vectorlogo.zone/logos/slack/slack-icon.svg"></a>
 <a href="https://code.visualstudio.com/"><img src="https://www.vectorlogo.zone/logos/visualstudio_code/visualstudio_code-icon.svg"></a>
-<a href="https://trello.com"><img src="https://www.vectorlogo.zone/logos/trello/trello-icon.svg"></a>
-<a href="https://zoom.us/"><img src="https://www.vectorlogo.zone/logos/zoomus/zoomus-icon.svg"></a>
-<a href="https://www.gmail.com/"><img src="https://www.vectorlogo.zone/logos/gmail/gmail-icon.svg"></a>
-<a href="https://www.canva.com/"><img src="https://www.vectorlogo.zone/logos/canva/canva-icon.svg"></a>
+
+
 </p>
 
 ## Methodology
