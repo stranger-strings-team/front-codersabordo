@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const accessToken = sessionStorage.getItem("access_token")
-const apiBase = 'http://localhost:4000/api'
+const apiBase = 'https://back-codersabordo-production.up.railway.app/api'
 
 const authAxios = axios.create({
     baseURL: apiBase,
