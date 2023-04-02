@@ -13,12 +13,12 @@ export const UserButton = (props: Props) => {
         <>
             {loggedInUser && 
                 <Button to="/profile">
-                    <img src={User}/>
+                    <img src={User} alt="user"/>
                 </Button>
             }
             {!loggedInUser &&
                 <Button to="/login">
-                    <img src={User}/>
+                    <img src={User} alt="user"/>
                 </Button>
             }
         </>
