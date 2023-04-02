@@ -140,7 +140,7 @@ To install and run the frontend of Coders a bordo, please follow the steps below
 
 4- Run `npm install` to install all the necessary dependencies.
 
-5- To run the development server, use the command `npm run dev`. This will start a local development server on http://localhost:3000/.
+5- To run the development server, use the command `npm run dev`. This will start a local development server on http://localhost:5173/.
 
 6- To build the project for production, use the command `npm run build`. This will create a **dist** directory with the compiled code.
 
@@ -160,7 +160,7 @@ To install and run the frontend of Coders a bordo, please follow the steps below
 ## Deployment
 
   
-[Visit our link](https://front-codersabordo-production.up.railway.app/)
+[Visit our link](https://codersabordo.netlify.app/)
 
 
 ***
