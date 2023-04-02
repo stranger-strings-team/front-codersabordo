@@ -25,7 +25,7 @@
   - [Methodology](#methodology)
 ***
 ## General Information
-"Coders a bordo” is a web app/game to help new coders in Factoría F5 revise and remember important information that is relevant while doing a bootcamp and once it is finished. 
+"Coders a bordo” is a web app/game for mobile devices to help new coders in Factoría F5 revise and remember important information that is relevant while doing a bootcamp and once it is finished. 
 
 ***
 
