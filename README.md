@@ -32,26 +32,42 @@
 
 <tab>
 <tr>
-<td><img src=""></td>
-<td><img src=""></td>
-<td><img src=""></td>
-<td><img src=""></td>
+<td><img src="src/assets/screenshots/1.png"></td>
+<td><img src="src/assets/screenshots/2.png"></td>
+<td><img src="src/assets/screenshots/3.png"></td>
+<td><img src="src/assets/screenshots/4.png"></td>
 </tr>
 <tr>
-<td><img src=""></td>
-<td><img src=""></td>
-<td><img src=""></td>
-<td><img src=""></td>
+<td><img src="src/assets/screenshots/1.png"></td>
+<td><img src="src/assets/screenshots/2.png"></td>
+<td><img src="src/assets/screenshots/3.png"></td>
+<td><img src="src/assets/screenshots/4.png"></td>
 </tr>
 <tr>
-<td><img src=""></td>
-<td><img src=""></td>
-<td><img src=""></td>
-<td><img src=""></td>
+<td><img src="src/assets/screenshots/5.png"></td>
+<td><img src="src/assets/screenshots/6.png"></td>
+<td><img src="src/assets/screenshots/7.png"></td>
+<td><img src="src/assets/screenshots/8.png"></td>
 </tr>
 <tr>
-<td><img src=""></td>
-<td><img src=""></td>
+<td><img src="src/assets/screenshots/9.png"></td>
+<td><img src="src/assets/screenshots/10.png"></td>
+<td><img src="src/assets/screenshots/11.png"></td>
+<td><img src="src/assets/screenshots/12.png"></td>
+</tr>
+<tr>
+<td><img src="src/assets/screenshots/13.png"></td>
+<td><img src="src/assets/screenshots/14.png"></td>
+<td><img src="src/assets/screenshots/15.png"></td>
+<td><img src="src/assets/screenshots/16.png"></td>
+</tr>
+<tr>
+<td><img src="src/assets/screenshots/17.png"></td>
+<td><img src="src/assets/screenshots18.png"></td>
+<td><img src="src/assets/screenshots/19.png"></td>
+
+</tr>
+
 
 ***
 
@@ -160,8 +176,8 @@ To install and run the frontend of Coders a bordo, please follow the steps below
 ## Deployment
 
   
-[Visit our link](https://codersabordo.netlify.app/)
-
+[Visit our link front](https://codersabordo.netlify.app/)
+[Visit our link back](https://back-codersabordo-production.up.railway.app/)
 
 ***
 
