@@ -1,7 +1,7 @@
 # Coders a bordo - Factoría F5
  
 <p align="center">
-<img src="src/assets/logo.png"> 
+<img src="src/assets/logo.png" width="256px"> 
 
 ***
 ## Table of Contents
