@@ -1,9 +1,8 @@
 import React from 'react'
-import { render, screen, userEvent, } from '../utils/test-utils'
-import { NavTop } from "../src/components/NavTop/NavTop";
+import { render, screen} from '@testing-library/react';
+import  userEvent  from '@testing-library/user-event'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { UserButton } from '../src/components';
-import Profile from '../src/pages/GamePages/Profile/Profile';
 import { vi } from 'vitest';
 import * as router from "react-router"
 

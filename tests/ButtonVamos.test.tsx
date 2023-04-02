@@ -1,11 +1,9 @@
 import React from 'react'
-import { fireEvent, render, screen } from '../utils/test-utils'
-import { BrowserRouter, useNavigate } from 'react-router-dom'
-import { createMemoryHistory } from '@remix-run/router'
+import { render, screen } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom'
 import { vi } from 'vitest'
 import * as router from "react-router"
 import userEvent from "@testing-library/user-event"
-
 import ButtonVamos from '../src/components/ButtonVamos/ButtonVamos'
 
 

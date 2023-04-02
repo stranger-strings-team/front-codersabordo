@@ -1,9 +1,7 @@
 import React from 'react'
-import { render, screen, userEvent, } from '../utils/test-utils'
 import { NavTop } from "../src/components/NavTop/NavTop";
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Profile from '../src/pages/GamePages/Profile/Profile'
-import { UserButton } from '../src/components';
+import { BrowserRouter } from 'react-router-dom'
+import { render, screen } from '@testing-library/react';
 
 
 describe('NavTop should render appropriately', ()=>{
