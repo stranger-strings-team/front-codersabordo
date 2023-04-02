@@ -16,7 +16,6 @@
     - [Backend Installation](#backend-installation)
     - [Frontend Installation](#frontend-installation)
   - [Versions](#versions)
-    - [Plugins](#plugins)
   - [Deployment](#deployment)
   - [Authors](#authors)
   - [FAQs](#faqs)
@@ -25,7 +24,7 @@
   - [Methodology](#methodology)
 ***
 ## General Information
-Coders a bordo” is a web app/game to help new coders in Factoría F5 revise    and remember important information that is relevant while doing a bootcamp and once it is finished. 
+"Coders a bordo” is a web app/game for mobile devices to help new coders in Factoría F5 revise and remember important information that is relevant while doing a bootcamp and once it is finished. 
 
 ***
 
@@ -81,8 +80,8 @@ The project was developed with the following technologies
 
 ### Frontend Technologies
 
-- Html
-- Css
+- HTML
+- CSS
 - React
 - Vite
 - Typescript 
@@ -134,11 +133,17 @@ To install and run the backend of Coders a bordo, please follow the steps below:
 To install and run the frontend of Coders a bordo, please follow the steps below:
 
 1- Ensure that you have Node.js installed on your machine. You can download it from the [official website](https://nodejs.org/en/download/).
+
 2- Clone the [repository from GitHub](https://github.com/stranger-strings-team/front-codersabordo0).
+
 3- Navigate to the root directory of the project in your terminal.
+
 4- Run `npm install` to install all the necessary dependencies.
+
 5- To run the development server, use the command `npm run dev`. This will start a local development server on http://localhost:3000/.
+
 6- To build the project for production, use the command `npm run build`. This will create a **dist** directory with the compiled code.
+
 7- To preview the production build, use the command `npm run preview`.
 
 ***
@@ -164,18 +169,15 @@ To install and run the frontend of Coders a bordo, please follow the steps below
 
 ## Authors
 
-[Rosie Bradshaw](https://github.com/Rosie-Bradshaw)<br>
-[Hel Aige](https://github.com/HelAige)   
-[Sablina Angulo](https://github.com/sablinali)  
 [Arnau Mínguez](https://github.com/GrimMori)     
+[Hel Aige](https://github.com/HelAige)   
+[Rosie Bradshaw](https://github.com/Rosie-Bradshaw)<br> 
+[Sablina Angulo](https://github.com/sablinali)<br>
 [Sergi Alsina](https://github.com/SergiAlsina)
 
 
 
 ***
-## FAQs
-
-We'll fill this field when you ask something
 
 ## About the project
 
@@ -198,6 +200,6 @@ This project was developed as the final presentation of the P6.2022-23 class of 
 
 ## Methodology
 
-* Agile and SCRUM.
-* Pair programming.
+* Agile and SCRUM
+* Pair programming
 * Kanban
