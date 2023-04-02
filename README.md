@@ -195,6 +195,6 @@ This project was developed as the final presentation of the P6.2022-23 class of 
 
 ## Methodology
 
-* Agile and SCRUM.
-* Pair programming.
+* Agile and SCRUM
+* Pair programming
 * Kanban
