@@ -136,7 +136,7 @@ const Onboarding = () => {
       }
       const decodedToken: {email: string; sub: string; roles: string[]} = jwt_decode(token)
       setId(decodedToken.sub)
-      findOneById(id)
+      findOneById(decodedToken.sub)
         .catch()
         .then((response) => {
           // console.log("res", response)
