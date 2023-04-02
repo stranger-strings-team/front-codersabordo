@@ -16,7 +16,6 @@
     - [Backend Installation](#backend-installation)
     - [Frontend Installation](#frontend-installation)
   - [Versions](#versions)
-    - [Plugins](#plugins)
   - [Deployment](#deployment)
   - [Authors](#authors)
   - [FAQs](#faqs)
