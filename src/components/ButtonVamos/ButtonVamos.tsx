@@ -18,7 +18,7 @@ export default function ButtonVamos () {
   }
 
   return (
-    <StyledButtonVamos onClick={handleClick}>¡Vamos!</StyledButtonVamos>
+    <StyledButtonVamos onClick={handleClick} role='button'>¡Vamos!</StyledButtonVamos>
   )
 }
 
