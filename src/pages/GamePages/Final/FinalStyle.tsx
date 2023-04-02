@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { GlobalStyles } from '../../Global.style'
+import { GlobalStyles } from '../../../Global.style'
 
 export const h3 = styled.h3`
 font-size: 2rem;
