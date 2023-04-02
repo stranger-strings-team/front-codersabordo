@@ -25,7 +25,7 @@
   - [Methodology](#methodology)
 ***
 ## General Information
-Coders a bordo” is a web app/game to help new coders in Factoría F5 revise    and remember important information that is relevant while doing a bootcamp and once it is finished. 
+"Coders a bordo” is a web app/game to help new coders in Factoría F5 revise and remember important information that is relevant while doing a bootcamp and once it is finished. 
 
 ***
 
@@ -164,18 +164,15 @@ To install and run the frontend of Coders a bordo, please follow the steps below
 
 ## Authors
 
-[Rosie Bradshaw](https://github.com/Rosie-Bradshaw)<br>
-[Hel Aige](https://github.com/HelAige)   
-[Sablina Angulo](https://github.com/sablinali)  
 [Arnau Mínguez](https://github.com/GrimMori)     
+[Hel Aige](https://github.com/HelAige)   
+[Rosie Bradshaw](https://github.com/Rosie-Bradshaw)<br> 
+[Sablina Angulo](https://github.com/sablinali) 
 [Sergi Alsina](https://github.com/SergiAlsina)
 
 
 
 ***
-## FAQs
-
-We'll fill this field when you ask something
 
 ## About the project
 
