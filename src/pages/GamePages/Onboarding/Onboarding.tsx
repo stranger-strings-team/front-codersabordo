@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react'
 import { ParagraphContainer, AnswerImage, Container, DarkText, OrangeText } from '../../../Global.style'
 import { getQuestions } from '../../../services/questionServices'
-import { getColor } from './Onboarding.style'
+import { getColor, FeedbackDiv } from './Onboarding.style'
 import "./style.css"
 import { RetryButton } from '../../../components/RetryButton/RetryButton'
 import { useNavigate, useParams } from 'react-router-dom'
@@ -199,11 +199,13 @@ const Onboarding = () => {
               {feedback ? (
                 correctFeedback ? (
                   <>
-                    <AnswerImage src={Correct}></AnswerImage>
-                    <ThoughtBubbleStyled>
-                    <h4><OrangeText>¡Muy bien!</OrangeText></h4>
-                    <DarkText>{question.feedbackCorrect}</DarkText>
-                    </ThoughtBubbleStyled>
+                    <FeedbackDiv>
+                      <AnswerImage src={Correct}></AnswerImage>
+                      <ThoughtBubbleStyled>
+                        <h4><OrangeText>¡Muy bien!</OrangeText></h4>
+                        <DarkText>{question.feedbackCorrect}</DarkText>
+                      </ThoughtBubbleStyled>
+                    </FeedbackDiv>
                     <NextButton onClick={() => handleNext(questionIndex)} />
                   </>
                 ):(
