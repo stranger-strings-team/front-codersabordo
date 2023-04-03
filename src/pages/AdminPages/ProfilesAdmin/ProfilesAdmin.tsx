@@ -36,11 +36,9 @@ const ProfilesAdmin = () => {
 
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
-        console.log(user)
         postUserRequest(user)
             .catch()
             .then((response) => {
-                console.log(response)
                 location.reload()
             })
             .catch(err => console.log(err))
@@ -54,7 +52,6 @@ const ProfilesAdmin = () => {
         deleteUserById(admin._id)
             .catch()
             .then(() => {
-                console.log("deleted", admin)
                 location.reload()
             })
             .catch(err => console.log(err))
@@ -65,7 +62,6 @@ const ProfilesAdmin = () => {
             getUsersRequest()
                 .catch()
                 .then((response) => {
-                    //console.log(response.data)
                     setAdmins(response.data)
                 })
                 .catch(err => console.log(err))

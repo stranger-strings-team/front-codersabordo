@@ -31,8 +31,6 @@ const AuthProvider: any = ({ children }: any): any => {
 
       const decodedToken: { email: string; _id: string, roles: [string] } =
         jwt_decode(token);
-      console.log("AuthProvider, from token: " + decodedToken.email);
-      console.log("AuthProvider, from auth: " + auth?.email);
 
       const authData = {
         email: decodedToken.email,

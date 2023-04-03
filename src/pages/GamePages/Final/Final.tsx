@@ -1,16 +1,16 @@
 import React from 'react'
 import { Container, OrangeText, ParagraphContainer } from '../../../Global.style'
-import { MyConfeti } from './FinalStyle'
+import { MyConfetti } from './FinalStyle'
 import canvasConfetti from 'canvas-confetti';
 import { OrangeButton } from '../../../components';
 import { useNavigate } from 'react-router-dom';
-import { Confeti } from '../../../assets';
+import { Confetti } from '../../../assets';
 
 
 type Props = {}
 
 const Final = (props: Props) => {
-  const activarAnimacion = () => {
+  const activateAnimation = () => {
     canvasConfetti({
       particleCount: 350,
       spread: 150,
@@ -28,7 +28,7 @@ const Final = (props: Props) => {
       <h3>¡Felicidades!</h3>
       <ParagraphContainer>¡Has completado el juego y los has hecho genial! Te deseamos lo mejor en tu bootcamp. <OrangeText>¡Adelante!</OrangeText></ParagraphContainer>
   
-      <MyConfeti src={Confeti} alt="celebration with confeti" onLoad={activarAnimacion} />
+      <MyConfetti src={Confetti} alt="celebration with confetti" onLoad={activateAnimation} />
       <canvas id="canvas"></canvas>
 
       <OrangeButton onClick={handleClick}/>

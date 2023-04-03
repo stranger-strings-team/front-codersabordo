@@ -5,7 +5,7 @@ export const h3 = styled.h3`
 font-size: 2rem;
 `
 
-export const MyConfeti = styled.img `
+export const MyConfetti = styled.img `
 width: 10rem;
 margin-top: 60px;
 display: flex;

@@ -20,12 +20,10 @@ const PostQuestionForm = () => {
 
 	const handleSubmit = (e: FormEvent) => {
 		e.preventDefault();
-		console.log(question)
 		
 		postQuestion(question)
 			.catch()
 			.then((response) => {
-				console.log(response)
 			})
 			.catch(err => console.log(err))
 	}

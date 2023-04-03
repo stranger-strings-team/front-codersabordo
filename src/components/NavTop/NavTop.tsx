@@ -35,12 +35,9 @@ export const NavTop = () => {
       findOneById(decodedToken.sub)
         .catch()
         .then((response) => {
-          //console.log(response)
           if(response.roles.includes("Admin")){
-            //console.log("is admin")
             setIsAdmin(true)
           } else {
-            //console.log("not an admin")
             setIsAdmin(false)
           }
         })

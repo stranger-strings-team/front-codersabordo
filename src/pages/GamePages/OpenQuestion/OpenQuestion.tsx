@@ -30,7 +30,6 @@ const OpenQuestion = () => {
           setId("6411d0d751f84eb36a7c8cb2")
         }
         setId(user._id)
-        //console.log("id: ", id)
       })
       .catch(err => console.log(err))
     }
@@ -43,7 +42,6 @@ const OpenQuestion = () => {
     patchUserRequest(id , answer)
       .catch()
       .then((response) => { 
-        //console.log(response)
         navigate("/roadmap")
       })
       .catch(err => console.log(err))

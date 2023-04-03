@@ -92,13 +92,9 @@ const Onboarding = () => {
         actualAnswers.push(true)
       }
     })
-    // console.log("selected answers: ", checked)
-    // console.log("correct answers: ", actualAnswers)
     if(checked.toString() == actualAnswers.toString()) {
-      // console.log("correct!")
       setCorrectFeedback(true)
     } else {
-      // console.log("wrong!")
       setCorrectFeedback(false)
     }
     setFeedback(true)
@@ -139,8 +135,6 @@ const Onboarding = () => {
       findOneById(decodedToken.sub)
         .catch()
         .then((response) => {
-          // console.log("res", response)
-          // console.log("progress", response.progress)
           setUserProgress(response.progress)
         })
         .catch(err => console.log(err))
@@ -149,7 +143,6 @@ const Onboarding = () => {
   }, [])
 
   const handleProgress = async () => {
-    console.log("progress: ", userProgress)
     if (sectionIndex == 0) {
       userProgress[0] = true;
       setUserProgress([...userProgress])
@@ -160,8 +153,6 @@ const Onboarding = () => {
       userProgress[2] = true;
       setUserProgress([...userProgress])
     }
-    console.log("progress: ", userProgress)
-    // console.log("user: ", userData)
     patchUserRequest(id, {progress: userProgress})
   }
 

@@ -40,7 +40,6 @@ const CreatePassword = () => {
         return
       }
       const decodedToken: {email: string; sub: string; roles: string[]} = jwt_decode(token)
-      //console.log("email: ", decodedToken.email)
 
       const authData = {
         email: decodedToken.email,
@@ -52,7 +51,6 @@ const CreatePassword = () => {
         const userData = await findOneById(authData._id)
         setAuth(userData)
         setUser(userData)
-        //console.log("userData: ", auth)
       }
       catch (error) {
         console.log(error)

@@ -28,12 +28,10 @@ const CoderProgress = () => {
   const filteredUsers = users.filter((user: User) => user.city == cityQuery).reverse().filter(user => !user.roles.includes("Admin"))
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    //console.log(e.target.value)
     setCityQuery(e.target.value)
   }
 
   const handleClick = (user: User) => {
-    console.log(user.name)
     if(user.openQuestion == undefined){
       alert("Sin respuesta.")
     } else {

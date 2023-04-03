@@ -21,16 +21,13 @@ const Login = () => {
     authUserRequest(post)
       .catch()
       .then((response) => {
-        // console.log(response);
         token = response.data.access_token;
-        // console.log("access_token: ", token);
         sessionStorage.setItem("access_token", token);
         const decodedToken: {email: string; sub: string; roles: string[]} = jwt_decode(token)
         const user: any = findOneById(decodedToken.sub)
         findOneById(decodedToken.sub)
           .catch()
           .then((user) => {
-            console.log(user)
             if(!user.roles.includes("Admin") && user.openQuestion == undefined){
               navigate("/welcome")
               location.reload()

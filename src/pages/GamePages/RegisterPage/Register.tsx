@@ -28,7 +28,6 @@ const Register = (props: Props) => {
     postUserRequest(post)
       .catch()
       .then((response) => {
-        console.log(response)
         navigate('/login')
     })
       .catch(err => console.log(err))

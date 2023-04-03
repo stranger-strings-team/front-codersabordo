@@ -17,7 +17,6 @@ const EliminateQuestion = () => {
   useEffect(() => {
   async function loadQuestion () {
     const id = sessionStorage.getItem("question");
-    console.log("read: ", id)
     getOneQuestion(id)
       .catch()
       .then((res) => {
@@ -30,11 +29,9 @@ const EliminateQuestion = () => {
   }, [])
 
   const handleClick = () => {
-    console.log("hola")
     deleteOneQuestion(question?._id)
       .catch()
 			.then((response) => {
-				console.log(response)
         navigate("/admin/question")
 			})
 			.catch(err => console.log(err))

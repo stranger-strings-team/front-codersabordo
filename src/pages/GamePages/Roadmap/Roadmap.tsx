@@ -12,7 +12,6 @@ const Roadmap = () => {
     const navigate = useNavigate();
 
     const redirect = (section: number) => {
-        console.log("sección: ", section+1)
         setSectionIndex(section)
         navigate(`/onboarding/${section}`)
     }
