@@ -8,7 +8,7 @@ export const getColor = (key: number) => {
   }
 
   export const FeedbackDiv = styled.div`
-    max-width: 1000px,
+    max-width: 1000px;
     display: flex;
     flex-direction: column;
   `
