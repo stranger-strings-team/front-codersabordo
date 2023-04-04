@@ -120,7 +120,7 @@ export const ParagraphContainer = styled.div`
 
 export const AnswerImage = styled.img`
   width: 10rem; 
-  margin: 0 0 0 auto;
+  margin: 0 0 0 175px;
 `
 export const Input = styled.input`
     background-color: #ffe6dc;

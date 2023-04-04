@@ -18,8 +18,7 @@ export const ProfileAdminDiv = styled.div`
     background-color: ${theme.yellowBackground};
     display: flex;
     gap: 20px;
-    /* grid-template-columns: 2fr 1fr 1fr;  */
-    justify-content: stretch;
+    justify-content: center;
     align-items: center;
     padding: 6px;
     border-radius: 8px;
@@ -41,7 +40,6 @@ export const Padminname = styled(Padmin)`
 
 export const BinImg = styled.img`
     width: 1.6rem;
-    margin-top: 8px;
     cursor: pointer;
     margin-right: 2px;
 `
